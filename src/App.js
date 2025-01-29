@@ -1,13 +1,17 @@
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
+import MainCourt from "./components/homepagepart/MainCourt";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        india court
-      </header>
-    </div>
+    
+        <Router>
+          <Routes>
+          <Route path="/" element={<MainCourt />} />
+          </Routes>
+        </Router>
+         
+    
   );
 }
 
