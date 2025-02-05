@@ -1,13 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
+import FooterIcon from '../assets/icons/footerIcon.svg'
+import Line from '../assets/icons/fullpolygon_line_white.svg'
+import { Image, Text } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#C08729] px-[10vw] text-white py-[10vh]">
+      <footer className="bg-[#C08729] px-[10vw] text-white pb-[10vh]">
+         <>
+         <Image src={FooterIcon} mx='auto'/>
+        <Text className='text-base text-center my-8 '>We are here to create awareness</Text>
+         <Image src={Line} mx='auto' mb={8}/>
+         </>
+
         <div className="container justify-center mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-[1vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-6">
-         
           <div className="max-sm:w-full max-sm:text-left">
             <h3 className="text-lg font-semibold mb-4">Pages</h3>
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
