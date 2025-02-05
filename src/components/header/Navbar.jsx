@@ -1,13 +1,15 @@
-import { Box, Flex,  IconButton, Select, Input, InputGroup, InputRightElement, HStack, VStack, Text, Image } from "@chakra-ui/react";
+import { Box, Flex,  HStack, VStack, Text, Image, Select } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { MdRectangle } from "react-icons/md";
+import { GoSearch } from "react-icons/go";
+import { FaSquareFull } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import logo from '../../assets/home/logo.png';
+import { useEffect, useState } from "react";
 
 const Marquee = () => {
   return (
     <motion.div
-      className="overflow-hidden whitespace-nowrap "
+      className="py-4 inline-block whitespace-nowrap"
       animate={{ x: ["100%", "-100%"] }}
       transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
     >
@@ -18,33 +20,49 @@ const Marquee = () => {
   );
 };
 
+const Rhombus = () => <Box className="rotate-45 pt-0.5"><FaSquareFull size={9} /></Box>
+
 const Navbar = () => {
+  const [bg, setBg] = useState("transparent");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) setBg("#d4d3d8");
+      else setBg("transparent");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <Box  as="nav" className="position-fixed top-0 z-50 bg-white shadow-md bg-transparent" position={'fixed'} w="100%" mx={3}>
-      <HStack justify="start" className="">
+    <Box  as="nav" className="fixed top-0 z-50 pl-6" bg={bg} w="100%">
+      <HStack justify="start" gap={6}>
       <Box className="text-2xl font-bold text-yellow-700">
 
         <Image src={logo} alt="logo" w="100px" />
       </Box>
       
-      <Flex  align="center" justify="space-between" p={4} className=" border-l  border-yellow-600 ">
-      <VStack>
+      <Flex justify="space-between" className="overflow-hidden flex-1 border-l border-yellow-600">
+      <VStack align="start" gap={0} className="w-full">
       <Marquee />    
-        <Flex gap={6} className="hidden md:flex border-t border-yellow-600 w-[100%] ">
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Home </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Legal Insights </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Case library</Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Laws & Acts </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Join our legal team  </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> OUR SERVICES </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> RESOURSES </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Contact </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> Home </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <MdRectangle/>  <Text> <Select size="sm" className="border-gray-300">
-            <option>English</option>
-            <option>Hindi</option>
-          </Select> </Text></HStack> </Link>
+        <Flex gap={6} justify="space-between" flexWrap="wrap" align="center" className="p-4 pl-6 w-full border-t border-yellow-600" >
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> HOME </Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> LEGAL INSIGHTS </Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> CASE LIBRARY</Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> LAWS & ACTS </Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> JOIN OUR LEGAL TEAM  </Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> OUR SERVICES </Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> RESOURCES </Text></HStack> </Link>
+          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> CONTACT </Text></HStack> </Link>
           
+          <Flex gap={0} align="center">
+            <Box className="border border-yellow-700 p-1 rounded"><GoSearch color="#C08729" width={20} height={20}/></Box>
+            <Link className="hover:text-yellow-700">  <Text> <Select size="sm" style={{border:0}}>
+              <option>English</option>
+              <option>Hindi</option>
+            </Select> </Text> </Link>
+          </Flex>
         </Flex>
         {/* <Flex align="center" gap={3}>
           <InputGroup className="hidden md:flex">

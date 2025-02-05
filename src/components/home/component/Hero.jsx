@@ -27,7 +27,7 @@ const Hero = () => {
         overflow="hidden"
         bgImage={`url(${bg_main})`}
         bgSize="cover"
-        bgPosition="center"
+        bgPosition="top"
         height="container.sm"
         display="flex"
         alignItems="center"
