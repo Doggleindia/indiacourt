@@ -43,7 +43,6 @@ the two major realms of Classical physics: Newtonian mechanics "
                         overflow="hidden"
                         p={6}
                         margin={"auto"}
-                        w="120%"
                       >
                         <Image
                           src={resources}
