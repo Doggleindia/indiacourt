@@ -5,6 +5,7 @@ import Helplinenumber from "./components/helplinenumber/Page";
 import LegalTopics from "./components/legalTopics/Page";
 import Resources from "./components/resources/page";
 import Articles from "./components/articles/Articles";
+import Judgements from "./components/judgements/Page";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/legal-topics" element={<LegalTopics />} />
+        <Route path="/judgements" element={<Judgements />} />
         {/* <Route path="/" element={<MainCourt />} /> */}
       </Routes>
     </Router>
