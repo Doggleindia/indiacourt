@@ -21,11 +21,18 @@ export default function LatestJudgements() {
         <Text className="text-sm font-normal text-black border-b-[1px] border-b-[#F0E5D4] leading-6">
           Bherulal Bhimaji Oswal (D) by LRS. Vs. Madhusudan N.Kumbhare
         </Text>
-
-        <Flex gap={2} align="center" mt={2} justify="center">
-          <Text className=" text-[12px] font-bold">See more</Text>
-          <FaArrowRightLong />
-        </Flex>
+        <Box justifyContent="center" display="flex">
+          <Flex
+            gap={2}
+            mt={2}
+            as="button"
+            _hover={{ color: "#C08729" }}
+            alignItems="center"
+          >
+            <Text className=" text-[12px] font-bold">See more</Text>
+            <FaArrowRightLong />
+          </Flex>
+        </Box>
       </Box>
     </VStack>
   );

@@ -18,9 +18,17 @@ export default function JudgementBlock() {
         legitimised by the provisions enumerated in the Agreement dated
         12.11.1997
       </Text>
-      <Flex gap={2} align="center" mt={2} justify="flex-end">
-        <Text className=" text-[12px] font-bold">Learn more</Text>
-        <FaArrowRightLong />
+      <Flex justify="flex-end">
+        <Flex
+          gap={2}
+          align="center"
+          mt={2}
+          as="button"
+          _hover={{ color: "#C08729" }}
+        >
+          <Text className=" text-[12px] font-bold">Learn more</Text>
+          <FaArrowRightLong />
+        </Flex>
       </Flex>
     </Box>
   );

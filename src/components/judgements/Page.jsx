@@ -18,15 +18,7 @@ export default function Page() {
       <Box mb={5}>
         <Inquiry />
       </Box>
-
       <Footer />
-      {/* <Findalawyer />
-
-      <Advertisment />
-      <Box pb={5}>
-        <Inquiry />
-      </Box>
-      <Footer /> */}
     </Box>
   );
 }

@@ -18,7 +18,7 @@ export default function JudgementDetails() {
           Bridge Company Limited (NTBCL), has preferred the instant appeal
           questioning the judgement dated 26.10.2016 passed by the High Court of
           Judicature at Allahabad (High Court).{" "}
-          <Text as="span" className="font-bold">
+          <Text as="span" cursor="pointer" className="font-bold">
             Know more
           </Text>
         </Text>

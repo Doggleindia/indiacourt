@@ -1,4 +1,4 @@
-import { Card, Flex, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -22,10 +22,13 @@ export default function TopicItem({ title, description, icon }) {
       >
         {description}
       </Text>
-      <Flex gap={2}>
-        <Text className=" text-[12px] font-bold">READ MORE</Text>
-        <FaArrowRightLong />
-      </Flex>
+
+      <Box>
+        <Flex gap={2} as="button" align="center" _hover={{ color: "#C08729" }}>
+          <Text className=" text-[12px] font-bold">READ MORE</Text>
+          <FaArrowRightLong />
+        </Flex>
+      </Box>
     </Card>
   );
 }
