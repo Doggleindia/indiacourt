@@ -1,83 +1,204 @@
-import { Box, Flex,  HStack, VStack, Text, Image, Select } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  HStack,
+  VStack,
+  Text,
+  Image,
+  Select,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { GoSearch } from "react-icons/go";
 import { FaSquareFull } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import logo from '../../assets/home/logo.png';
+import logo from "../../assets/home/logo.png";
+import { IoMdMenu } from "react-icons/io";
 import { useEffect, useState } from "react";
 
-const Marquee = () => {
+const Marquee = ({ scrolled }) => {
   return (
     <motion.div
       className="py-4 inline-block whitespace-nowrap"
       animate={{ x: ["100%", "-100%"] }}
       transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
     >
-      <span className="mx-4 text-black font-semibold">General Legal Advice</span>
-      <span className="mx-4 text-black font-semibold">General Legal Advice</span>
-      <span className="mx-4 text-black font-semibold">General Legal Advice</span>
+      <span
+        className={`mx-4 text-${scrolled ? "white" : "black"} font-semibold`}
+      >
+        General Legal Advice
+      </span>
+      <span
+        className={`mx-4 text-${scrolled ? "white" : "black"} font-semibold`}
+      >
+        General Legal Advice
+      </span>
+      <span
+        className={`mx-4 text-${scrolled ? "white" : "black"} font-semibold`}
+      >
+        General Legal Advice
+      </span>
     </motion.div>
   );
 };
 
-const Rhombus = () => <Box className="rotate-45 pt-0.5"><FaSquareFull size={9} /></Box>
+const Rhombus = () => (
+  <Box className="rotate-45 pt-0.5">
+    <FaSquareFull size={9} />
+  </Box>
+);
+
+const NavLinks = () => {
+  return (
+    <>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> HOME </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> LEGAL INSIGHTS </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> CASE LIBRARY</Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> LAWS & ACTS </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> OUR SERVICES </Text>
+        </HStack>
+      </Link>
+      <Link to="/resources" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> RESOURCES </Text>
+        </HStack>
+      </Link>
+      <Link to="/help-line" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> CONTACT </Text>
+        </HStack>
+      </Link>
+      <Flex gap={0} align="center">
+        <Box className="border border-yellow-700 p-1 rounded">
+          <GoSearch color="#C08729" width={20} height={20} />
+        </Box>
+        <Link className="hover:text-yellow-700">
+          <Text>
+            <Select size="sm" style={{ border: 0 }}>
+              <option>English</option>
+              <option>Hindi</option>
+            </Select>
+          </Text>
+        </Link>
+      </Flex>
+    </>
+  );
+};
 
 const Navbar = () => {
-  const [bg, setBg] = useState("transparent");
+  const [scrolled, setScrolled] = useState(false);
+  const [isSmallScreen] = useMediaQuery("(max-width: 899px)");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) setBg("#d4d3d8");
-      else setBg("transparent");
+      if (window.scrollY > 50) setScrolled(true);
+      else setScrolled(false);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <Box  as="nav" className="fixed top-0 z-50 pl-6" bg={bg} w="100%">
-      <HStack justify="start" gap={6}>
-      <Box className="text-2xl font-bold text-yellow-700">
+  if (isSmallScreen)
+    return (
+      <Box
+        as="nav"
+        className="fixed top-0 z-50 "
+        color={scrolled ? "white" : "black"}
+        bg={scrolled ? "#07070B" : "transparent"}
+        w="100%"
+      >
+        <HStack justify="start" gap={6}>
+          <Flex justify="space-between" className="overflow-hidden flex-1">
+            <VStack align="start" gap={0} className="w-full">
+              <Marquee scrolled={scrolled} />
 
-        <Image src={logo} alt="logo" w="100px" />
-      </Box>
-      
-      <Flex justify="space-between" className="overflow-hidden flex-1 border-l border-yellow-600">
-      <VStack align="start" gap={0} className="w-full">
-      <Marquee />    
-        <Flex gap={6} justify="space-between" flexWrap="wrap" align="center" className="p-4 pl-6 w-full border-t border-yellow-600" >
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> HOME </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> LEGAL INSIGHTS </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> CASE LIBRARY</Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> LAWS & ACTS </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> JOIN OUR LEGAL TEAM  </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> OUR SERVICES </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> RESOURCES </Text></HStack> </Link>
-          <Link to="/" className="hover:text-yellow-700"><HStack> <Rhombus/>  <Text> CONTACT </Text></HStack> </Link>
-          
-          <Flex gap={0} align="center">
-            <Box className="border border-yellow-700 p-1 rounded"><GoSearch color="#C08729" width={20} height={20}/></Box>
-            <Link className="hover:text-yellow-700">  <Text> <Select size="sm" style={{border:0}}>
-              <option>English</option>
-              <option>Hindi</option>
-            </Select> </Text> </Link>
+              <Flex className="border-t border-yellow-600 w-full py-2 px-4 items-center justify-between">
+                <Box className="text-2xl font-bold text-yellow-700">
+                  <Image src={logo} alt="logo" w="80px" />
+                </Box>
+                <IoMdMenu
+                  size={32}
+                  onClick={() =>
+                    setMenuOpen((prev) => {
+                      if (!prev) setScrolled(true);
+                      return !prev;
+                    })
+                  }
+                />
+              </Flex>
+
+              {menuOpen && (
+                <VStack
+                  gap={6}
+                  flexWrap="wrap"
+                  align="start"
+                  ml="auto"
+                  className="pb-2 px-2"
+                >
+                  <NavLinks />
+                </VStack>
+              )}
+            </VStack>
           </Flex>
+        </HStack>
+      </Box>
+    );
+
+  return (
+    <Box
+      as="nav"
+      className="fixed top-0 z-50 pl-6"
+      color={scrolled ? "white" : "black"}
+      bg={scrolled ? "#07070B" : "transparent"}
+      w="100%"
+    >
+      <HStack justify="start" gap={6}>
+        <Box className="text-2xl font-bold text-yellow-700">
+          <Image src={logo} alt="logo" w="100px" />
+        </Box>
+
+        <Flex
+          justify="space-between"
+          className="overflow-hidden flex-1 border-l border-yellow-600"
+        >
+          <VStack align="start" gap={0} className="w-full">
+            <Marquee scrolled={scrolled} />
+            <Flex
+              gap={6}
+              justify="space-between"
+              flexWrap="wrap"
+              align="center"
+              className="p-4 pl-6 w-full border-t border-yellow-600"
+            >
+              <NavLinks />
+            </Flex>
+          </VStack>
         </Flex>
-        {/* <Flex align="center" gap={3}>
-          <InputGroup className="hidden md:flex">
-            <Input placeholder="Search" className="border-gray-300" />
-            <InputRightElement>
-              <IconButton aria-label="Search" icon={<FaSearch />} size="sm" />
-            </InputRightElement>
-          </InputGroup>
-          <Select size="sm" className="border-gray-300">
-            <option>English</option>
-            <option>Hindi</option>
-          </Select>
-        </Flex> */}
-      </VStack>
-      </Flex>
       </HStack>
     </Box>
   );

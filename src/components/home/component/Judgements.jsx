@@ -21,7 +21,6 @@ import { LuFolder, LuSquareCheck, LuUser } from "react-icons/lu";
 import Judgementstab from "./judgements/Judgementstab";
 const Judgements = () => {
   return (
-    <>
       <Box py={4}>
         <Container maxW="container.xl" py={2}>
           <ComponentHeader
@@ -96,6 +95,7 @@ const Judgements = () => {
                       _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                       p={3}
                       borderRadius="md"
+                      flexWrap='wrap'
                     >
                       <LuUser style={{ marginRight: 8 }} />
                       Supreme court 
@@ -104,6 +104,7 @@ const Judgements = () => {
                       _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                       p={3}
                       borderRadius="md"
+                      flexWrap='wrap'
                     >
                       <LuFolder style={{ marginRight: 8 }} />
                       High court 
@@ -112,6 +113,7 @@ const Judgements = () => {
                       _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                       p={3}
                       borderRadius="md"
+                      flexWrap='wrap'
                     >
                       <LuSquareCheck style={{ marginRight: 8 }} />
                       Lok Sabha
@@ -120,6 +122,7 @@ const Judgements = () => {
                       _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                       p={3}
                       borderRadius="md"
+                      flexWrap='wrap'
                     >
                       <LuSquareCheck style={{ marginRight: 8 }} />
                       Rajya Sabha
@@ -147,7 +150,6 @@ const Judgements = () => {
           </Box>
         </Container>
       </Box>
-    </>
   );
 };
 

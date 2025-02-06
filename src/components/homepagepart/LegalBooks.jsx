@@ -81,17 +81,17 @@ const LegalBooks = () => {
             </div>
           </div>
 
-          <div className="mt-16   flex justify-end">
-            <div className="flex items-center text-right ml-[9vw] relative">
+          <div className="mt-16 flex justify-end">
+            <div className="flex items-center text-right relative">
               {/* Left Diamond */}
               <div
-                className="w-3 h-3 bg-[#C08729] transform rotate-90 absolute max-sm:left-[24vw] left-[7vw]"
+                className="w-3 h-3 bg-[#C08729] transform rotate-90 absolute right-8"
                 style={{
                   clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                 }}
               ></div>
               <div
-                className="w-3 h-3 bg-[#C08729] transform rotate-90 absolute max-sm:left-[29vw] left-[9vw] "
+                className="w-3 h-3 bg-[#C08729] transform rotate-90 absolute right-12"
                 style={{
                   clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                 }}
