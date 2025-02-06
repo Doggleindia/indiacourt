@@ -4,6 +4,9 @@ import Hero from "./components/home/page";
 import Helplinenumber from "./components/helplinenumber/Page";
 import Resources from "./components/resources/page";
 import Articles from "./components/articles/Articles";
+import BlogDetails from "./components/home/component/blog/BlogDetails";
+import Acts from "./components/acts/Acts";
+import Particularacts from "./components/acts/Particularacts";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
           <Route path="/help-line" element={<Helplinenumber />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/articles" element={<Articles />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/acts" element={<Acts />} />
+          <Route path="/acts/:id" element={<Particularacts />} />
           {/* <Route path="/" element={<MainCourt />} /> */}
           </Routes>
         </Router>

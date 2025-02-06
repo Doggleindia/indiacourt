@@ -19,7 +19,7 @@ import Serachbutton from "../header/Serachbutton";
 const Page = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Box pb={4} pt={{base:'2rem' ,xl:"9rem"}}>
         <Container maxW="container.xl" >
           <Header
