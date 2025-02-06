@@ -12,7 +12,6 @@ import React from "react";
 import law_book from "../../../assets/home/law_book.png";
 const Subscribe = () => {
   return (
-    <>
       <Box
         display="flex"
         justifyContent="center"
@@ -107,20 +106,13 @@ const Subscribe = () => {
             </Button>
             </HStack>
 
-            {/* Image Positioned at Bottom Left */}
-            <Box
-              position="absolute"
-              bottom={{ base: "-21px", md: "-3px" }}
-              right={{ base: "-12%", md: "0%" }}
-              transform={{ base: "translateX(-50%)", md: "none" }}
-              width={{ base: "120px", md: "200px" }}
-            >
-              <Image src={law_book} alt="law book" />
-            </Box>
           </Box>
         </Container>
-      </Box>
-    </>
+        {/* Image Positioned at Bottom Left */}
+        <Box position="absolute" bottom={2} right={2} width={{ base: "120px", md: "200px" }}>
+          <Image src={law_book} alt="law book" />
+        </Box>
+      </Box>  
   );
 };
 

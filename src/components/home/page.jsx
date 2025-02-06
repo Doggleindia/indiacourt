@@ -20,7 +20,7 @@ import Footer from "../Footer";
 const page = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Hero />
       <Counter />
       <Highlights />
