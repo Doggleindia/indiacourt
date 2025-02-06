@@ -1,5 +1,4 @@
 import {
-  border,
   Box,
   Container,
   Tab,
@@ -7,7 +6,6 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import Header from "../header/Header";
@@ -57,13 +55,6 @@ export default function Judgements() {
           </TabPanels>
         </Tabs>
       </Box>
-
-      {/* <Flex mt="6" gap={12}>
-        <Topics />
-        <Box className="hidden md:block">
-          <Image src={BookImage} w="60vw" />
-        </Box>
-      </Flex> */}
     </Container>
   );
 }

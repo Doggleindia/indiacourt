@@ -48,6 +48,66 @@ const Rhombus = () => (
   </Box>
 );
 
+const NavLinks = () => {
+  return (
+    <>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> HOME </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> LEGAL INSIGHTS </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> CASE LIBRARY</Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> LAWS & ACTS </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
+        </HStack>
+      </Link>
+      <Link to="/" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> OUR SERVICES </Text>
+        </HStack>
+      </Link>
+      <Link to="/resources" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> RESOURCES </Text>
+        </HStack>
+      </Link>
+      <Link to="/help-line" className="hover:text-yellow-700">
+        <HStack>
+          <Rhombus /> <Text> CONTACT </Text>
+        </HStack>
+      </Link>
+      <Flex gap={0} align="center">
+        <Box className="border border-yellow-700 p-1 rounded">
+          <GoSearch color="#C08729" width={20} height={20} />
+        </Box>
+        <Link className="hover:text-yellow-700">
+          <Text>
+            <Select size="sm" style={{ border: 0 }}>
+              <option>English</option>
+              <option>Hindi</option>
+            </Select>
+          </Text>
+        </Link>
+      </Flex>
+    </>
+  );
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isSmallScreen] = useMediaQuery("(max-width: 899px)");
@@ -100,60 +160,7 @@ const Navbar = () => {
                   ml="auto"
                   className="pb-2 px-2"
                 >
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> HOME </Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> LEGAL INSIGHTS </Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> CASE LIBRARY</Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> LAWS & ACTS </Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> OUR SERVICES </Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> RESOURCES </Text>
-                    </HStack>
-                  </Link>
-                  <Link to="/" className="hover:text-yellow-700">
-                    <HStack>
-                      <Rhombus /> <Text> CONTACT </Text>
-                    </HStack>
-                  </Link>
-
-                  <Flex gap={0} align="center">
-                    <Box className="border border-yellow-700 p-1 rounded">
-                      <GoSearch color="#C08729" width={20} height={20} />
-                    </Box>
-                    <Link className="hover:text-yellow-700">
-                      <Text>
-                        <Select size="sm" style={{ border: 0 }}>
-                          <option>English</option>
-                          <option>Hindi</option>
-                        </Select>
-                      </Text>
-                    </Link>
-                  </Flex>
+                  <NavLinks />
                 </VStack>
               )}
             </VStack>
@@ -188,73 +195,8 @@ const Navbar = () => {
               align="center"
               className="p-4 pl-6 w-full border-t border-yellow-600"
             >
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> HOME </Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> LEGAL INSIGHTS </Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> CASE LIBRARY</Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> LAWS & ACTS </Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> OUR SERVICES </Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> RESOURCES </Text>
-                </HStack>
-              </Link>
-              <Link to="/" className="hover:text-yellow-700">
-                <HStack>
-                  <Rhombus /> <Text> CONTACT </Text>
-                </HStack>
-              </Link>
-
-              <Flex gap={0} align="center">
-                <Box className="border border-yellow-700 p-1 rounded">
-                  <GoSearch color="#C08729" width={20} height={20} />
-                </Box>
-                <Link className="hover:text-yellow-700">
-                  <Text>
-                    <Select size="sm" style={{ border: 0 }}>
-                      <option>English</option>
-                      <option>Hindi</option>
-                    </Select>
-                  </Text>
-                </Link>
-              </Flex>
+              <NavLinks />
             </Flex>
-            {/* <Flex align="center" gap={3}>
-          <InputGroup className="hidden md:flex">
-            <Input placeholder="Search" className="border-gray-300" />
-            <InputRightElement>
-              <IconButton aria-label="Search" icon={<FaSearch />} size="sm" />
-            </InputRightElement>
-          </InputGroup>
-          <Select size="sm" className="border-gray-300">
-            <option>English</option>
-            <option>Hindi</option>
-          </Select>
-        </Flex> */}
           </VStack>
         </Flex>
       </HStack>
