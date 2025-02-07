@@ -1,15 +1,23 @@
-import { Box, Container, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  HStack,
+  SimpleGrid,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import BlogCard from "../home/component/blog/BlogCard";
 import law_queen from "../../assets/home/law_queen.png";
 import Navbar from "../header/Navbar";
+import CommonFooter from "../CommonFooter";
 
 const Articles = () => {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header
@@ -44,53 +52,71 @@ const Articles = () => {
                 />
               </HStack>
             </HStack>
-            <Text className="text-4xl" fontWeight={'bold'}>Featured articles</Text>
+            <Text className="text-4xl" fontWeight={"bold"}>
+              Featured articles
+            </Text>
           </VStack>
           <SimpleGrid columns={{ base: 1, sm: 2, xl: 2 }} py={4} spacing={4}>
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero  Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
-          
           </SimpleGrid>
         </Container>
       </Box>
+      <CommonFooter />
     </>
   );
 };

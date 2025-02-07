@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../header/Header";
 import LegalDocumentsAccordion from "../resources/LegalDocumentsAccordion";
 import ParticularactAccordian from "./ParticularactAccordian";
+import CommonFooter from "../CommonFooter";
 
 const Particularacts = () => {
   return (
@@ -14,13 +15,15 @@ const Particularacts = () => {
             headtitle="Articles"
             description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
           />
-          <Text color={'#C08729'} fontSize={'2xl'}>
-          The Abducted Persons (Recovery and Restoration) Continuance Act, 1955
+          <Text color={"#C08729"} fontSize={"2xl"}>
+            The Abducted Persons (Recovery and Restoration) Continuance Act,
+            1955
           </Text>
 
           <ParticularactAccordian />
         </Container>
       </Box>
+      <CommonFooter />
     </>
   );
 };

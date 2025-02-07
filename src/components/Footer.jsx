@@ -1,46 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
-import FooterIcon from '../assets/icons/footerIcon.svg'
-import Line from '../assets/icons/fullpolygon_line_white.svg'
+import FooterIcon from "../assets/icons/footerIcon.svg";
+import Line from "../assets/icons/fullpolygon_line_white.svg";
 import { Image, Text } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
     <div>
       <footer className="bg-[#C08729] px-[10vw] text-white pb-[10vh]">
-         <>
-         <Image src={FooterIcon} mx='auto'/>
-        <Text className='text-base text-center my-8 '>We are here to create awareness</Text>
-         <Image src={Line} mx='auto' mb={8}/>
-         </>
+        <>
+          <Image src={FooterIcon} mx="auto" />
+          <Text className="text-base text-center my-8 ">
+            We are here to create awareness
+          </Text>
+          <Image src={Line} mx="auto" mb={8} />
+        </>
 
         <div className="container justify-center mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-[1vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-6">
           <div className="max-sm:w-full max-sm:text-left">
             <h3 className="text-lg font-semibold mb-4">Pages</h3>
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
               <Link to="/">
-                {" "}
                 <li>Home</li>
-              </Link>{" "}
+              </Link>
               <Link to="/clinic">
-                {" "}
                 <li>Clinic</li>
-              </Link>{" "}
+              </Link>
               <Link to={"/about-us"}>
-                {" "}
                 <li>About us</li>
               </Link>
               <Link to={"/assessments-evaluation"}>
-                {" "}
                 <li>Services</li>
               </Link>
-              <Link>
-                {" "}
+              <Link to="/contact-us">
                 <li>Contact us</li>
               </Link>
-              <Link to={'/career'}>
-                {" "}
+              <Link to={"/join-as-lawyer"}>
                 <li>Career</li>
               </Link>
             </ul>
@@ -52,21 +48,17 @@ const Footer = () => {
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
               {/* <li>Brand Story</li> */}
               <Link to={"/terms"}>
-                {" "}
                 <li>Terms & Conditions</li>
               </Link>
               <Link to={"/refund-reschedule"}>
-                {" "}
                 <li>Return Policy</li>
-              </Link>{" "}
+              </Link>
               <Link to={"/refund-reschedule"}>
-                {" "}
                 <li>Refund Policy</li>
-              </Link>{" "}
+              </Link>
               <Link to={"/privacy-policy"}>
-                {" "}
                 <li>Privacy Policy</li>
-              </Link>{" "}
+              </Link>
             </ul>
           </div>
           {/* Contact Us Section */}
@@ -74,8 +66,7 @@ const Footer = () => {
             <h3 className="text-lg text-left font-semibold mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 max-sm:text-left">
               <p>
-                Registered Office: 311, Adarsh Nagar
-                Jaipur, Rajasthan, 302004
+                Registered Office: 311, Adarsh Nagar Jaipur, Rajasthan, 302004
               </p>
               <p>+91 999999999</p>
               <p>support@indiaCourt.in</p>
@@ -127,35 +118,36 @@ const Footer = () => {
             </ul>
           </div>
           <div className="border-t-2 md:hidden flex justify-center items-center w-full border-[#F6E8FB80]">
-            <h3 className="text-[10px] text-center mt-4"> <p>
-              &copy; 2025{' '}
-              All rights reserved By IndiaCourt Private Limited Powered by
+            <h3 className="text-[10px] text-center mt-4">
+              <p>
+                &copy; 2025 All rights reserved By IndiaCourt Private Limited
+                Powered by
+                <a
+                  href="https://doggleindia.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  Doggleindia
+                </a>
+              </p>
+            </h3>
+          </div>
+        </div>
+        <div className="border-t-2 mt-[5vw] hidden md:flex justify-center items-center w-full border-[#F6E8FB80]">
+          <h3 className="text-[10px] text-center mt-4">
+            <p>
+              &copy; 2025 All rights reserved By IndiaCourt Private Limited
+              <br /> Powered by
               <a
                 href="https://doggleindia.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                {' '} Doggleindia
+                Doggleindia
               </a>
             </p>
-            </h3>
-          </div>
-        </div>
-        <div className="border-t-2 mt-[5vw] hidden md:flex justify-center items-center w-full border-[#F6E8FB80]">
-          <h3 className="text-[10px] text-center mt-4"> <p>
-            &copy; 2025{' '}
-            All rights reserved By IndiaCourt Private Limited <br /> Powered by
-            <a
-              href="https://doggleindia.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              {' '}Doggleindia
-            </a>
-          </p>
-
           </h3>
         </div>
       </footer>

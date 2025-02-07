@@ -1,31 +1,33 @@
-import { Box, Container, Text } from '@chakra-ui/react'
-import React from 'react'
-import Header from '../header/Header'
-import Serachbutton from '../header/Serachbutton'
-import LegalDocumentsAccordion from './LegalDocumentsAccordion'
-import Navbar from '../header/Navbar'
+import { Box, Container, Text } from "@chakra-ui/react";
+import React from "react";
+import Header from "../header/Header";
+import Serachbutton from "../header/Serachbutton";
+import LegalDocumentsAccordion from "./LegalDocumentsAccordion";
+import Navbar from "../header/Navbar";
+import CommonFooter from "../CommonFooter";
 
 const page = () => {
   return (
-   <>
-   <Navbar/>
-    <Box pb={4} pt={{base:'2rem' ,xl:"8rem"}}>
-        <Container maxW="container.xl" >
+    <>
+      <Navbar />
+      <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
+        <Container maxW="container.xl">
           <Header
             title="Easy-to-Use Legal Templates"
             headtitle="Resources"
             description="Access a wide range of customizable legal templates for personal, business, and real estate needs. From contracts to wills, manage your legal tasks quickly and efficiently, with no lawyer verification required. Get the right document at your fingertips"
           />
-          <Text color={'#C08729'} className='max-sm:text-2xl text-4xl py-4' >
-          Search Templates that you will need 
+          <Text color={"#C08729"} className="max-sm:text-2xl text-4xl py-4">
+            Search Templates that you will need
           </Text>
-        <Serachbutton bordercolor='#C08729'/>
+          <Serachbutton bordercolor="#C08729" />
 
-        <LegalDocumentsAccordion/>
+          <LegalDocumentsAccordion />
         </Container>
-        </Box>
-   </>
-  )
-}
+      </Box>
+      <CommonFooter />
+    </>
+  );
+};
 
-export default page
+export default page;
