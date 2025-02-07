@@ -10,6 +10,14 @@ import Acts from "./components/acts/Acts";
 import Particularacts from "./components/acts/Particularacts";
 import Judgements from "./components/judgements/Page";
 import JudgementDetails from "./components/judgementDetails/Page";
+import ActsDesc from "./components/acts/ActsDesc";
+import CaseNumber from "./components/casenumber/CaseNumber";
+import Contactus from "./components/contactus/page";
+import Lawyer from "./components/lawyer/Lawyer";
+import Resolution from "./components/resolution/Resolution";
+import Joinlawyer from "./components/lawyer/JoinAsLawyer/Joinlawyer";
+import { ValidateDocument } from "./components/validate/ValidateDocument";
+import Dictionary from "./components/dictionary/Dictionary";
 
 function App() {
   return (
@@ -22,9 +30,17 @@ function App() {
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/acts" element={<Acts />} />
         <Route path="/acts/:id" element={<Particularacts />} />
+        <Route path="/acts/:id/desc" element={<ActsDesc />} />
         <Route path="/legal-topics" element={<LegalTopics />} />
         <Route path="/judgements" element={<Judgements />} />
         <Route path="/judgement-details" element={<JudgementDetails />} />
+        <Route path="/case-number" element={<CaseNumber />} />
+        <Route path="/contact-us" element={<Contactus />} />
+        <Route path="/find-lawyer" element={<Lawyer />} />
+        <Route path="/resolution" element={<Resolution />} />
+        <Route path="/join-as-lawyer" element={<Joinlawyer />} />
+        <Route path="/validate" element={<ValidateDocument />} />
+        <Route path="/dictionary" element={<Dictionary />} />
         {/* <Route path="/" element={<MainCourt />} /> */}
       </Routes>
     </Router>
