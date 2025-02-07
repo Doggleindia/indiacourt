@@ -18,6 +18,8 @@ import Resolution from "./components/resolution/Resolution";
 import Joinlawyer from "./components/lawyer/JoinAsLawyer/Joinlawyer";
 import { ValidateDocument } from "./components/validate/ValidateDocument";
 import Dictionary from "./components/dictionary/Dictionary";
+import Books from "./components/books/Page";
+import BookDetails from "./components/bookDetails/Page";
 
 function App() {
   return (
@@ -33,7 +35,7 @@ function App() {
         <Route path="/acts/:id/desc" element={<ActsDesc />} />
         <Route path="/legal-topics" element={<LegalTopics />} />
         <Route path="/judgements" element={<Judgements />} />
-        <Route path="/judgement-details" element={<JudgementDetails />} />
+        <Route path="/judgement/:id" element={<JudgementDetails />} />
         <Route path="/case-number" element={<CaseNumber />} />
         <Route path="/contact-us" element={<Contactus />} />
         <Route path="/find-lawyer" element={<Lawyer />} />
@@ -41,6 +43,8 @@ function App() {
         <Route path="/join-as-lawyer" element={<Joinlawyer />} />
         <Route path="/validate" element={<ValidateDocument />} />
         <Route path="/dictionary" element={<Dictionary />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/book/:id" element={<BookDetails />} />
         {/* <Route path="/" element={<MainCourt />} /> */}
       </Routes>
     </Router>
