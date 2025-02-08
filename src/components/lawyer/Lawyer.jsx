@@ -51,7 +51,7 @@ const steps = [
 const Lawyer = () => {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
         <Header

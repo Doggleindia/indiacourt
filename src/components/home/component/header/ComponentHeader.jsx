@@ -14,7 +14,7 @@ const ComponentHeader = ({ headtitle, title, description }) => {
     >
       <HStack width="100%" align="center">
         {/* Left Side: Title + Description */}
-        <VStack align="start" maxW="600px" flex="1">
+        <VStack align="start" maxW={{base:'270px',xl:"600px"}} textAlign={'left'} >
           {/* Title + Left Line */}
           <HStack spacing={0}>
             <div
