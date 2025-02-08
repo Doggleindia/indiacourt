@@ -1,14 +1,13 @@
-import React from 'react'
-import Navbar from '../header/Navbar'
-import { Box, Container } from '@chakra-ui/react'
-import Header from '../header/Header'
-import Serachbutton from '../header/Serachbutton'
-import LegalActsList from './LegalActsList'
+import React from "react";
+import { Box, Container } from "@chakra-ui/react";
+import Header from "../header/Header";
+import Serachbutton from "../header/Serachbutton";
+import LegalActsList from "./LegalActsList";
+import CommonFooter from "../CommonFooter";
 
 const Acts = () => {
   return (
     <>
-     <Navbar/>
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header
@@ -18,11 +17,12 @@ const Acts = () => {
           />
 
           <Serachbutton bordercolor="#C08729" />
-          <LegalActsList/>
-          </Container>
-   </Box>
+          <LegalActsList />
+        </Container>
+      </Box>
+      <CommonFooter />
     </>
-  )
-}
+  );
+};
 
-export default Acts
+export default Acts;

@@ -12,10 +12,6 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import LawyerImage from "../../assets/judgements/lawyer.png";
 import RecentJudgements from "./components/RecentJudgements";
 import JudgementBlock from "../judgements/components/JudgementBlock";
-import JudgeHammerImage from "../../assets/judgements/judge_hammer.png";
-import LawStatueImage from "../../assets/judgements/law_statue.png";
-import BookImage from "../../assets/legalTopics/family_law_in_india.png";
-import Recomendedblog from "../articles/Recomendedblog";
 
 export default function JudgementDetails() {
   return (

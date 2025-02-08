@@ -1,6 +1,7 @@
 import { Box, Card, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function TopicItem({ title, description, icon }) {
   return (
@@ -23,12 +24,12 @@ export default function TopicItem({ title, description, icon }) {
         {description}
       </Text>
 
-      <Box>
+      <Link to="/legal-topic/:id">
         <Flex gap={2} as="button" align="center" _hover={{ color: "#C08729" }}>
           <Text className=" text-[12px] font-bold">READ MORE</Text>
           <FaArrowRightLong />
         </Flex>
-      </Box>
+      </Link>
     </Card>
   );
 }

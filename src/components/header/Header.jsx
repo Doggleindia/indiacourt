@@ -1,20 +1,17 @@
-import { Box, VStack, HStack, Image, Text, Spacer } from "@chakra-ui/react";
-import { FaArrowRight } from "react-icons/fa";
-
+import { Box, VStack, HStack, Text } from "@chakra-ui/react";
 
 const Header = ({ headtitle, title, description }) => {
   return (
     <Box
       display="flex"
-      justifyContent={{ base: "center", md: "space-between" }} 
+      justifyContent={{ base: "center", md: "space-between" }}
       width="100%"
       textAlign={{ base: "center", md: "left" }}
-      py={{base:2, xl:8}}
-    
+      py={{ base: 2, xl: 8 }}
     >
       <HStack width="100%" align="center">
-        <VStack gap={'0'} align="start" maxW="600px" flex="1">
-          <HStack >
+        <VStack gap={"0"} align="start" maxW="600px" flex="1">
+          <HStack>
             <div
               className="w-3 h-3 bg-[#C08729] transform rotate-90"
               style={{
@@ -35,12 +32,14 @@ const Header = ({ headtitle, title, description }) => {
             {title}
           </Text>
           {/* Description */}
-          <Text fontSize={{ base: "sm", xl: "md" }} textAlign={{base:'left'}}  color="gray.700">
+          <Text
+            fontSize={{ base: "sm", xl: "md" }}
+            textAlign={{ base: "left" }}
+            color="gray.700"
+          >
             {description}
           </Text>
         </VStack>
-       
-        
       </HStack>
     </Box>
   );

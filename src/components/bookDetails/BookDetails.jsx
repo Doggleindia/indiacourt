@@ -40,9 +40,8 @@ const books = [
 
 export default function BookDetails() {
   return (
-
-    <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
-      <Container maxW="container.xl" >
+    <Box pb={10} pt={{ base: "2rem", xl: "8rem" }}>
+      <Container maxW="container.xl">
         <Box>
           <Flex
             gap={2}

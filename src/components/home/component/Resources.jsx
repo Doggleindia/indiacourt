@@ -11,7 +11,6 @@ import React from "react";
 import ComponentHeader from "./header/ComponentHeader";
 import resources from "../../../assets/home/resources.png";
 import { resourcesData } from "./data";
-import { FaArrowRight } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 const Resources = () => {
   return (
@@ -23,6 +22,7 @@ const Resources = () => {
             headtitle="Forms & Agreements"
             description="Problems trying to resolve the conflict between 
 the two major realms of Classical physics: Newtonian mechanics "
+            to="resources"
           />
           <SimpleGrid columns={{ base: 1, sm: 2, xl: 4 }} spacing={6}>
             {resourcesData.map((item, idx) => {
@@ -34,7 +34,6 @@ the two major realms of Classical physics: Newtonian mechanics "
                     justifyContent="center"
                     alignItems="center"
                     p={4}
-                  
                   >
                     <VStack align="start" spacing={1} ml={4}>
                       <Box
@@ -47,7 +46,7 @@ the two major realms of Classical physics: Newtonian mechanics "
                         <Image
                           src={resources}
                           alt={item.title}
-                          boxSize={{base:"330px",md:"250px"}}
+                          boxSize={{ base: "330px", md: "250px" }}
                         />
                       </Box>
                       <Text fontSize="lg" color={"#3A3A38"} fontWeight="medium">

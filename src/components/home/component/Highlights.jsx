@@ -8,10 +8,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import leftline from "../../../assets/icons/leftline.svg";
 import ComponentHeader from "./header/ComponentHeader";
 import { counterData } from "./data";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Highlights = () => {
   return (
@@ -19,15 +19,15 @@ const Highlights = () => {
       <Box py={4}>
         <Container maxW="container.xl" py={2}>
           <ComponentHeader
-          headtitle={"Highlights"}
+            headtitle={"Highlights"}
             title={"Explore Legal Topics"}
             description={
               "Whether you are facing a legal issue or want to learn about a specific legal subject, browsing our legal topics is the perfect starting point."
             }
+            to="/legal-topics"
           />
           <SimpleGrid columns={{ base: 1, sm: 2, xl: 3 }} spacing={8}>
             {counterData.map((item, idx) => {
-              
               return (
                 <Box
                   key={idx}
@@ -53,16 +53,18 @@ const Highlights = () => {
                     <Text fontSize="sm" fontWeight="sm">
                       {item.desc}
                     </Text>
-                    <HStack
-                     as={'button'}
-                     _hover={{ color: "#C08729" }}
-                      cursor="pointer"
-                    >
-                      <Text fontSize="sm" fontWeight="semibold">
-                        Read more
-                      </Text>
-                      <FaArrowRight />
-                    </HStack>
+                    <Link to="/legal-topic/:id">
+                      <HStack
+                        as={"button"}
+                        _hover={{ color: "#C08729" }}
+                        cursor="pointer"
+                      >
+                        <Text fontSize="sm" fontWeight="semibold">
+                          Read more
+                        </Text>
+                        <FaArrowRight />
+                      </HStack>
+                    </Link>
                   </VStack>
                 </Box>
               );

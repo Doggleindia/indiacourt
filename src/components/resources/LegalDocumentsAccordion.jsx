@@ -1,4 +1,13 @@
-import { Box, Text, VStack, Collapse, IconButton, Divider, HStack, UnorderedList, ListItem } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  VStack,
+  Collapse,
+  IconButton,
+  Divider,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
@@ -19,11 +28,20 @@ const legalDocuments = [
       },
       {
         category: "Family Law",
-        subItems: ["Divorce Agreements", "Child Custody", "Prenuptial Agreements", "Separation Agreements"],
+        subItems: [
+          "Divorce Agreements",
+          "Child Custody",
+          "Prenuptial Agreements",
+          "Separation Agreements",
+        ],
       },
       {
         category: "Health & Medical",
-        subItems: ["Medical Power of Attorney", "Health Insurance Waiver", "Medical Release Form"],
+        subItems: [
+          "Medical Power of Attorney",
+          "Health Insurance Waiver",
+          "Medical Release Form",
+        ],
       },
     ],
   },
@@ -158,7 +176,9 @@ const LegalDocumentsAccordion = () => {
 
             {/* Expand/Collapse Icon */}
             <IconButton
-              icon={openIndex === index ? <ChevronUpIcon /> : <ChevronDownIcon />}
+              icon={
+                openIndex === index ? <ChevronUpIcon /> : <ChevronDownIcon />
+              }
               variant="ghost"
               colorScheme="yellow"
               aria-label="Expand section"
@@ -186,7 +206,9 @@ const LegalDocumentsAccordion = () => {
           </Collapse>
 
           {/* Divider Line */}
-          {index < legalDocuments.length - 1 && <Divider borderColor="#C08729" />}
+          {index < legalDocuments.length - 1 && (
+            <Divider borderColor="#C08729" />
+          )}
         </VStack>
       ))}
     </Box>

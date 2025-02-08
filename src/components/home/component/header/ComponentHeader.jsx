@@ -1,20 +1,23 @@
-import { Box, VStack, HStack, Image, Text, Spacer } from "@chakra-ui/react";
+import { Box, VStack, HStack, Text, Spacer } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
-import leftline from "../../../../assets/icons/leftline.svg";
+import { Link } from "react-router-dom";
 
-const ComponentHeader = ({ headtitle, title, description }) => {
+const ComponentHeader = ({ headtitle, title, description, to }) => {
   return (
     <Box
       display="flex"
-      justifyContent={{ base: "center", md: "space-between" }} 
+      justifyContent={{ base: "center", md: "space-between" }}
       width="100%"
       textAlign={{ base: "center", md: "left" }}
       py={8}
-    
     >
       <HStack width="100%" align="center">
         {/* Left Side: Title + Description */}
-        <VStack align="start" maxW={{base:'270px',xl:"600px"}} textAlign={'left'} >
+        <VStack
+          align="start"
+          maxW={{ base: "270px", xl: "600px" }}
+          textAlign={"left"}
+        >
           {/* Title + Left Line */}
           <HStack spacing={0}>
             <div
@@ -44,18 +47,20 @@ const ComponentHeader = ({ headtitle, title, description }) => {
         </VStack>
         <Spacer /> {/* Pushes "See more" to the right */}
         {/* Right Side: See More Button */}
-        <HStack
-          as="button"
-          spacing={2}
-          align="center"
-          color="gray.700"
-          cursor="pointer"
-          fontSize={{ base: "sm", md: "md" }}
-          _hover={{ color: "#C08729" }}
-        >
-          <Text>See more</Text>
-          <FaArrowRight />
-        </HStack>
+        <Link to={to}>
+          <HStack
+            as="button"
+            spacing={2}
+            align="center"
+            color="gray.700"
+            cursor="pointer"
+            fontSize={{ base: "sm", md: "md" }}
+            _hover={{ color: "#C08729" }}
+          >
+            <Text>See more</Text>
+            <FaArrowRight />
+          </HStack>
+        </Link>
       </HStack>
     </Box>
   );

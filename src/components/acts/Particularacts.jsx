@@ -1,7 +1,6 @@
 import { Box, Container, Text } from "@chakra-ui/react";
 import React from "react";
 import Header from "../header/Header";
-import LegalDocumentsAccordion from "../resources/LegalDocumentsAccordion";
 import ParticularactAccordian from "./ParticularactAccordian";
 import CommonFooter from "../CommonFooter";
 

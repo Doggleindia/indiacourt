@@ -3,13 +3,11 @@ import React from "react";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import LegalDocumentsAccordion from "./LegalDocumentsAccordion";
-import Navbar from "../header/Navbar";
 import CommonFooter from "../CommonFooter";
 
 const page = () => {
   return (
     <>
-      <Navbar />
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header

@@ -12,6 +12,7 @@ const LegalBooks = () => {
               headtitle={"Reference"}
               title={"Explore Legal Books"}
               description={"Sidestep the lawyers with do-it-yourself books"}
+              to="/books"
             />
 
             <div className="flex flex-wrap justify-center gap-6">

@@ -24,7 +24,8 @@ const legalTerms = [
   {
     term: "ab initio",
     type: "prep.",
-    definition: 'lawyer Latin for "from the start," as "it was legal ab initio."',
+    definition:
+      'lawyer Latin for "from the start," as "it was legal ab initio."',
   },
   {
     term: "abandon",
@@ -36,9 +37,9 @@ const legalTerms = [
 
 const LegalDictionary = () => {
   return (
-    <Box p={2}  mx="auto">
+    <Box p={2} mx="auto">
       {/* Alphabetical Index */}
-      <HStack justify="center" spacing={{base:2, xl:8}} mb={6} wrap="wrap">
+      <HStack justify="center" spacing={{ base: 2, xl: 8 }} mb={6} wrap="wrap">
         {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
           <Text key={letter} fontWeight="bold" color="#C08729" fontSize="lg">
             {letter}
@@ -50,12 +51,17 @@ const LegalDictionary = () => {
         {legalTerms.map((item, index) => (
           <Box key={index} w="100%">
             <Text fontSize="xl" fontWeight="bold">
-              {item.term} <Text as="span" fontSize="md" color="gray.500">{item.pronunciation}</Text>
+              {item.term}{" "}
+              <Text as="span" fontSize="md" color="gray.500">
+                {item.pronunciation}
+              </Text>
             </Text>
             <Text fontSize="md" fontWeight="semibold" color="gray.600">
               {item.type}
             </Text>
-            <Text fontSize="sm" color="gray.700">{item.definition}</Text>
+            <Text fontSize="sm" color="gray.700">
+              {item.definition}
+            </Text>
             {index !== legalTerms.length - 1 && <Divider my={4} />}
           </Box>
         ))}

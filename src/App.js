@@ -3,6 +3,7 @@ import "./App.css";
 import Hero from "./components/home/page";
 import Helplinenumber from "./components/helplinenumber/Page";
 import LegalTopics from "./components/legalTopics/Page";
+import LegalTopicDetails from "./components/legalTopicDetails/Page";
 import Resources from "./components/resources/page";
 import Articles from "./components/articles/Articles";
 import BlogDetails from "./components/home/component/blog/BlogDetails";
@@ -21,38 +22,38 @@ import Dictionary from "./components/dictionary/Dictionary";
 import Books from "./components/books/Page";
 import BookDetails from "./components/bookDetails/Page";
 import Navbar from "./components/header/Navbar";
-import LongFooter from "./components/header/LongFooter";
 
 function App() {
   return (
     <>
-    <Router>
-    <Navbar/>
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/help-line" element={<Helplinenumber />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-        <Route path="/acts" element={<Acts />} />
-        <Route path="/acts/:id" element={<Particularacts />} />
-        <Route path="/acts/:id/desc" element={<ActsDesc />} />
-        <Route path="/legal-topics" element={<LegalTopics />} />
-        <Route path="/judgements" element={<Judgements />} />
-        <Route path="/judgement/:id" element={<JudgementDetails />} />
-        <Route path="/case-number" element={<CaseNumber />} />
-        <Route path="/contact-us" element={<Contactus />} />
-        <Route path="/find-lawyer" element={<Lawyer />} />
-        <Route path="/resolution" element={<Resolution />} />
-        <Route path="/join-as-lawyer" element={<Joinlawyer />} />
-        <Route path="/validate" element={<ValidateDocument />} />
-        <Route path="/dictionary" element={<Dictionary />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/book/:id" element={<BookDetails />} />
-        {/* <Route path="/" element={<MainCourt />} /> */}
-      </Routes>
-      {/* <LongFooter/> */}
-    </Router>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/help-line" element={<Helplinenumber />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/acts" element={<Acts />} />
+          <Route path="/acts/:id" element={<Particularacts />} />
+          <Route path="/acts/:id/desc" element={<ActsDesc />} />
+          <Route path="/legal-topics" element={<LegalTopics />} />
+          <Route path="/legal-topic/:id" element={<LegalTopicDetails />} />
+          <Route path="/judgements" element={<Judgements />} />
+          <Route path="/judgement/:id" element={<JudgementDetails />} />
+          <Route path="/case-number" element={<CaseNumber />} />
+          <Route path="/contact-us" element={<Contactus />} />
+          <Route path="/find-lawyer" element={<Lawyer />} />
+          <Route path="/resolution" element={<Resolution />} />
+          <Route path="/join-as-lawyer" element={<Joinlawyer />} />
+          <Route path="/validate" element={<ValidateDocument />} />
+          <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/book/:id" element={<BookDetails />} />
+          {/* <Route path="/" element={<MainCourt />} /> */}
+        </Routes>
+        {/* <LongFooter/> */}
+      </Router>
     </>
   );
 }

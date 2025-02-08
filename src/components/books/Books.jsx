@@ -1,5 +1,5 @@
 import { Box, Container, HStack, SimpleGrid, Text } from "@chakra-ui/react";
-import React, { version } from "react";
+import React from "react";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import BookCard from "./BookCard";
@@ -51,9 +51,8 @@ const books = [
 ];
 export default function Books() {
   return (
-    
-    <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
-      <Container maxW="container.xl" >
+    <Box pb={10} pt={{ base: "2rem", xl: "8rem" }}>
+      <Container maxW="container.xl">
         <Header
           title="Books & Documents"
           description="Sidestep the lawyers with do-it-yourself books"

@@ -7,11 +7,10 @@ import LAWYER from "../../../../assets/blog/LAWYER.png";
 import law_queen from "../../../../assets/home/law_queen.png";
 import Recomendedblog from "../../../articles/Recomendedblog";
 import BrowseMore from "../../../articles/BrowseMore";
-import Navbar from "../../../header/Navbar";
+import CommonFooter from "../../../CommonFooter";
 const BlogDetails = () => {
   return (
     <>
-    <Navbar/>
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header
@@ -30,7 +29,7 @@ const BlogDetails = () => {
           />
           <Box mx={"auto"}>
             <HStack
- spacing={8}
+              spacing={8}
               align={"center"}
               flexDirection={{ base: "column", md: "row" }}
             >
@@ -95,32 +94,39 @@ const BlogDetails = () => {
                   pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
                 </Text>
               </VStack>
-              <Box flex="1" width="100%"  minH="400px">
+              <Box flex="1" width="100%" minH="400px">
                 <Text fontSize={"4xl"} fontWeight={"bold"}>
                   Recommendation Articles
                 </Text>
                 <Recomendedblog
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"}
-            imgurl={law_queen}
-            />
+                  title={"7 Cases Have Been Success"}
+                  desc={
+                    " Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"
+                  }
+                  imgurl={law_queen}
+                />
                 <Recomendedblog
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"}
-            imgurl={law_queen}
-            />
+                  title={"7 Cases Have Been Success"}
+                  desc={
+                    " Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"
+                  }
+                  imgurl={law_queen}
+                />
                 <Recomendedblog
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"}
-            imgurl={law_queen}
-            />
-               
+                  title={"7 Cases Have Been Success"}
+                  desc={
+                    " Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"
+                  }
+                  imgurl={law_queen}
+                />
               </Box>
             </HStack>
           </Box>
-          <BrowseMore/>
+          <BrowseMore />
         </Container>
       </Box>
+
+      <CommonFooter />
     </>
   );
 };

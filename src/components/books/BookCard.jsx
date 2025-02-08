@@ -1,4 +1,4 @@
-import { Box, Card, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 export default function BookCard({ image, version, title, description }) {

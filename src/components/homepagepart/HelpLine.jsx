@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // Replace with your actual background image
-import higher from "./higher.png"
+import higher from "./higher.png";
 
 const HelpLine = () => {
   const helplines = [
@@ -28,32 +28,32 @@ const HelpLine = () => {
       <div className="relative z-10 p-16">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-
           <div>
-          <div className="mt-8 max-sm:ml-[-8vw] ml-[-9vw]">
-          {/* Line with diamond ends */}
-          <div className="flex items-center ml-[9vw] ">
-            {/* Left Diamond */}
-            <div
-              className="w-3 h-3 bg-[#C08729] transform rotate-90"
-              style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
-            ></div>
-            {/* Line */}
-            <div className="h-[2px] bg-[#C08729] w-20"></div>
-            {/* Right Diamond */}
-            <div>
-               <p className="text-[#C08729] ml-[.5vw]">
-                HelpLine
-                </p> 
+            <div className="mt-8 max-sm:ml-[-8vw] ml-[-9vw]">
+              {/* Line with diamond ends */}
+              <div className="flex items-center ml-[9vw] ">
+                {/* Left Diamond */}
+                <div
+                  className="w-3 h-3 bg-[#C08729] transform rotate-90"
+                  style={{
+                    clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  }}
+                ></div>
+                {/* Line */}
+                <div className="h-[2px] bg-[#C08729] w-20"></div>
+                {/* Right Diamond */}
+                <div>
+                  <p className="text-[#C08729] ml-[.5vw]">HelpLine</p>
                 </div>
-          </div>
-          
-        </div>
+              </div>
+            </div>
             <h2 className="text-2xl font-bold uppercase">Helpline numbers</h2>
-            <p className="text-sm max-sm:text-[1.5vw]">Sidestep the lawyers with do-it-yourself books</p>
+            <p className="text-sm max-sm:text-[1.5vw]">
+              Sidestep the lawyers with do-it-yourself books
+            </p>
           </div>
           <a
-            href="#"
+            href="/help-line"
             className="text-sm text-white flex font-bold items-center max-sm:mt-[12vw] gap-1"
           >
             See more →

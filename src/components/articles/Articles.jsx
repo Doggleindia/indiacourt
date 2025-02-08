@@ -11,13 +11,11 @@ import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import BlogCard from "../home/component/blog/BlogCard";
 import law_queen from "../../assets/home/law_queen.png";
-import Navbar from "../header/Navbar";
 import CommonFooter from "../CommonFooter";
 
 const Articles = () => {
   return (
     <>
-      <Navbar />
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header

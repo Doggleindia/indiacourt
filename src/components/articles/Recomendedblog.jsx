@@ -1,16 +1,8 @@
-import {
-  Button,
-  Divider,
-  HStack,
-  Image,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Divider, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Recomendedblog = ({ imgurl, title, desc, top }) => {
+const Recomendedblog = ({ imgurl, title, desc }) => {
   return (
     <>
       <HStack

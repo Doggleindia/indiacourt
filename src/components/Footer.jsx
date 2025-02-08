@@ -25,8 +25,7 @@ const Footer = () => {
                 <li>Find A Lawyer</li>
               </Link>
               <Link to="/resolution">
-                <li>Dispute Resolution
-                Tool</li>
+                <li>Dispute Resolution Tool</li>
               </Link>
               <Link to={"/validate"}>
                 <li>Validate Document</li>
@@ -48,7 +47,7 @@ const Footer = () => {
               <Link to={"/legal-topics"}>
                 <li>Legal Insights</li>
               </Link>
-              <Link to={"/books"}>
+              <Link to={"/case-number"}>
                 <li>Case Library</li>
               </Link>
               <Link to={"/acts"}>
@@ -63,8 +62,7 @@ const Footer = () => {
           <div className="max-sm:w-full max-sm:text-left">
             <h3 className="text-lg text-left font-semibold mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 max-sm:text-left">
-              <p>
-              +7889 Mechanic Rd.Miami, FL 33125              </p>
+              <p>+7889 Mechanic Rd.Miami, FL 33125 </p>
               <p>+91 999999999</p>
               <p>support@indiaCourt.in</p>
             </address>
@@ -113,7 +111,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-           
           </div>
           <div className="border-t-2 md:hidden flex justify-center items-center w-full border-[#F6E8FB80]">
             <h3 className="text-[10px] text-center mt-4">

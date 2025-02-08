@@ -4,6 +4,7 @@ import Faq from "./home/component/Faq";
 import Advertisement from "./home/component/Advertisement";
 import Inquiry from "./home/component/Inquiry";
 import Footer from "./Footer";
+import { Box } from "@chakra-ui/react";
 
 export default function CommonFooter() {
   return (
@@ -11,7 +12,9 @@ export default function CommonFooter() {
       <Findalawyer />
       <Faq />
       <Advertisement />
-      <Inquiry />
+      <Box pb={5}>
+        <Inquiry />
+      </Box>
       <Footer />
     </>
   );

@@ -1,4 +1,11 @@
-import { Box, Text, VStack, Collapse, IconButton, Divider, HStack, UnorderedList, ListItem } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  VStack,
+  Collapse,
+  IconButton,
+  Divider,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
@@ -10,7 +17,6 @@ const legalDocuments = [
     categories: [
       {
         category: "Wills & Estate Planning",
-       
       },
       {
         category: "Family Law",
@@ -26,15 +32,12 @@ const legalDocuments = [
     categories: [
       {
         category: "Contracts",
-      
       },
       {
         category: "Intellectual Property",
-       
       },
       {
         category: "Business Transactions",
-       
       },
     ],
   },
@@ -128,7 +131,9 @@ const ParticularactAccordian = () => {
 
             {/* Expand/Collapse Icon */}
             <IconButton
-              icon={openIndex === index ? <ChevronUpIcon /> : <ChevronDownIcon />}
+              icon={
+                openIndex === index ? <ChevronUpIcon /> : <ChevronDownIcon />
+              }
               variant="ghost"
               colorScheme="yellow"
               aria-label="Expand section"
@@ -140,11 +145,15 @@ const ParticularactAccordian = () => {
             <Box px={6} py={3} bg="#FFF9F1">
               {section.categories.map((category, i) => (
                 <Box key={i} mb={3}>
-                    <Link to={'/acts/:id/desc'}>
-                    
-                  <Text fontWeight="bold" borderBottom={'1px solid black'} width={{base:'100%', md:'25%'}} color="#3A3A38">
-                    {category.category}
-                  </Text>
+                  <Link to={"/acts/:id/desc"}>
+                    <Text
+                      fontWeight="bold"
+                      borderBottom={"1px solid black"}
+                      width={{ base: "100%", md: "25%" }}
+                      color="#3A3A38"
+                    >
+                      {category.category}
+                    </Text>
                   </Link>
                 </Box>
               ))}
@@ -152,7 +161,9 @@ const ParticularactAccordian = () => {
           </Collapse>
 
           {/* Divider Line */}
-          {index < legalDocuments.length - 1 && <Divider borderColor="#C08729" />}
+          {index < legalDocuments.length - 1 && (
+            <Divider borderColor="#C08729" />
+          )}
         </VStack>
       ))}
     </Box>

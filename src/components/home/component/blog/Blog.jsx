@@ -1,15 +1,6 @@
 import React from "react";
 import ComponentHeader from "../header/ComponentHeader";
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  HStack,
-  Image,
-  SimpleGrid,
- 
-} from "@chakra-ui/react";
+import { Box, Container, SimpleGrid } from "@chakra-ui/react";
 import law_queen from "../../../../assets/home/law_queen.png";
 import BlogCard from "./BlogCard";
 
@@ -25,29 +16,41 @@ const Blog = () => {
     >
       <Container maxW="container.xl">
         <Box mx="auto">
-          <ComponentHeader headtitle={"Blogs"} title={"Features articles"} />
+          <ComponentHeader
+            headtitle={"Blogs"}
+            title={"Features articles"}
+            to="/articles"
+          />
           <SimpleGrid columns={{ base: 1, sm: 2, xl: 2 }} spacing={8}>
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            top={'100px'}
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              top={"100px"}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
             <BlogCard
-            top={'100px'}
-            title={'7 Cases Have Been Success'}
-            desc={" Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"}
-            imgurl={law_queen}
+              top={"100px"}
+              title={"7 Cases Have Been Success"}
+              desc={
+                " Lorem ipsum dolor sit amet consecter Commodo pulvinar molestie pellentesque urna libero"
+              }
+              imgurl={law_queen}
             />
           </SimpleGrid>
         </Box>

@@ -1,27 +1,15 @@
-import {
-  Box,
-  Button,
-  Container,
-  HStack,
-  Input,
-  Select,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Box, Container, Select, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
-import ComponentHeader from "../home/component/header/ComponentHeader";
-import Navbar from "../header/Navbar";
 import NumberCard from "./NumberCard";
 import { helplineNumber } from "./data";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import CommonFooter from "../CommonFooter";
-// import helplineNumber from './data'
 
 const Page = () => {
   return (
     <>
-      <Navbar />
-      <Box pt={{ base: "2rem", xl: "9rem" }}>
+      <Box pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl" pb={4}>
           <Header
             title="Helpline Numbers"

@@ -1,54 +1,98 @@
-import { Box, Button, Container, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  HStack,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 import law_book from "../../../assets/home/law_book.png";
+import { Link } from "react-router-dom";
 
 const Joinus = () => {
   return (
     <>
-      <Box display="flex" justifyContent="center" py={4} backgroundColor="#003315" position="relative">
+      <Box
+        display="flex"
+        justifyContent="center"
+        py={4}
+        backgroundColor="#003315"
+        position="relative"
+      >
         <Container maxW="container.xl">
           <Box mx="auto" py={4} position="relative">
-            
             {/* Header */}
             <HStack justify="center" spacing={3}>
               <HStack>
-                <Box width="12px" height="12px" bg="#C08729" transform="rotate(45deg)" />
+                <Box
+                  width="12px"
+                  height="12px"
+                  bg="#C08729"
+                  transform="rotate(45deg)"
+                />
                 <Box height="2px" width="60px" bg="#C08729" />
               </HStack>
-              <Text color="#BF9874" fontSize="sm" textTransform="uppercase">Join Us</Text>
+              <Text color="#BF9874" fontSize="sm" textTransform="uppercase">
+                Join Us
+              </Text>
               <HStack>
                 <Box height="2px" width="60px" bg="#C08729" />
-                <Box width="12px" height="12px" bg="#C08729" transform="rotate(45deg)" />
+                <Box
+                  width="12px"
+                  height="12px"
+                  bg="#C08729"
+                  transform="rotate(45deg)"
+                />
               </HStack>
             </HStack>
 
             {/* Content Section */}
-            <VStack width={{ base: "100%", md: "70%" }} margin="auto" textAlign="center" spacing={4}>
-              <Text fontSize={{ base: "xl", md: "3xl" }} color="#FFFF" fontWeight="bold">
+            <VStack
+              width={{ base: "100%", md: "70%" }}
+              margin="auto"
+              textAlign="center"
+              spacing={4}
+            >
+              <Text
+                fontSize={{ base: "xl", md: "3xl" }}
+                color="#FFFF"
+                fontWeight="bold"
+              >
                 Shape Your Legal Journey with Us – Free and Seamless.
               </Text>
               <Text fontSize={{ base: "sm", md: "md" }} color="#FFFF">
-                "Join our growing network of passionate legal professionals. Connect, collaborate, and 
-                grow your career with no fees or barriers."
+                "Join our growing network of passionate legal professionals.
+                Connect, collaborate, and grow your career with no fees or
+                barriers."
               </Text>
             </VStack>
 
             {/* Button */}
-            <Button backgroundColor="#056B38" size="md" color="#FFFF" mt={4} display="block" mx="auto">
-              Read Now
-            </Button>
 
+            <Link to="/join-as-lawyer">
+              <Button
+                backgroundColor="#056B38"
+                size="md"
+                color="#FFFF"
+                mt={4}
+                display="block"
+                mx="auto"
+              >
+                Read Now
+              </Button>
+            </Link>
             {/* Image Positioned at Bottom Left */}
-            <Box 
-              position="absolute" 
-              bottom={{ base: "-2px", md: "-3px" }} 
-              left={{ base: "10%", md: "0%" }} 
-              transform={{ base: "translateX(-50%)", md: "none" }} 
+            <Box
+              position="absolute"
+              bottom={{ base: "-2px", md: "-3px" }}
+              left={{ base: "10%", md: "0%" }}
+              transform={{ base: "translateX(-50%)", md: "none" }}
               width={{ base: "120px", md: "200px" }}
             >
               <Image src={law_book} alt="law book" />
             </Box>
-
           </Box>
         </Container>
       </Box>

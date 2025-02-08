@@ -61,7 +61,7 @@ const NavLinks = () => {
           <Rhombus /> <Text> LEGAL INSIGHTS </Text>
         </HStack>
       </Link>
-      <Link to="/articles" className="hover:text-yellow-700">
+      <Link to="/case-number" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> CASE LIBRARY</Text>
         </HStack>
