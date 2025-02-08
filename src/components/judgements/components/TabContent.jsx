@@ -15,7 +15,7 @@ export default function TabContent() {
       <TrackInput />
 
       <Flex mt={8} w="full" gap={5} justify="space-between">
-        <VStack gap={6}>
+        <Box className="hidden md:flex flex-col" gap={6}>
           <Box border="1px solid #C08729" px={4} py={5} w="full">
             {arr.map((val) => (
               <Text className=" text-sm font-normal text-[#07070B] border-b-[1px] border-b-[#F0E5D4] leading-6 w-max mx-auto">
@@ -24,12 +24,15 @@ export default function TabContent() {
             ))}
           </Box>
           <Image src={BookImage} w="197px" />
-        </VStack>
+        </Box>
 
         <Box>
           <Flex gap={6} justify="space-between">
             <JudgementDetails />
-            <LatestJudgements />
+
+            <Box className="hidden md:block">
+              <LatestJudgements />
+            </Box>
           </Flex>
 
           <VStack mt={4} gap={6}>
