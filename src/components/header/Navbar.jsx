@@ -56,27 +56,27 @@ const NavLinks = () => {
           <Rhombus /> <Text> HOME </Text>
         </HStack>
       </Link>
-      <Link to="/" className="hover:text-yellow-700">
+      <Link to="/legal-topics" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> LEGAL INSIGHTS </Text>
         </HStack>
       </Link>
-      <Link to="/" className="hover:text-yellow-700">
+      <Link to="/articles" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> CASE LIBRARY</Text>
         </HStack>
       </Link>
-      <Link to="/" className="hover:text-yellow-700">
+      <Link to="/acts" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> LAWS & ACTS </Text>
         </HStack>
       </Link>
-      <Link to="/" className="hover:text-yellow-700">
+      <Link to="/join-as-lawyer" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
         </HStack>
       </Link>
-      <Link to="/" className="hover:text-yellow-700">
+      <Link to="/find-lawyer" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> OUR SERVICES </Text>
         </HStack>
@@ -86,7 +86,7 @@ const NavLinks = () => {
           <Rhombus /> <Text> RESOURCES </Text>
         </HStack>
       </Link>
-      <Link to="/help-line" className="hover:text-yellow-700">
+      <Link to="/contact-us" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> CONTACT </Text>
         </HStack>
@@ -135,9 +135,7 @@ const Navbar = () => {
         <HStack justify="start" gap={6}>
           <Flex justify="space-between" className="overflow-hidden flex-1">
             <VStack align="start" gap={0} className="w-full">
-              <Marquee scrolled={scrolled} />
-
-              <Flex className="border-t border-yellow-600 w-full py-2 px-4 items-center justify-between">
+              <Flex className="w-full py-2 px-4 items-center justify-between">
                 <Box className="text-2xl font-bold text-yellow-700">
                   <Image src={logo} alt="logo" w="80px" />
                 </Box>
