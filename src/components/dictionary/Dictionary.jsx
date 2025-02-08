@@ -8,7 +8,7 @@ import CommonFooter from "../CommonFooter";
 const Dictionary = () => {
   return (
     <>
-      <Box pb={4} pt={{ base: "5rem", lg: "11rem", xl: "9rem" }}>
+      <Box pb={4} pt={{ base: "5rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header
             title=" Glossary"
