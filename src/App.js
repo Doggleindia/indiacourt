@@ -20,10 +20,14 @@ import { ValidateDocument } from "./components/validate/ValidateDocument";
 import Dictionary from "./components/dictionary/Dictionary";
 import Books from "./components/books/Page";
 import BookDetails from "./components/bookDetails/Page";
+import Navbar from "./components/header/Navbar";
+import LongFooter from "./components/header/LongFooter";
 
 function App() {
   return (
+    <>
     <Router>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/help-line" element={<Helplinenumber />} />
@@ -47,7 +51,9 @@ function App() {
         <Route path="/book/:id" element={<BookDetails />} />
         {/* <Route path="/" element={<MainCourt />} /> */}
       </Routes>
+      {/* <LongFooter/> */}
     </Router>
+    </>
   );
 }
 

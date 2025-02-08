@@ -51,8 +51,9 @@ const books = [
 ];
 export default function Books() {
   return (
-    <Box pt={12}>
-      <Container maxW="container.xl" pb={10}>
+    
+    <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
+      <Container maxW="container.xl" >
         <Header
           title="Books & Documents"
           description="Sidestep the lawyers with do-it-yourself books"

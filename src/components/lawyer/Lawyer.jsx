@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../header/Header";
 import LegalInfoCard from "./LegalInfoCard";
 import FindSteps from "./FindSteps";
+import Navbar from "../header/Navbar";
 
 const LegalInfoCardData = [
     {
@@ -50,6 +51,7 @@ const steps = [
 const Lawyer = () => {
   return (
     <>
+    <Navbar/>
       <Box pb={4} pt={{ base: "2rem", xl: "8rem" }}>
         <Container maxW="container.xl">
         <Header

@@ -11,7 +11,7 @@ import Footer from "../Footer";
 export default function Page() {
   return (
     <Box pt={32}>
-      <Navbar />
+      {/* <Navbar /> */}
       <LegalTopics />
       <Findalawyer />
       <Faq />

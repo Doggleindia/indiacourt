@@ -40,6 +40,7 @@ const books = [
 
 export default function BookDetails() {
   return (
+    
     <Box pt={12}>
       <Container maxW="container.xl" pb={10}>
         <Box>

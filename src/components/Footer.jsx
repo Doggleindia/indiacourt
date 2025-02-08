@@ -21,43 +21,41 @@ const Footer = () => {
           <div className="max-sm:w-full max-sm:text-left">
             <h3 className="text-lg font-semibold mb-4">Pages</h3>
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
-              <Link to="/">
-                <li>Home</li>
+              <Link to="/find-lawyer">
+                <li>Find A Lawyer</li>
               </Link>
-              <Link to="/clinic">
-                <li>Clinic</li>
+              <Link to="/resolution">
+                <li>Dispute Resolution
+                Tool</li>
               </Link>
-              <Link to={"/about-us"}>
-                <li>About us</li>
+              <Link to={"/validate"}>
+                <li>Validate Document</li>
               </Link>
-              <Link to={"/assessments-evaluation"}>
-                <li>Services</li>
-              </Link>
-              <Link to="/contact-us">
-                <li>Contact us</li>
-              </Link>
-              <Link to={"/join-as-lawyer"}>
-                <li>Career</li>
+              <Link to={"/contact-us"}>
+                <li>Legal Advice</li>
               </Link>
             </ul>
           </div>
 
           {/* Information Section */}
           <div className="max-sm:w-full max-sm:text-left">
-            <h3 className="text-lg font-semibold mb-4">Information</h3>
+            <h3 className="text-lg font-semibold mb-4">pages</h3>
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
               {/* <li>Brand Story</li> */}
-              <Link to={"/terms"}>
-                <li>Terms & Conditions</li>
+              <Link to={"/"}>
+                <li>Home</li>
               </Link>
-              <Link to={"/refund-reschedule"}>
-                <li>Return Policy</li>
+              <Link to={"/legal-topics"}>
+                <li>Legal Insights</li>
               </Link>
-              <Link to={"/refund-reschedule"}>
-                <li>Refund Policy</li>
+              <Link to={"/books"}>
+                <li>Case Library</li>
               </Link>
-              <Link to={"/privacy-policy"}>
-                <li>Privacy Policy</li>
+              <Link to={"/acts"}>
+                <li>Laws and Acts</li>
+              </Link>
+              <Link to={"/resources"}>
+                <li>Resources</li>
               </Link>
             </ul>
           </div>
@@ -66,8 +64,7 @@ const Footer = () => {
             <h3 className="text-lg text-left font-semibold mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 max-sm:text-left">
               <p>
-                Registered Office: 311, Adarsh Nagar Jaipur, Rajasthan, 302004
-              </p>
+              +7889 Mechanic Rd.Miami, FL 33125              </p>
               <p>+91 999999999</p>
               <p>support@indiaCourt.in</p>
             </address>
@@ -116,6 +113,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+           
           </div>
           <div className="border-t-2 md:hidden flex justify-center items-center w-full border-[#F6E8FB80]">
             <h3 className="text-[10px] text-center mt-4">
