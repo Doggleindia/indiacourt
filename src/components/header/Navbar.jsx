@@ -96,7 +96,7 @@ const NavLinks = () => {
           <GoSearch color="#C08729" width={20} height={20} />
         </Box>
         <Link className="hover:text-yellow-700">
-          <Text>
+          <Text className="w-max">
             <Select size="sm" style={{ border: 0 }}>
               <option>English</option>
               <option>Hindi</option>
@@ -110,7 +110,7 @@ const NavLinks = () => {
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [isSmallScreen] = useMediaQuery("(max-width: 899px)");
+  const [isSmallScreen] = useMediaQuery("(max-width: 1280px)");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -189,7 +189,6 @@ const Navbar = () => {
             <Flex
               gap={6}
               justify="space-between"
-              flexWrap="wrap"
               align="center"
               className="p-4 pl-6 w-full border-t border-yellow-600"
             >

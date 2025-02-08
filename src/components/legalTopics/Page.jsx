@@ -6,7 +6,7 @@ import CommonFooter from "../CommonFooter";
 export default function Page() {
   return (
     <>
-      <Box pt={{ base: "2rem", xl: "8rem" }}>
+      <Box pt={{ base: "5rem", xl: "8rem" }}>
         <LegalTopics />
       </Box>
 

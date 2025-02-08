@@ -9,7 +9,7 @@ import CommonFooter from "../CommonFooter";
 const Page = () => {
   return (
     <>
-      <Box pt={{ base: "2rem", xl: "8rem" }}>
+      <Box pt={{ base: "5rem", xl: "8rem" }}>
         <Container maxW="container.xl" pb={4}>
           <Header
             title="Helpline Numbers"
