@@ -16,6 +16,7 @@ import Advertisment from "./component/Advertisement";
 import Inquiry from "./component/Inquiry";
 import Subscribe from "./component/Subscribe";
 import Footer from "../Footer";
+
 const page = () => {
   return (
     <>
