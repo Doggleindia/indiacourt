@@ -22,6 +22,7 @@ import Dictionary from "./components/dictionary/Dictionary";
 import Books from "./components/books/Page";
 import BookDetails from "./components/bookDetails/Page";
 import Navbar from "./components/header/Navbar";
+import ChatScreen from "./components/chatscreen/chatscreen";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />} />
+          <Route path="/chatscreen" element={<ChatScreen />} />
           <Route path="/help-line" element={<Helplinenumber />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/articles" element={<Articles />} />
