@@ -1,6 +1,6 @@
 import {
   Box,
-  Button,
+
   Container,
   Heading,
   HStack,
@@ -9,10 +9,7 @@ import {
   VStack,
   Stack,
 } from "@chakra-ui/react";
-import { BiX } from "react-icons/bi";
-import { FaCommentDots } from "react-icons/fa";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import StickyChatBox from "./StickyChatBox";
 
 

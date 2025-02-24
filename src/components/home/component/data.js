@@ -1,5 +1,4 @@
-import { FaBook, FaHome, FaPhone, FaPhoneAlt } from 'react-icons/fa';
-import { BsPatchCheckFill } from 'react-icons/bs';
+import { FaBook, FaHome, FaPhoneAlt } from 'react-icons/fa';
 import legalcourt from '../../../assets/icons/leagal.svg';
 import resources from '../../../assets/home/resources.png'
 import { RiBookShelfLine, RiUserSettingsLine } from 'react-icons/ri';
@@ -39,23 +38,21 @@ export const counterData = [{
   icon: FaPhoneAlt,
   variant: 'info'
 },
-, {
+{
   title: 'Bare Acts',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
   icon: BiSearchAlt,
   variant: 'info'
-},
-, {
+},{
   title: 'Our Services',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
   icon: RiUserSettingsLine,
   variant: 'info'
-},
-, {
+}, {
   title: 'Resources',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
