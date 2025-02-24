@@ -19,7 +19,7 @@ const Page = () => {
   }, [dispatch]);
 
   // ✅ Separate national helplines
-  const nationalHelplines = helpline.filter((item) => item.state === "national");
+  const nationalHelplines = helpline.filter((item) => item.state === "India");
   
   // ✅ Filter state-specific helplines (excluding national)
   const stateHelplines = selectedState
@@ -61,10 +61,10 @@ const Page = () => {
             marginLeft={"auto"}
             onChange={(e) => setSelectedState(e.target.value)}
           >
-            <option value="Raj">Rajasthan</option>
+            <option value="Goa">Goa</option>
             <option value="Bihar">Bihar</option>
-            <option value="MP">Madhya Pradesh</option>
-            <option value="UP">Uttar Pradesh</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
           </Select>
 
           {/* ✅ State-Specific Helplines (Filtered) */}

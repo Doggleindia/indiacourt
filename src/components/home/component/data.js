@@ -1,7 +1,10 @@
-import { FaBook, FaHome } from 'react-icons/fa';
+import { FaBook, FaHome, FaPhone, FaPhoneAlt } from 'react-icons/fa';
 import { BsPatchCheckFill } from 'react-icons/bs';
 import legalcourt from '../../../assets/icons/leagal.svg';
 import resources from '../../../assets/home/resources.png'
+import { RiBookShelfLine, RiUserSettingsLine } from 'react-icons/ri';
+import { BiSearchAlt } from 'react-icons/bi';
+import { GiOpenBook } from 'react-icons/gi';
 export const counterData = [{
   title: 'Legal Topics',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
@@ -21,43 +24,43 @@ export const counterData = [{
   icon: FaHome,
 }
 , {
-  title: 'Certified Courses',
+  title: 'Case Library',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
-  icon: BsPatchCheckFill,
+  icon: RiBookShelfLine,
   variant: 'info'
 }
 , {
-  title: 'Certified Courses',
+  title: 'Helpline Numbers',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
-  icon: BsPatchCheckFill,
+  icon: FaPhoneAlt,
   variant: 'info'
 },
 , {
-  title: 'Certified Courses',
+  title: 'Bare Acts',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
-  icon: BsPatchCheckFill,
+  icon: BiSearchAlt,
   variant: 'info'
 },
 , {
-  title: 'Certified Courses',
+  title: 'Our Services',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
-  icon: BsPatchCheckFill,
+  icon: RiUserSettingsLine,
   variant: 'info'
 },
 , {
-  title: 'Certified Courses',
+  title: 'Resources',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
-  icon: BsPatchCheckFill,
+  icon: GiOpenBook,
   variant: 'info'
 },
 
