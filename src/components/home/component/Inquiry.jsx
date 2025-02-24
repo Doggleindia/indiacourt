@@ -1,7 +1,67 @@
-import { Box, Button, Container, HStack, Input, InputGroup, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Button, Container, HStack, Input, InputGroup, Spinner, Text, useToast, VStack } from "@chakra-ui/react";
+import axios from "axios";
+import React, { useState } from "react";
 
 const Inquiry = () => {
+
+
+
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const toast = useToast();
+
+  // ✅ Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // ✅ Handle form submission
+  const handleSubmit = async () => {
+    if (!formData.fullName || !formData.email || !formData.phone || !formData.message) {
+      toast({
+        title: "All fields are required.",
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_MAIN_BACKEND}/api/inquiries`, formData);
+      console.log("API Response:", response.data);
+
+      toast({
+        title: "Inquiry sent successfully!",
+        description: "We will get back to you soon.",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+
+      setFormData({ fullName: "", email: "", phone: "", message: "" }); // Clear form
+    } catch (error) {
+      toast({
+        title: "Failed to send inquiry.",
+        description: error.response?.data?.message || "Something went wrong!",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
     <>
       <Box
@@ -49,13 +109,15 @@ const Inquiry = () => {
             {/* First Row - Two Inputs Side by Side */}
             <HStack width="100%" spacing={4} flexDirection={{ base: "column", md: "row" }}>
               <Input 
-                name="name" 
+                name="fullName" 
                 placeholder="Enter your name" 
                 border="none" 
                 borderBottom="2px solid #C08729" 
                 _focus={{ boxShadow: "none", borderBottom: "2px solid #C08729" }} 
                 rounded="none" 
                 px={2}
+                value={formData.fullName}
+                onChange={handleChange}
               />
               <Input 
                 name="email" 
@@ -65,6 +127,8 @@ const Inquiry = () => {
                 _focus={{ boxShadow: "none", borderBottom: "2px solid #C08729" }} 
                 rounded="none" 
                 px={2}
+                value={formData.email}
+                onChange={handleChange}
               />
             </HStack>
 
@@ -78,6 +142,8 @@ const Inquiry = () => {
               rounded="none" 
               px={2}
               width="100%"
+              value={formData.phone}
+              onChange={handleChange}
             />
             <Input 
               name="message" 
@@ -88,6 +154,8 @@ const Inquiry = () => {
               rounded="none" 
               px={2}
               width="100%"
+              value={formData.message}
+              onChange={handleChange}
             />
 
             {/* Button */}
@@ -99,8 +167,10 @@ const Inquiry = () => {
               mt={4} 
               px={6} 
               _hover={{ bg: "#C08729", color: "#fff", borderColor: "#C08729" }}
+              onClick={handleSubmit}
+              disabled={loading}
             >
-              Send Me
+              {loading ? <Spinner size="sm" /> : "Send Inquiry"}
             </Button>
           </VStack>
           </Box>

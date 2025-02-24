@@ -2,7 +2,7 @@ import { Button, Divider, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BlogCard = ({imgurl,title,desc,top,Direction,width}) => {
+const BlogCard = ({imgurl,title,desc,top,Direction,width,to}) => {
   return (
     <>
      <HStack
@@ -25,7 +25,7 @@ const BlogCard = ({imgurl,title,desc,top,Direction,width}) => {
                 <Text fontSize="sm" color="#07070B">
                   {desc}
                 </Text>
-                <Link to={'/blog/:id'}>
+                <Link to={to}>
                 <Button
                   width={"100%"}
                   backgroundColor={"#056B38"}

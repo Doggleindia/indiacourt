@@ -1,12 +1,31 @@
-import { Box, Container, Select, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
+import { Box, Container, Select, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import NumberCard from "./NumberCard";
-import { helplineNumber } from "./data";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import CommonFooter from "../CommonFooter";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHelpline } from "../../redux/features/helplineSlice";
 
 const Page = () => {
+  const dispatch = useDispatch();
+  const { helpline, loading, error } = useSelector((state) => state.helpline);
+  
+  // ✅ State for filtering by selected state
+  const [selectedState, setSelectedState] = useState("");
+
+  useEffect(() => {
+    dispatch(fetchHelpline()); // ✅ Fetch API data on mount
+  }, [dispatch]);
+
+  // ✅ Separate national helplines
+  const nationalHelplines = helpline.filter((item) => item.state === "national");
+  
+  // ✅ Filter state-specific helplines (excluding national)
+  const stateHelplines = selectedState
+    ? helpline.filter((item) => item.state === selectedState)
+    : [];
+
   return (
     <>
       <Box pt={{ base: "5rem", xl: "8rem" }}>
@@ -17,38 +36,51 @@ const Page = () => {
             description="Stay updated with key highlights, including recent judgments, newly passed bills, and significant legal updates."
           />
           <Serachbutton bordercolor="#000000" />
-          <SimpleGrid
-            columns={{ base: 2, sm: 2, xl: 4 }}
-            spacing={{ base: 3, xl: 6 }}
-            p={{ base: 2, xl: 4 }}
-          >
-            {helplineNumber.map((item, idx) => (
-              <>
-                <NumberCard idx={idx} title={item.title} number={item.Number} />
-              </>
-            ))}
+
+          {/* ✅ National Helplines (Always Visible) */}
+          <Text fontSize="xl" fontWeight="bold" mt={5}>
+            National Helpline Numbers
+          </Text>
+          <SimpleGrid columns={{ base: 2, sm: 2, xl: 4 }} spacing={6} p={4}>
+            {loading ? (
+              <Spinner size="xl" mt={10} color="blue.500" />
+            ) : error ? (
+              <Text color="red.500" fontSize="xl" textAlign="center">{error}</Text>
+            ) : (
+              nationalHelplines.map((item, idx) => (
+                <NumberCard key={item._id} idx={idx} title={item.title} number={item.number} />
+              ))
+            )}
           </SimpleGrid>
+
+          {/* ✅ State Filter Dropdown */}
           <Select
-            placeholder="Rajasthan"
+            placeholder="Select State"
             width={{ base: "38%", xl: "14%" }}
             py={3}
             marginLeft={"auto"}
+            onChange={(e) => setSelectedState(e.target.value)}
           >
-            <option value="Bihar">Option 1</option>
-            <option value="MP">Option 2</option>
-            <option value="UP">Option 3</option>
-            <option value="Delhi">Option 3</option>
+            <option value="Raj">Rajasthan</option>
+            <option value="Bihar">Bihar</option>
+            <option value="MP">Madhya Pradesh</option>
+            <option value="UP">Uttar Pradesh</option>
           </Select>
-          <SimpleGrid
-            columns={{ base: 2, sm: 2, xl: 4 }}
-            spacing={{ base: 3, xl: 6 }}
-            p={{ base: 2, xl: 4 }}
-          >
-            {helplineNumber.map((item, idx) => (
-              <>
-                <NumberCard idx={idx} title={item.title} number={item.Number} />
-              </>
-            ))}
+
+          {/* ✅ State-Specific Helplines (Filtered) */}
+          <Text fontSize="xl" fontWeight="bold" mt={5}>
+            {selectedState ? `${selectedState} Helpline Numbers` : "Select a State"}
+          </Text>
+          <SimpleGrid columns={{ base: 2, sm: 2, xl: 4 }} spacing={6} p={4}>
+            {stateHelplines.length > 0 ? (
+              stateHelplines.map((item, idx) => (
+                <NumberCard key={item._id} idx={idx} title={item.title} number={item.number} />
+              ))
+            ) : (
+              <Text textAlign="center" fontSize="lg" color="gray.500">
+                No helpline numbers available for this state.
+              </Text>
+            )}
           </SimpleGrid>
         </Container>
         <CommonFooter />

@@ -1,7 +1,9 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import TopicItem from "./TopicItem";
 import { HiCurrencyDollar } from "react-icons/hi";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchLegalTopics } from "../../../redux/features/legalTopicsSlice";
 
 let topics = [
   {
@@ -79,6 +81,15 @@ let topics = [
 ];
 
 export default function Topics() {
+  const dispatch = useDispatch();
+  const { topics, loading, error } = useSelector((state) => state.legalTopics);
+
+  useEffect(() => {
+    dispatch(fetchLegalTopics());
+  }, [dispatch]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
   return (
     <Box>
       <SimpleGrid
@@ -90,6 +101,7 @@ export default function Topics() {
             title={topic.title}
             description={topic.description}
             icon={topic.icon}
+            topic={topic}
           />
         ))}
       </SimpleGrid>

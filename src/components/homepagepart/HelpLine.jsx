@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 // Replace with your actual background image
 import higher from "./higher.png";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHelpline } from "../../redux/features/helplineSlice";
+import { Link } from "react-router-dom";
 
 const HelpLine = () => {
-  const helplines = [
-    { name: "National Women's Rights", number: "7827170170" },
-    { name: "Anti Corruption", number: "102" },
-    { name: "Wildlife", number: "100 or 112" },
-    { name: "Electrical Emergency", number: "108" },
-    { name: "Smoking and Alcohol", number: "1091" },
-    { name: "Cancer Helpline", number: "1098" },
-    { name: "Domestic Abuse", number: "108" },
-    { name: "Drugs Complaint", number: "139" },
-  ];
+  // const helplines = [
+  //   { name: "National Women's Rights", number: "7827170170" },
+  //   { name: "Anti Corruption", number: "102" },
+  //   { name: "Wildlife", number: "100 or 112" },
+  //   { name: "Electrical Emergency", number: "108" },
+  //   { name: "Smoking and Alcohol", number: "1091" },
+  //   { name: "Cancer Helpline", number: "1098" },
+  //   { name: "Domestic Abuse", number: "108" },
+  //   { name: "Drugs Complaint", number: "139" },
+  // ];
+  const dispatch = useDispatch();
+  const { helpline, loading, error } = useSelector((state) => state.helpline);
 
+  useEffect(() => {
+    dispatch(fetchHelpline()); // ✅ Correct action dispatch
+  }, [dispatch]);
+  console.log(helpline,"helpline")
   return (
     <div
       className="relative bg-cover bg-center text-white p-6 "
       style={{
-        backgroundImage: `url(${higher})`,
+        backgroundImage: `url(https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740225621718_HELPLINE.png)`,
       }}
     >
       {/* Background Overlay */}
@@ -52,22 +61,22 @@ const HelpLine = () => {
               Sidestep the lawyers with do-it-yourself books
             </p>
           </div>
-          <a
-            href="/help-line"
+          <Link
+            to="/help-line"
             className="text-sm text-white flex font-bold items-center max-sm:mt-[12vw] gap-1"
           >
             See more →
-          </a>
+          </Link>
         </div>
 
         {/* Helpline Numbers */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {helplines.map((helpline, index) => (
+          {helpline.slice(0,8).map((helpline, index) => (
             <div
               key={index}
               className="bg-white text-black p-4 rounded shadow-md hover:shadow-lg transition duration-300"
             >
-              <h3 className="font-semibold text-center">{helpline.name}</h3>
+              <h3 className="font-semibold text-center">{helpline.title}</h3>
               <p className="text-center font-medium">{helpline.number}</p>
             </div>
           ))}

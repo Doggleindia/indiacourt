@@ -2,7 +2,7 @@ import { Divider, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Recomendedblog = ({ imgurl, title, desc }) => {
+const Recomendedblog = ({ imgurl, title, desc ,to}) => {
   return (
     <>
       <HStack
@@ -30,7 +30,7 @@ const Recomendedblog = ({ imgurl, title, desc }) => {
           <Text fontSize="sm" color="#07070B">
             {desc}
           </Text>
-          <Link to={"/blog/:id"}>
+          <Link to={to}>
             <Text
               fontWeight={"bold"}
               backgroundColor={"transparent"}

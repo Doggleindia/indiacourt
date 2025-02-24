@@ -13,6 +13,7 @@ import bg_main from "../../../assets/home/bg_main.png";
 import { BiX } from "react-icons/bi";
 import { FaCommentDots } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [isChatOpen, setIsChatOpen] = useState(true);
@@ -25,7 +26,7 @@ const Hero = () => {
       <Box
         position="relative"
         overflow="hidden"
-        bgImage={`url(${bg_main})`}
+        bgImage={`url(https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740159684742_SUPREME%20COURT%20HOME%20PAGE.png)`}
         bgSize="cover"
         bgPosition="top"
         height="container.sm"
@@ -127,7 +128,9 @@ const Hero = () => {
                         size="sm"
                         width="100%" // Make button responsive
                       >
+                        <Link to={'/chat'}>
                         Chat with AI
+                        </Link>
                       </Button>
                     </VStack>
                   </Box>

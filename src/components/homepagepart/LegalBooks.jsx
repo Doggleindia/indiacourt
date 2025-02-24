@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ComponentHeader from "../home/component/header/ComponentHeader";
-import { Container } from "@chakra-ui/react";
+import { Container, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBooks } from "../../redux/features/booksSlice";
+import BookCard from "../books/BookCard";
 
 const LegalBooks = () => {
+  const dispatch = useDispatch();
+  const { books, loading, error } = useSelector((state) => state.books);
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
+  if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
+  if (error) return <Text textAlign="center" fontSize="2xl" color="red.500">{error}</Text>;
+  if (books.length === 0) return <Text textAlign="center" fontSize="2xl">No books available</Text>;
   return (
     <>
       <div className="bg-[#F267271A] min-h-screen p-8">
@@ -15,71 +28,11 @@ const LegalBooks = () => {
               to="/books"
             />
 
-            <div className="flex flex-wrap justify-center gap-6">
-              {/* Card 1 */}
-              <div className="flex flex-col max-w-[280px] w-full">
-                <div className="border-2 border-black p-2">
-                  <div className="relative bg-[#C0872999] py-20 text-center shadow-md">
-                    <h3 className="text-3xl text-white font-bold mb-2">
-                      Family Law II
-                    </h3>
-                    <p className="text-gray-800 mb-4">English version</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 text-center mx-auto mt-4">
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentes urna libero.
-                </p>
-              </div>
-
-              {/* Card 2 */}
-              <div className="flex flex-col max-w-[280px] w-full">
-                <div className="border-2 border-black p-2">
-                  <div className="relative bg-[#C0872999] py-16 text-center shadow-md">
-                    <h3 className="text-3xl text-white font-bold mb-2">
-                      Bhartiya Nyaay Itihaas
-                    </h3>
-                    <p className="text-gray-800 mb-4">Hindi version</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 text-center mx-auto mt-4">
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentes urna libero.
-                </p>
-              </div>
-
-              {/* Card 3 */}
-              <div className="flex flex-col max-w-[280px] w-full">
-                <div className="border-2 border-black p-2">
-                  <div className="relative bg-[#C0872999] py-16 text-center shadow-md">
-                    <h3 className="text-3xl text-white font-bold mb-2">
-                      Jurisprudence Indian Court
-                    </h3>
-                    <p className="text-gray-800 mb-4">English version</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 text-center mx-auto mt-4">
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentes urna libero.
-                </p>
-              </div>
-
-              {/* Card 4 */}
-              <div className="flex flex-col max-w-[280px] w-full">
-                <div className="border-2 border-black p-2">
-                  <div className="relative bg-[#C0872999] py-16 text-center shadow-md">
-                    <h3 className="text-3xl text-white font-bold mb-2">
-                      Jurisprudence Indian Court
-                    </h3>
-                    <p className="text-gray-800 mb-4">English version</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 text-center mx-auto mt-4">
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentes urna libero.
-                </p>
-              </div>
-            </div>
+             <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
+                          {books.slice(0,6).map((book) => (
+                            <BookCard {...book} />
+                          ))}
+                        </SimpleGrid>
           </div>
 
           <div className="mt-16 flex justify-end">

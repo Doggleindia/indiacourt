@@ -1,5 +1,5 @@
-import { Box, Container, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Container, HStack, Image, Spinner, Text, VStack } from "@chakra-ui/react";
+import React, { useEffect } from "react";
 import Header from "../../../header/Header";
 import Serachbutton from "../../../header/Serachbutton";
 import LAWYER from "../../../../assets/blog/LAWYER.png";
@@ -8,7 +8,18 @@ import law_queen from "../../../../assets/home/law_queen.png";
 import Recomendedblog from "../../../articles/Recomendedblog";
 import BrowseMore from "../../../articles/BrowseMore";
 import CommonFooter from "../../../CommonFooter";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchArticleById, fetchRecommendedArticles } from "../../../../redux/features/articlesSlice";
 const BlogDetails = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { article, recommendedArticles, loading, error } = useSelector((state) => state.articles);
+
+  useEffect(() => {
+    dispatch(fetchArticleById(id)); // ✅ Fetch article details
+    dispatch(fetchRecommendedArticles()); // ✅ Fetch recommended articles
+  }, [dispatch, id]);
   return (
     <>
       <Box pb={4} pt={{ base: "5rem", xl: "8rem" }}>
@@ -20,8 +31,17 @@ const BlogDetails = () => {
           />
 
           <Serachbutton bordercolor="#C08729" />
+           {/* ✅ Loading & Error Handling */}
+          {loading ? (
+            <Spinner size="xl" mt={10} color="blue.500" />
+          ) : error ? (
+            <Text color="red.500" fontSize="xl" textAlign="center">
+              {error}
+            </Text>
+          ) : article ? (
+            <>
           <Image
-            src={LAWYER}
+            src={article?.image}
             alt="lawyer image"
             margin={"auto"}
             width={"100%"}
@@ -35,94 +55,39 @@ const BlogDetails = () => {
             >
               <VStack flex="1" align={"start"} spacing={4}>
                 <Text fontSize={"4xl"} fontWeight={"bold"}>
-                  23 cases have been successfully
+                  {article?.title}
                 </Text>
                 <Text color={"#3A3A38"} fontSize={"sm"}>
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentesque urna libero velit porta. Velit
-                  pellentesque hac gravida pellentesque est semper. Duis lectus
-                  gravida ultricies eleifend in pharetra faucibus orci sem.
-                  Proin ac a cursus praesent. Malesuada risus amet nunc posuere
-                  rhoncus accumsan congue id dolor. Convallis maecenas sed in
-                  pellentesque. Diam tristique semper mauris dolor amet. Dolor
-                  elit nunc et purus quam amet laoreet eu risus.Cum mattis
-                  mollis odio gravida adipiscing. Facilisis scelerisque non
-                  lacinia tincidunt faucibus tortor vel. Erat risus etiam quam
-                  pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
-                  mollis odio gravida adipiscing. Facilisis scelerisque non
-                  lacinia tincidunt faucibus tortor vel. Erat risus etiam quam
-                  pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
-                  pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
-                </Text>
-                <Text color={"#3A3A38"} fontSize={"sm"}>
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentesque urna libero velit porta. Velit
-                  pellentesque hac gravida pellentesque est semper. Duis lectus
-                  gravida ultricies eleifend in pharetra faucibus orci sem.
-                  Proin ac a cursus praesent. Malesuada risus amet nunc posuere
-                  rhoncus accumsan congue id dolor. Convallis maecenas sed in
-                  pellentesque. Diam tristique semper mauris dolor amet. Dolor
-                  elit nunc et purus quam amet laoreet eu risus.Cum mattis
-                  mollis odio gravida adipiscing. Facilisis scelerisque non
-                  lacinia tincidunt faucibus tortor vel. Erat risus etiam quam
-                  pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
-                </Text>
-                <Text color={"#3A3A38"} fontSize={"sm"}>
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentesque urna libero velit porta. Velit
-                  pellentesque hac gravida pellentesque est semper. Duis lectus
-                  gravida ultricies eleifend in pharetra faucibus orci sem.
-                  Proin ac a cursus praesent. Malesuada risus amet nunc posuere
-                  rhoncus accumsan congue id dolor. Convallis maecenas sed in
-                  pellentesque. Diam tristique semper mauris dolor amet. Dolor
-                  elit nunc et purus quam amet laoreet eu risus.Cum mattis
-                  mollis odio gravida adipiscing. Facilisis scelerisque non
-                  lacinia tincidunt faucibus tortor vel. Erat risus etiam quam
-                  pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
-                </Text>
-                <Text color={"#3A3A38"} fontSize={"sm"}>
-                  Lorem ipsum dolor sit amet consectetur. Commodo pulvinar
-                  molestie pellentesque urna libero velit porta. Velit
-                  pellentesque hac gravida pellentesque est semper. Duis lectus
-                  gravida ultricies eleifend in pharetra faucibus orci sem.
-                  Proin ac a cursus praesent. Malesuada risus amet nunc posuere
-                  rhoncus accumsan congue id dolor. Convallis maecenas sed in
-                  pellentesque. Diam tristique semper mauris dolor amet. Dolor
-                  elit nunc et purus quam amet laoreet eu risus.Cum mattis
-                  mollis odio gravida adipiscing. Facilisis scelerisque non
-                  lacinia tincidunt faucibus tortor vel. Erat risus etiam quam
-                  pretium ornare. Semper orci arcu pulvinar adipiscing pretium.
+                 {article?.content}
                 </Text>
               </VStack>
               <Box flex="1" width="100%" minH="400px">
                 <Text fontSize={"4xl"} fontWeight={"bold"}>
                   Recommendation Articles
                 </Text>
+                {recommendedArticles.length > 0 ? (
+                      recommendedArticles.map((recArticle) => (
                 <Recomendedblog
-                  title={"7 Cases Have Been Success"}
-                  desc={
-                    " Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"
-                  }
-                  imgurl={law_queen}
+                key={recArticle._id}
+                title={recArticle.title}
+                desc={recArticle.content.substring(0, 100) + "..."}
+                imgurl={recArticle.image || LAWYER} // Placeholder image
+                to={`/blog/${recArticle._id}`} 
                 />
-                <Recomendedblog
-                  title={"7 Cases Have Been Success"}
-                  desc={
-                    " Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"
-                  }
-                  imgurl={law_queen}
-                />
-                <Recomendedblog
-                  title={"7 Cases Have Been Success"}
-                  desc={
-                    " Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit"
-                  }
-                  imgurl={law_queen}
-                />
+              ))
+            ) : (
+              <Text>No recommended articles available.</Text>
+            )}
               </Box>
             </HStack>
           </Box>
-          <BrowseMore />
+          <BrowseMore recommendedArticles={recommendedArticles} article = {article}/>
+          </>
+        ) : (
+          <Text textAlign="center" fontSize="lg">
+            Article not found.
+          </Text>
+        )}
         </Container>
       </Box>
 

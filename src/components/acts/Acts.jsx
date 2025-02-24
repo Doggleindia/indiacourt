@@ -11,9 +11,9 @@ const Acts = () => {
       <Box pb={4} pt={{ base: "5rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header
-            title="Articles"
-            headtitle="Articles"
-            description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
+            title="Bare Acts"
+            headtitle="Bare Acts"
+            description="Explore the comprehensive collection of Bare Acts, providing the fundamental text of laws enacted by the legislature. Stay informed with precise legal provisions, amendments, and interpretations. "
           />
 
           <Serachbutton bordercolor="#C08729" />

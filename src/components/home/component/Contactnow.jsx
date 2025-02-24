@@ -40,7 +40,7 @@ const Contactnow = () => {
         </Button>
         <Button border="1px solid #353535"
       borderRadius="md" backgroundColor={'#056B38'} color={'#fff'} className='border border-#353535' size="lg">
-          Contact Us Now
+          Call Now
         </Button>
       </HStack>
     </Box>

@@ -1,9 +1,10 @@
-import { Box, Card, Flex, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-export default function TopicItem({ title, description, icon }) {
+export default function TopicItem({ title, description, icon,topic }) {
+  console.log(topic,"getid")
   return (
     <Card
       py="25px"
@@ -11,7 +12,7 @@ export default function TopicItem({ title, description, icon }) {
       boxShadow="4px 8px 8px rgba(218, 218, 218, 0.68)"
       gap={3}
     >
-      {icon}
+      <Image src={icon} w={10}/>
       <Text fontWeight="bold" fontSize="20px" color="#07070B">
         {title}
       </Text>
@@ -24,7 +25,7 @@ export default function TopicItem({ title, description, icon }) {
         {description}
       </Text>
 
-      <Link to="/legal-topic/:id">
+       <Link to={`/legal-topic/${topic._id}`}>
         <Flex gap={2} as="button" align="center" _hover={{ color: "#C08729" }}>
           <Text className=" text-[12px] font-bold">READ MORE</Text>
           <FaArrowRightLong />

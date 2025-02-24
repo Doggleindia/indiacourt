@@ -1,55 +1,68 @@
-import { Box, Container, HStack, SimpleGrid, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box, Container, HStack, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import React, { useEffect } from "react";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import BookCard from "./BookCard";
 import FamilyLawI from "../../assets/books/Family_Law_I.png";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBooks } from "../../redux/features/booksSlice";
 
-const books = [
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-];
+// const books = [
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+// ];
 export default function Books() {
+  const dispatch = useDispatch();
+  const { books, loading, error } = useSelector((state) => state.books);
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
+  if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
+  if (error) return <Text textAlign="center" fontSize="2xl" color="red.500">{error}</Text>;
+  if (books.length === 0) return <Text textAlign="center" fontSize="2xl">No books available</Text>;
+
   return (
     <Box pb={10} pt={{ base: "5rem", xl: "8rem" }}>
       <Container maxW="container.xl">

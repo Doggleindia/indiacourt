@@ -5,104 +5,38 @@ import {
   Collapse,
   IconButton,
   Divider,
+  Spinner,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
-
-const legalDocuments = [
-  {
-    id: "I",
-    title: "Personal Legal Documents",
-    categories: [
-      {
-        category: "Wills & Estate Planning",
-      },
-      {
-        category: "Family Law",
-      },
-      {
-        category: "Health & Medical",
-      },
-    ],
-  },
-  {
-    id: "II",
-    title: "Business & Commercial Documents",
-    categories: [
-      {
-        category: "Contracts",
-      },
-      {
-        category: "Intellectual Property",
-      },
-      {
-        category: "Business Transactions",
-      },
-    ],
-  },
-  {
-    id: "III",
-    title: "Event & Social Media Documents",
-    categories: [
-      {
-        category: "Event Planning",
-      },
-      {
-        category: "Social Media & Online Use",
-      },
-    ],
-  },
-  {
-    id: "IV",
-    title: "Event & Social Media Documents",
-    categories: [
-      {
-        category: "Event Planning",
-      },
-      {
-        category: "Social Media & Online Use",
-      },
-    ],
-  },
-  {
-    id: "V",
-    title: "Event & Social Media Documents",
-    categories: [
-      {
-        category: "Event Planning",
-      },
-      {
-        category: "Social Media & Online Use",
-      },
-    ],
-  },
-  {
-    id: "III",
-    title: "Event & Social Media Documents",
-    categories: [
-      {
-        category: "Event Planning",
-      },
-      {
-        category: "Social Media & Online Use",
-      },
-    ],
-  },
-];
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchActDetails } from "../../redux/features/bareActsSlice";
 
 const ParticularactAccordian = () => {
+  const { id } = useParams(); // Extract act ID from route
+  const dispatch = useDispatch();
+  const { actDetails, loading, error } = useSelector((state) => state.bareActs);
   const [openIndex, setOpenIndex] = useState(null);
+
+  useEffect(() => {
+    // ✅ Only fetch data if it's NOT already loaded
+    if (!actDetails || actDetails.length === 0) {
+      dispatch(fetchActDetails(id));
+    }
+  }, [dispatch, id, actDetails.length]); // ✅ Depend only on `id` and existing data length
 
   const toggleOpen = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
+  if (error) return <Text color="red.500">{error}</Text>;
+
   return (
     <Box maxW="100%" mx="auto" my={4} border="1px solid #C08729">
-      {legalDocuments.map((section, index) => (
+      {actDetails.map((section, index) => (
         <VStack key={index} spacing={0} align="stretch">
-          {/* Title Row */}
           <Box
             display="flex"
             alignItems="center"
@@ -111,59 +45,29 @@ const ParticularactAccordian = () => {
             cursor="pointer"
             onClick={() => toggleOpen(index)}
             p={3}
-            borderBottom={openIndex === index ? "1px solid #C08729" : "none"}
           >
-            {/* Left Numbering Box */}
-            <Box
-              width="50px"
-              textAlign="center"
-              fontWeight="bold"
-              color="#C08729"
-              borderRight="1px solid #C08729"
-            >
-              {section.id}
-            </Box>
-
-            {/* Title Text */}
             <Box flex="1" px={4} fontWeight="bold" color="#C08729">
-              {section.title}
+              {section[0]?.title || "Unknown Section"}
             </Box>
-
-            {/* Expand/Collapse Icon */}
             <IconButton
-              icon={
-                openIndex === index ? <ChevronUpIcon /> : <ChevronDownIcon />
-              }
+              icon={openIndex === index ? <ChevronUpIcon /> : <ChevronDownIcon />}
               variant="ghost"
               colorScheme="yellow"
               aria-label="Expand section"
             />
           </Box>
 
-          {/* Collapsible List */}
           <Collapse in={openIndex === index}>
             <Box px={6} py={3} bg="#FFF9F1">
-              {section.categories.map((category, i) => (
-                <Box key={i} mb={3}>
-                  <Link to={"/acts/:id/desc"}>
-                    <Text
-                      fontWeight="bold"
-                      borderBottom={"1px solid black"}
-                      width={{ base: "100%", md: "25%" }}
-                      color="#3A3A38"
-                    >
-                      {category.category}
-                    </Text>
-                  </Link>
-                </Box>
+              {section.slice(1).map((item, i) => (
+                <Link key={i} to={item.href || "#"}>
+                  <Text fontWeight="bold" color="#3A3A38">{item.title}</Text>
+                </Link>
               ))}
             </Box>
           </Collapse>
 
-          {/* Divider Line */}
-          {index < legalDocuments.length - 1 && (
-            <Divider borderColor="#C08729" />
-          )}
+          {index < actDetails.length - 1 && <Divider borderColor="#C08729" />}
         </VStack>
       ))}
     </Box>

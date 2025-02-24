@@ -31,7 +31,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/chatscreen" element={<ChatScreen />} />
+          <Route path="/chat" element={<ChatScreen />} />
           <Route path="/help-line" element={<Helplinenumber />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/articles" element={<Articles />} />
@@ -51,7 +51,7 @@ function App() {
           <Route path="/validate" element={<ValidateDocument />} />
           <Route path="/dictionary" element={<Dictionary />} />
           <Route path="/books" element={<Books />} />
-          <Route path="/book/:id" element={<BookDetails />} />
+          <Route path="/books/:id" element={<BookDetails />} />
           {/* <Route path="/" element={<MainCourt />} /> */}
         </Routes>
         {/* <LongFooter/> */}
