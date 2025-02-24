@@ -1,14 +1,21 @@
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import TrackInput from "./TrackInput";
 import BookImage from "../../../assets/legalTopics/family_law_in_india.png";
 import JudgementBlock from "./JudgementBlock";
 import LatestJudgements from "./LatestJudgements";
 import JudgementDetails from "./JudgementDetails";
-
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSupremeCourtJudgements } from "../../../redux/features/judgementsSlice";
 export default function TabContent() {
   const arr = [...Array(8).keys()].map((i) => i);
   const base = 1920;
+  const dispatch = useDispatch();
+    const { judgements, loading, error } = useSelector((state) => state.judgements);
+  
+    useEffect(() => {
+      dispatch(fetchSupremeCourtJudgements()); // ✅ Fetch data on mount
+    }, [dispatch]);
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>
@@ -28,16 +35,16 @@ export default function TabContent() {
 
         <Box>
           <Flex gap={6} justify="space-between">
-            <JudgementDetails />
+            <JudgementDetails  error = {error} loading = {loading} judgements = {judgements} />
 
             <Box className="hidden md:block">
-              <LatestJudgements />
+              <LatestJudgements  error = {error} loading = {loading} judgements = {judgements}/>
             </Box>
           </Flex>
 
-          <VStack mt={4} gap={6}>
-            <JudgementBlock />
-            <JudgementBlock />
+          <VStack mt={4} align={'flex-start'} width={'full'} gap={6}>
+            <JudgementBlock error = {error} loading = {loading} judgements = {judgements} />
+            
           </VStack>
         </Box>
       </Flex>

@@ -9,18 +9,20 @@ export const counterData = [{
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   suffix: 'K',
   icon: legalcourt,
-  isImage: true  
+  isImage: true,
+  to:'/legal-topics'
 }, {
   title: 'Books',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   suffix: '+',
   icon: FaBook,
-
+to:'/books'
 }, {
   title: 'Judgements',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   suffix: 'K+',
   icon: FaHome,
+  to:'/judgements'
 }
 , {
   title: 'Case Library',
@@ -28,7 +30,8 @@ export const counterData = [{
   count: 6,
   suffix: 'K+',
   icon: RiBookShelfLine,
-  variant: 'info'
+  variant: 'info',
+  to:'/case-number'
 }
 , {
   title: 'Helpline Numbers',
@@ -36,7 +39,8 @@ export const counterData = [{
   count: 6,
   suffix: 'K+',
   icon: FaPhoneAlt,
-  variant: 'info'
+  variant: 'info',
+  to:'/help-line'
 },
 {
   title: 'Bare Acts',
@@ -44,21 +48,24 @@ export const counterData = [{
   count: 6,
   suffix: 'K+',
   icon: BiSearchAlt,
-  variant: 'info'
+  variant: 'info',
+  to:'/acts'
 },{
   title: 'Our Services',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
   icon: RiUserSettingsLine,
-  variant: 'info'
+  variant: 'info',
+  to:'/find-lawyer'
 }, {
   title: 'Resources',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
   icon: GiOpenBook,
-  variant: 'info'
+  variant: 'info',
+  to:'/resources'
 },
 
 ];

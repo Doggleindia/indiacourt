@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function BookCard({ image, version, title, description, _id }) {
+  console.log(_id,"idddsss")
   return (
     <VStack gap={4} align="start" maxW="sm">
       <Box className="border border-[#353535] p-5 relative" overflow="hidden">
@@ -15,12 +16,12 @@ export default function BookCard({ image, version, title, description, _id }) {
             bottom="220px"
             left="50%"
             transform="translateX(-50%)"
-            color="gold"
+            color="#edddb5"
             fontWeight="bold"
-            fontSize="lg"
+            fontSize="2rem"
             textAlign="center"
             bg=""
-            px={3}
+            // px={1}
             py={1}
             borderRadius="md"
             textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)"

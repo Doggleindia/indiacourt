@@ -1,22 +1,23 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Spinner, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function JudgementBlock() {
+
+export default function JudgementBlock({error,loading,judgements}) {
+  
   return (
-    <Box py={3} px={7} border="1px solid #C08729">
+    <>
+    {loading && <Spinner color="#C08729" size="lg" />}
+            {error && <Text color="red.500">Error: {error}</Text>}
+            {judgements.map((judgement, index) => (
+    <Box py={3} px={7} border="1px solid #C08729" width={'100%'}>
       <Text className="text-[#C08729] text-sm">Supreme Court</Text>
       <Text className=" text-2xl text-black">
-        NOIDA Toll Bridge Company Ltd. Vs. Federation of NOIDA Residents Welfare
-        Association
+      {judgement.date}
       </Text>
       <Text className="text-[#353535] text-sm">
-        The NOIDA Toll Bridge Company Limited (NTBCL), has preferred the instant
-        appeal questioning the judgement dated 26.10.2016 passed by the High
-        Court of Judicature at Allahabad (High Court). The issue before the High
-        Court concerned a challenge to the collection and levying of toll, as
-        legitimised by the provisions enumerated in the Agreement dated
-        12.11.1997
+        
+      {judgement.title}
       </Text>
       <Flex justify="flex-end">
         <Flex
@@ -26,10 +27,12 @@ export default function JudgementBlock() {
           as="button"
           _hover={{ color: "#C08729" }}
         >
-          <Text className=" text-[12px] font-bold">Learn more</Text>
+          <Text className=" text-[12px] font-bold"  as="a"   href={judgement.href} target="_blank" rel="noopener noreferrer">Learn more</Text>
           <FaArrowRightLong />
         </Flex>
       </Flex>
     </Box>
+     ))}
+    </>
   );
 }

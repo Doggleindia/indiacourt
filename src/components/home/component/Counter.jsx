@@ -1,6 +1,7 @@
 import { Box, Container, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { counterData } from "./data";
 import Contactnow from "./Contactnow";
+import { Link } from "react-router-dom";
 
 const Counter = () => {
   return (
@@ -11,6 +12,7 @@ const Counter = () => {
           {counterData.map((item, idx) => {
             // const Icon = item.icon;
             return (
+              <Link to={item.to} className="pointer">
               <Box
                 key={idx}
                 display="flex"
@@ -34,6 +36,7 @@ const Counter = () => {
                   </Text>
                 </VStack>
               </Box>
+              </Link>
             );
           })}
         </SimpleGrid>

@@ -1,6 +1,7 @@
 import { Box, Button, HStack, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import straightline from '../../../assets/icons/straightline.svg'
+import { Link } from 'react-router-dom'
 
 const Contactnow = () => {
   return (
@@ -34,14 +35,18 @@ const Contactnow = () => {
 
       {/* Buttons */}
       <HStack spacing={4} flexWrap="wrap" justify="center">
+      <Link to={'/contact-us'} >
         <Button  border="1px solid #353535"
       borderRadius="md" backgroundColor={'transparent'} className='border border-#353535' size="lg">
           Contact Us Now
         </Button>
+        </Link>
+        <Link to={'/help-line'}>
         <Button border="1px solid #353535"
       borderRadius="md" backgroundColor={'#056B38'} color={'#fff'} className='border border-#353535' size="lg">
           Call Now
         </Button>
+        </Link>
       </HStack>
     </Box>
 

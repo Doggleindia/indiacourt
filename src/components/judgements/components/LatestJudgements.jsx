@@ -1,26 +1,24 @@
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Spinner, Text, VStack } from "@chakra-ui/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import React from "react";
 
-export default function LatestJudgements() {
+export default function LatestJudgements({error,loading,judgements}) {
   return (
+    <>
+    {loading && <Spinner color="#C08729" size="lg" />}
+                {error && <Text color="red.500">Error: {error}</Text>}
+              
     <VStack gap={5}>
+      
       <Text className=" text-[#07070B] text-2xl font-normal">
         Latest Judgements
       </Text>
       <Box border="1px solid #C08729" px={4} py={5} w="full">
+      {judgements.slice(0,6).map((judgement, index) => (
         <Text className="text-sm font-normal text-black border-b-[1px] border-b-[#F0E5D4] leading-6">
-          China Development Bank Vs. Doha Bank Q.P.S.C.
+        {judgement.title}
         </Text>
-        <Text className="text-sm font-normal text-black border-b-[1px] border-b-[#F0E5D4] leading-6">
-          Abdul Rejak Laskar Vs. Mafizur Rahman
-        </Text>
-        <Text className="text-sm font-normal text-black border-b-[1px] border-b-[#F0E5D4] leading-6">
-          Dwarika Prasad (D) through LRS. Vs. Prithvi Raj Singh
-        </Text>
-        <Text className="text-sm font-normal text-black border-b-[1px] border-b-[#F0E5D4] leading-6">
-          Bherulal Bhimaji Oswal (D) by LRS. Vs. Madhusudan N.Kumbhare
-        </Text>
+       ))}
         <Box justifyContent="center" display="flex">
           <Flex
             gap={2}
@@ -35,5 +33,6 @@ export default function LatestJudgements() {
         </Box>
       </Box>
     </VStack>
+    </>
   );
 }

@@ -4,7 +4,7 @@ import {
   Container,
   Flex,
   HStack,
-  SimpleGrid,
+  // SimpleGrid,
   Spinner,
   Text,
   VStack,
@@ -14,7 +14,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 // import FamilyLawI from "../../assets/books/Family_Law_I.png";
 import BookCard from "../books/BookCard";
 import { FaStar } from "react-icons/fa";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import axiosInstance from "../../config/axiosInstance";
 import axios from "axios";
 
@@ -44,7 +44,7 @@ import axios from "axios";
 
 export default function BookDetails() {
 const {id} = useParams();
-const navigate = useNavigate()
+// const navigate = useNavigate()
  const [books, setbooks] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -70,6 +70,8 @@ console.log(process.env.REACT_APP_MAIN_BACKEND,"env")
   if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
   if (error) return <Text textAlign="center" fontSize="2xl" color="red.500">{error}</Text>;
   if (!books) return <Text textAlign="center" fontSize="2xl">No topic found.</Text>;
+
+  
 console.log(books,"allDataBooks")
 
   return (
@@ -81,10 +83,12 @@ console.log(books,"allDataBooks")
             as="button"
             align="center"
             _hover={{ color: "#C08729" }}
-            onClick={navigate(-1)}
+            // onClick={navigate(-1)}
           >
             <FaArrowLeftLong />
+            <Link to={'/'}>
             <Text className=" text-xl font-bold">BACK</Text>
+            </Link>
           </Flex>
         </Box>
 
@@ -96,7 +100,8 @@ console.log(books,"allDataBooks")
             flexDirection={{ base: "column", lg: "row" }}
           >
             <Box>
-              <BookCard image={books.image} />
+              <BookCard image={books.image}  title={books.title}/>
+              
             </Box>
             <VStack align="start" maxW="xl" gap={5}>
               <Box>
@@ -129,22 +134,22 @@ console.log(books,"allDataBooks")
           </HStack>
         </Box>
 
-        <Box mt={8}>
+        {/* <Box mt={8}>
           <Text className=" text-4xl font-bold">Featured Books </Text>
 
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5} mt={9}>
-            {/* {books.map((book) => ( */}
+
               <BookCard  
               image={books.image}
               version={books.language}
               title={books.title}
               description={books.category}
-              // _id={books._id}
+            
               
               />
-            {/* // ))} */}
+
           </SimpleGrid>
-        </Box>
+        </Box> */}
       </Container>
     </Box>
   );
