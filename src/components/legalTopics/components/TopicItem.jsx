@@ -1,4 +1,4 @@
-import { Box, Card, Flex, Image, Text } from "@chakra-ui/react";
+import { Card, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
