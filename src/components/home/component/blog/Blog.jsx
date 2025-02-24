@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import ComponentHeader from "../header/ComponentHeader";
 import { Box, Container, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
-import law_queen from "../../../../assets/home/law_queen.png";
 import BlogCard from "./BlogCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles } from "../../../../redux/features/articlesSlice";

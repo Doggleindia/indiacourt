@@ -11,36 +11,36 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import FamilyLawI from "../../assets/books/Family_Law_I.png";
+// import FamilyLawI from "../../assets/books/Family_Law_I.png";
 import BookCard from "../books/BookCard";
 import { FaStar } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 // import axiosInstance from "../../config/axiosInstance";
 import axios from "axios";
 
-const books = [
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-  {
-    image: FamilyLawI,
-    version: "English Version",
-    title: "Family Law I",
-    description:
-      "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
-  },
-];
+// const books = [
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+//   {
+//     image: FamilyLawI,
+//     version: "English Version",
+//     title: "Family Law I",
+//     description:
+//       "Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et",
+//   },
+// ];
 
 export default function BookDetails() {
 const {id} = useParams();
@@ -81,7 +81,7 @@ console.log(books,"allDataBooks")
             as="button"
             align="center"
             _hover={{ color: "#C08729" }}
-            // onClick={navigate(-1)}
+            onClick={navigate(-1)}
           >
             <FaArrowLeftLong />
             <Text className=" text-xl font-bold">BACK</Text>

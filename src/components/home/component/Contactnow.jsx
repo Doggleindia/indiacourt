@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, HStack, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import straightline from '../../../assets/icons/straightline.svg'
 

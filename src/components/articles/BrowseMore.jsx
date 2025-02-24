@@ -1,7 +1,6 @@
 import { Box, HStack, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import BlogCard from "../home/component/blog/BlogCard";
-import law_queen from "../../assets/home/law_queen.png";
 const BrowseMore = ({ recommendedArticles,article }) => {
   return (
     <>

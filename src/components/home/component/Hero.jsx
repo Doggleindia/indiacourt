@@ -9,7 +9,6 @@ import {
   VStack,
   Stack,
 } from "@chakra-ui/react";
-import bg_main from "../../../assets/home/bg_main.png";
 import { BiX } from "react-icons/bi";
 import { FaCommentDots } from "react-icons/fa";
 import { useState } from "react";

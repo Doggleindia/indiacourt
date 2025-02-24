@@ -9,7 +9,7 @@ const Counter = () => {
       <Container maxW="container.xl">
         <SimpleGrid columns={{ base: 1, sm: 4, xl: 8 }} spacing={6}>
           {counterData.map((item, idx) => {
-            const Icon = item.icon;
+            // const Icon = item.icon;
             return (
               <Box
                 key={idx}
