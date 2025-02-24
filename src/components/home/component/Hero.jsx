@@ -13,6 +13,8 @@ import { BiX } from "react-icons/bi";
 import { FaCommentDots } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import StickyChatBox from "./StickyChatBox";
+
 
 const Hero = () => {
   const [isChatOpen, setIsChatOpen] = useState(true);
@@ -22,6 +24,7 @@ const Hero = () => {
   };
   return (
     <>
+    
       <Box
         position="relative"
         overflow="hidden"
@@ -33,6 +36,7 @@ const Hero = () => {
         alignItems="center"
       >
         <Container maxW="container.xl" position="relative" zIndex="1">
+        
           {/* Responsive Stack (Column for Mobile, Row for PC) */}
           <Stack
             spacing={8}
@@ -41,6 +45,7 @@ const Hero = () => {
             direction={{ base: "column", md: "row" }}
             textAlign={{ base: "center", md: "left" }} // Center for Mobile
           >
+            
             {/* LEFT SIDE (Heading + Search Box) */}
             <VStack
               spacing={4}
@@ -82,80 +87,11 @@ const Hero = () => {
                 </Box>
               </VStack>
             </VStack>
-
-            {/* RIGHT SIDE (AI Chat Box) */}
-            <Box flex="1" display="flex" justifyContent="end">
-              {/* Outer Green Box */}
-              {isChatOpen && (
-                <Box
-                  bg="#056B38"
-                  w={{ base: "90%", md: "300px" }} // Responsive Width
-                  h="170px"
-                  borderRadius="md"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  {/* Inner White Box */}
-                  <Box
-                    bg="#FFFFFF"
-                    m={2}
-                    height="90%"
-                    width="90%"
-                    borderRadius="md"
-                    display="flex"
-                    flexDirection="column"
-                    p={3}
-                  >
-                    {/* Header Row with Left & Right Aligned Content */}
-                    <HStack justifyContent="space-between" width="100%">
-                      <Text fontSize="sm" fontWeight="medium" color="#1B1E21">
-                        Hi there! 👋
-                      </Text>
-                      <BiX size={25} color="#1B1E21" cursor="pointer" />
-                    </HStack>
-
-                    {/* Content */}
-                    <VStack spacing={2} align="start" mt={2}>
-                      <Text fontSize="sm" color="#1B1E21">
-                        Need legal help with AI? I'm here to guide you. Say HI
-                        to begin!
-                      </Text>
-                      <Button
-                        color={"#fff"}
-                        bgColor={"#056B38"}
-                        size="sm"
-                        width="100%" // Make button responsive
-                      >
-                        <Link to={'/chat'}>
-                        Chat with AI
-                        </Link>
-                      </Button>
-                    </VStack>
-                  </Box>
-                </Box>
-              )}
-              <Box
-                position="absolute"
-                bottom="-6px"
-                right="10px"
-                bg="#056B38"
-                borderRadius="full"
-                padding="10px"
-                boxShadow="md"
-                cursor="pointer"
-                // Toggle chat box visibility
-              >
-                <FaCommentDots
-                  size={30}
-                  onClick={handleToggleChat}
-                  color="#fff"
-                />
-              </Box>
-            </Box>
+            
           </Stack>
         </Container>
       </Box>
+      <StickyChatBox isChatOpen={isChatOpen} handleToggleChat={handleToggleChat} />
     </>
   );
 };

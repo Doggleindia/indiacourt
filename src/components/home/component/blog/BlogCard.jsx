@@ -11,7 +11,7 @@ const BlogCard = ({imgurl,title,desc,top,Direction,width,to}) => {
               flexDirection={{ base: "column", md: Direction || "row" }}
               pt={top}
             >
-              <Image src={imgurl} width={{base:'350px',md: width ||"35%"}} alt="law_queen" />
+              <Image src={imgurl} width={{base:'150px',md: width ||"35%"}} alt="law_queen" />
               <VStack align="start" maxW={{base:'100%',md: width || "35%"}} spacing={4}>
                 <Text fontSize="2xl" color="#07070B" fontWeight="semibold">
                  {title}

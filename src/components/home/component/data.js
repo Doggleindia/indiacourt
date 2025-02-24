@@ -1,36 +1,69 @@
-import { FaBook, FaHome } from 'react-icons/fa';
+import { FaBook, FaHome, FaPhone, FaPhoneAlt } from 'react-icons/fa';
 import { BsPatchCheckFill } from 'react-icons/bs';
 import legalcourt from '../../../assets/icons/leagal.svg';
-import resources from '../../../assets/home/resources.png';
+import resources from '../../../assets/home/resources.png'
+import { RiBookShelfLine, RiUserSettingsLine } from 'react-icons/ri';
+import { BiSearchAlt } from 'react-icons/bi';
+import { GiOpenBook } from 'react-icons/gi';
+export const counterData = [{
+  title: 'Legal Topics',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  suffix: 'K',
+  icon: legalcourt,
+  isImage: true  
+}, {
+  title: 'Books',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  suffix: '+',
+  icon: FaBook,
 
-export const counterData = [
-  {
-    title: 'Legal Topics',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
-    suffix: 'K',
-    icon: legalcourt,
-    isImage: true
-  },
-  {
-    title: 'Books',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
-    suffix: '+',
-    icon: FaBook
-  },
-  {
-    title: 'Judgements',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
-    suffix: 'K+',
-    icon: FaHome
-  },
-  {
-    title: 'Certified Courses',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
-    count: 6,
-    suffix: 'K+',
-    icon: BsPatchCheckFill,
-    variant: 'info'
-  }
+}, {
+  title: 'Judgements',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  suffix: 'K+',
+  icon: FaHome,
+}
+, {
+  title: 'Case Library',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  count: 6,
+  suffix: 'K+',
+  icon: RiBookShelfLine,
+  variant: 'info'
+}
+, {
+  title: 'Helpline Numbers',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  count: 6,
+  suffix: 'K+',
+  icon: FaPhoneAlt,
+  variant: 'info'
+},
+, {
+  title: 'Bare Acts',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  count: 6,
+  suffix: 'K+',
+  icon: BiSearchAlt,
+  variant: 'info'
+},
+, {
+  title: 'Our Services',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  count: 6,
+  suffix: 'K+',
+  icon: RiUserSettingsLine,
+  variant: 'info'
+},
+, {
+  title: 'Resources',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  count: 6,
+  suffix: 'K+',
+  icon: GiOpenBook,
+  variant: 'info'
+},
+
 ];
 
 export const resourcesData = [
