@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 // Replace with your actual background image
-import higher from "./higher.png";
+// import higher from "./higher.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelpline } from "../../redux/features/helplineSlice";
 import { Link } from "react-router-dom";
