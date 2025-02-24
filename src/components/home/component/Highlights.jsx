@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import ComponentHeader from "./header/ComponentHeader";
-import { counterData } from "./data";
+// import { counterData } from "./data";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

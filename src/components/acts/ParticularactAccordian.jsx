@@ -20,11 +20,10 @@ const ParticularactAccordian = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   useEffect(() => {
-    // ✅ Only fetch data if it's NOT already loaded
     if (!actDetails || actDetails.length === 0) {
       dispatch(fetchActDetails(id));
     }
-  }, [dispatch, id, actDetails.length]); // ✅ Depend only on `id` and existing data length
+  }, [dispatch, id, actDetails]); // ✅ Depend only on `id` and existing data length
 
   const toggleOpen = (index) => {
     setOpenIndex(openIndex === index ? null : index);

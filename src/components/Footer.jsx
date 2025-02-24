@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
-import FooterIcon from "../assets/icons/footerIcon.svg";
 import Line from "../assets/icons/fullpolygon_line_white.svg";
 import { Image, Text } from "@chakra-ui/react";
 
@@ -10,7 +9,7 @@ const Footer = () => {
     <div>
       <footer className="bg-[#C08729] px-[10vw] text-white pb-[10vh]">
         <>
-          <Image src={FooterIcon} mx="auto" />
+          <Image src='https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740381649933_footerIcon.svg' mx="auto" />
           <Text className="text-base text-center my-8 ">
             We are here to create awareness
           </Text>
@@ -115,7 +114,7 @@ const Footer = () => {
           <div className="border-t-2 md:hidden flex justify-center items-center w-full border-[#F6E8FB80]">
             <h3 className="text-[10px] text-center mt-4">
               <p>
-                &copy; 2025 All rights reserved By IndiaCourt Private Limited
+                &copy; 2025 All rights reserved By SHIVLOK LEGAL INDIA PRIVATE LIMITED 
                 Powered by
                 <a
                   href="https://doggleindia.com/"
@@ -132,7 +131,7 @@ const Footer = () => {
         <div className="border-t-2 mt-[5vw] hidden md:flex justify-center items-center w-full border-[#F6E8FB80]">
           <h3 className="text-[10px] text-center mt-4">
             <p>
-              &copy; 2025 All rights reserved By IndiaCourt Private Limited
+              &copy; 2025 All rights reserved By SHIVLOK LEGAL INDIA PRIVATE LIMITED 
               <br /> Powered by
               <a
                 href="https://doggleindia.com/"

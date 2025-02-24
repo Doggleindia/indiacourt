@@ -3,8 +3,6 @@ import React, { useEffect } from "react";
 import Header from "../../../header/Header";
 import Serachbutton from "../../../header/Serachbutton";
 import LAWYER from "../../../../assets/blog/LAWYER.png";
-
-import law_queen from "../../../../assets/home/law_queen.png";
 import Recomendedblog from "../../../articles/Recomendedblog";
 import BrowseMore from "../../../articles/BrowseMore";
 import CommonFooter from "../../../CommonFooter";

@@ -74,61 +74,40 @@ export const resourcesData = [
     URL: '/'
   },
   {
-    title: 'Legal notice format',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+    title: 'Legal agreement templates',
+    desc: 'Find legal agreements that can be customized for your needs.',
     icon: resources,
     URL: '/'
   },
   {
-    title: 'Legal notice format',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+    title: 'Case studies',
+    desc: 'Explore real-world legal case studies and their outcomes.',
     icon: resources,
     URL: '/'
   },
   {
-    title: 'Legal notice format',
-    desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+    title: 'Guides & articles',
+    desc: 'Read expert legal insights and guides.',
     icon: resources,
     URL: '/'
-  },
-]
-
+  }
+];
 
 export const faqData = [
   {
     title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
+    desc: 'We offer a wide range of legal services, including personal injury, family law, business law, estate planning, and criminal defense.'
   },
   {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
+    title: 'How do I schedule a consultation?',
+    desc: 'You can schedule a consultation through our website or by calling our office.'
   },
   {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
+    title: 'Do you offer free consultations?',
+    desc: 'Yes, we provide free initial consultations for most of our legal services.'
   },
   {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
-  },
-  {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
-  },
-  {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
-  },
-  {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
-  },
-  {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
-  },
-  {
-    title: 'What types of legal services do you offer?',
-    desc: '  We offer a wide range of legal services, including [insert your practice areas here,  e.g., personal injury, family law, business law, estate planning, criminal defense, etc.]. Our experienced attorneys specialize in helping clients with briefly described services.'
-  },
-]
+    title: 'How much do legal services cost?',
+    desc: 'Our pricing depends on the complexity of your case. Contact us for a detailed estimate.'
+  }
+];

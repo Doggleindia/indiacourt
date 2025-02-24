@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Header from "../header/Header";
 import Serachbutton from "../header/Serachbutton";
 import BookCard from "./BookCard";
-import FamilyLawI from "../../assets/books/Family_Law_I.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../redux/features/booksSlice";
 

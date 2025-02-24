@@ -1,84 +1,84 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import TopicItem from "./TopicItem";
-import { HiCurrencyDollar } from "react-icons/hi";
+// import { HiCurrencyDollar } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLegalTopics } from "../../../redux/features/legalTopicsSlice";
 
-let topics = [
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-  {
-    title: "Women and Child Protection Laws",
-    description:
-      "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
-    icon: <HiCurrencyDollar size={42} color="#F26828" />,
-  },
-];
+// let topics = [
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+//   {
+//     title: "Women and Child Protection Laws",
+//     description:
+//       "Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec vulputatsadsad sad asd",
+//     icon: <HiCurrencyDollar size={42} color="#F26828" />,
+//   },
+// ];
 
 export default function Topics() {
   const dispatch = useDispatch();
