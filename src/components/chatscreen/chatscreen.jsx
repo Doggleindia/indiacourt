@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { sendMessage, clearChat } from "../../redux/features/chatSlice";
+import { sendMessage } from "../../redux/features/chatSlice";
 
 const Message = ({ text, sender, time }) => (
   <div className={`flex ${sender === "user" ? "justify-end" : "justify-start"} my-2`}>
@@ -11,7 +11,7 @@ const Message = ({ text, sender, time }) => (
           : "bg-gray-100 text-black rounded-bl-none"
       }`}
     >
-      <p>{text || "No response from bot."}</p> {/* ✅ Ensure bot message is not empty */}
+      <p>{text || "No response from bot."}</p>
       <span className="text-xs text-gray-500 block text-right">{time}</span>
     </div>
   </div>
@@ -22,8 +22,7 @@ const ChatScreen = () => {
   const dispatch = useDispatch();
   const chatEndRef = useRef(null);
 
-  const { messages, loading, error } = useSelector((state) => state.chat);
-  console.log(messages,"chatcheck")
+  const { messages } = useSelector((state) => state.chat);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -31,12 +30,8 @@ const ChatScreen = () => {
 
   const handleSendMessage = () => {
     if (!input.trim()) return;
-    dispatch(sendMessage(input)); // ✅ Dispatch Redux action
+    dispatch(sendMessage(input));
     setInput("");
-  };
-
-  const handleClearChat = () => {
-    dispatch(clearChat()); // ✅ Clear chat history
   };
 
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -47,13 +42,6 @@ const ChatScreen = () => {
 
   return (
     <div className="flex flex-col h-screen bg-white pt-[80px]">
-      {/* Navbar */}
-      <nav className="h-[60px] bg-transparent text-black flex items-center justify-center">
-        <button onClick={handleClearChat} className="text-red-500 font-semibold">
-          Clear Chat
-        </button>
-      </nav>
-
       {/* Chat Header */}
       <div className="flex items-center justify-center py-6 border-b border-gray-300">
         <div className="flex items-center">
@@ -62,12 +50,8 @@ const ChatScreen = () => {
         </div>
 
         <div className="text-center mx-4">
-          <h2 className="text-2xl font-bold tracking-wider text-black">
-            Chat With Us
-          </h2>
-          <p className="text-[#9B7B4D] tracking-wider text-sm">
-            Talk to us for any query
-          </p>
+          <h2 className="text-2xl font-bold tracking-wider text-black">Chat With Us</h2>
+          <p className="text-[#9B7B4D] tracking-wider text-sm">Talk to us for any query</p>
           <span className="text-xs text-gray-500">{currentDate}</span>
         </div>
 
@@ -78,13 +62,11 @@ const ChatScreen = () => {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto p-6 flex flex-col-reverse space-y-4">
-        <div ref={chatEndRef}></div>
-        {loading && <p className="text-center text-gray-500">Loading...</p>}
-        {error && <p className="text-center text-red-500">{error}</p>}
+      <div className="flex-1 overflow-y-auto p-6 space-y-4">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} time={msg.time} />
         ))}
+        <div ref={chatEndRef}></div>
       </div>
 
       {/* Chat Input */}
