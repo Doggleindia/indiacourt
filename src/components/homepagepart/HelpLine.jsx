@@ -33,7 +33,7 @@ const HelpLine = () => {
       <div className="absolute inset-0 bg-[#00000066]"></div>
 
       {/* Content */}
-      <div className="relative z-10 p-16">
+      <div className="relative z-10 py-16">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <div>

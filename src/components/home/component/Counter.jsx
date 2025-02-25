@@ -23,7 +23,7 @@ const Counter = () => {
                 borderRadius="lg"
                 boxShadow="md"
               >
-                <VStack align="start" spacing={1} ml={4}>
+                <VStack align={{base:'center', md:"start"}} spacing={1} ml={4}>
                 {item.isImage ? (
                   <Image src={item.icon} alt={item.title} boxSize="40px" />
                 ) : (
