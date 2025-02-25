@@ -91,10 +91,11 @@ const Judgements = () => {
             <Box flex="1" width="100%">
               <Tabs variant="unstyled" defaultIndex={0}>
                 {/* Tabs Header */}
-                <TabList bg="#f6f6f6" p={2} borderRadius="md">
+                <TabList bg="#f6f6f6" p={2} borderRadius="md" justifyContent='space-between'>
                   <Tab
                     _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                     p={3}
+                    px={{base:0, sm:3}}
                     borderRadius="md"
                     flexWrap="wrap"
                   >
@@ -104,6 +105,7 @@ const Judgements = () => {
                   <Tab
                     _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                     p={3}
+                    px={{base:0, sm:3}}
                     borderRadius="md"
                     flexWrap="wrap"
                   >
@@ -113,6 +115,7 @@ const Judgements = () => {
                   <Tab
                     _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                     p={3}
+                    px={{base:0, sm:3}}
                     borderRadius="md"
                     flexWrap="wrap"
                   >
@@ -122,6 +125,7 @@ const Judgements = () => {
                   <Tab
                     _selected={{ bg: "#056B38", color: "#FFFFFF" }}
                     p={3}
+                    px={{base:0, sm:3}}
                     borderRadius="md"
                     flexWrap="wrap"
                   >

@@ -77,21 +77,21 @@ const Inquiry = () => {
             <VStack
             py={2}
             >         
-            <HStack justify="center" spacing={6}>
-              <HStack>
+            <HStack justify="center" spacing={6} w='full'>
+              <HStack gap={0}>
                 <Box
                   width="12px"
                   height="12px"
                   bg="#C08729"
                   transform="rotate(45deg)"
                 />
-                <Box height="2px" width="100px" bg="#C08729" />
+                <Box height="2px" width={{base:'50px', sm:"100px"}} bg="#C08729" />
               </HStack>
               <Text color="#07070B" fontSize={{base:'1rem',md:"5xl"}} >
               Make an inquiry
               </Text>
-              <HStack>
-                <Box height="2px" width="100px" bg="#C08729" />
+              <HStack gap={0}>
+                <Box height="2px" width={{base:'50px', sm:"100px"}} bg="#C08729" />
                 <Box
                   width="12px"
                   height="12px"

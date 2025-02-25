@@ -72,8 +72,8 @@ export default function Books() {
         />
         <Serachbutton bordercolor="#C08729" label="Search" placeholder="" />
 
-        <HStack mt={8} align="start">
-          <Box className="border px-3 py-3">
+        <HStack mt={8} align="start" flexWrap={{ base:'wrap', sm:'nowrap' }} justify='center'>
+          <Box className="border px-3 py-3 text-center">
             <Text className="text-[#07070B] text-xl mb-6">Categories</Text>
             <Text className="text-[#C08729] text-lg">Categories</Text>
             <Text className="text-[#C08729] text-lg">Categories</Text>
