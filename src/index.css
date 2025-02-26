@@ -15,3 +15,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Hide Google Translate Toolbar */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Hide Google Translate Pop-up */
+body {
+  top: 0px !important;
+}
+
+/* Hide Google Translate Widget Box */
+.goog-te-gadget {
+  display: none !important;
+}
+
+/* Hide Google Translate Toolbar */
+.goog-te-banner-frame {
+  display: none !important;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Hide the Google Translate iframe */
+iframe.skiptranslate {
+  display: none !important;
+}
+
+/* Prevent body from shifting */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Hide the Google Translate Widget */
+.goog-te-gadget {
+  display: none !important;
+}

@@ -1,0 +1,16 @@
+/* Hide Google Translate Toolbar */
+.goog-te-banner-frame {
+    display: none !important;
+  }
+  
+  /* Hide Google Translate Pop-up */
+  body {
+    top: 0px !important;
+  }
+  
+  /* Hide Google Translate Widget Box */
+  .goog-te-gadget {
+    display: none !important;
+  }
+  
+  
