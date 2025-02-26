@@ -8,7 +8,7 @@ const Serachbutton = ({
 }) => {
   return (
     <>
-      <HStack display={"flex"} justifyContent={"center"} gap={"0"}>
+      <HStack display={"flex"} justifyContent={"center"} gap={"0"} flexDirection={{base:'column', sm:'row'}}>
         <Input
           name="phone"
           placeholder={placeholder}
@@ -17,7 +17,6 @@ const Serachbutton = ({
           rounded="0"
           //   px={2}
 
-          width={{ sm: "80%", md: "full" }}
         />
         <Button
           backgroundColor={"#056B38"}

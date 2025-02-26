@@ -32,16 +32,19 @@ const Judgementstab = () => {
             spacing={2}
             align="center"
             p={2}
+            flexWrap={{base:'wrap', sm:'nowrap'}}
             borderBottom="1px solid #C08729"
           >
-            <TbPlayerTrackNextFilled />
+          <Box className=" max-w-full">
+            <TbPlayerTrackNextFilled  />
+          </Box>
+            <Box className=" w-max">
             <Button
               backgroundColor={"#C08729"}
               variant="link"
               color="#fff"
               fontSize="sm"
-              py={2}
-              width={"35%"}
+              p={2}
               // as="a"
               // ✅ Open judgement link
               // target="_blank"
@@ -49,6 +52,7 @@ const Judgementstab = () => {
             >
               {judgement.date}
             </Button>
+            </Box>
             <Text  as="a" fontSize="sm" color="black" fontWeight="md"  href={judgement.href} target="_blank"
               rel="noopener noreferrer">
               {judgement.title}

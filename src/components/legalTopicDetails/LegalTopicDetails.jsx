@@ -60,14 +60,14 @@ console.log(topic,"checkdata")
           </Flex>
         </Box>
 
-        <HStack mt={6} alignItems="start">
+        <HStack mt={6} alignItems="start" justify='center' flexWrap={{ base:'wrap' , lg:'nowrap' }}>
           <Box>
             <HStack
               align="start"
               gap={4}
               flexDirection={{ base: "column", md: "row" }}
             >
-              <Box minW="250px">
+              <Box minW="250px" mx='auto'>
                 <BookCard image={topic.icon || JudgeHammer} />
               </Box>
               <VStack align="start" gap={5}>
@@ -85,9 +85,9 @@ console.log(topic,"checkdata")
             </Box>
           </Box>
 
-          <VStack gap={5} align="start">
-            <Text className="text-2xl text-[#3F4242]">Quotes</Text>
-            <Box className="border px-3 py-3">
+          <VStack gap={5} align="start" justify='center' maxW={{ base:'100%' , lg:'20%' }}>
+            <Text className="text-2xl text-[#3F4242] mx-auto">Quotes</Text>
+            <Box className="border px-3 py-3 w-full">
               <Text className="text-xl text-[#001025]">
               {topic.quotes}
               </Text>
@@ -125,6 +125,8 @@ console.log(topic,"checkdata")
                   justify="space-between"
                   fontWeight="bold"
                   color="#C08729"
+                  flexWrap='wrap'
+                  gap={2}
                   align="center"
                 >
                   <Text>{title}</Text>

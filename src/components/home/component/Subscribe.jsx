@@ -137,7 +137,7 @@ const Subscribe = () => {
               transform="rotate(45deg)"
             />
           </HStack>
-          <HStack display={"flex"} justifyContent={"center"} py={2}>
+          <HStack display={"flex"} justifyContent={"center"} py={2} flexDirection={{base:'column', md:'row'}}>
             <Input
               name="phone"
               placeholder="Enter your email"
@@ -145,7 +145,7 @@ const Subscribe = () => {
               _focus={{ boxShadow: "none",color:'#FFFFFf', borderBottom: "2px solid #C08729" }}
               rounded="10px"
               px={2}
-              width="40%"
+              width={{base:'60%', md:"40%"}}
               value={email}
               onChange={(e) => setEmail(e.target.value)} 
             />
@@ -167,7 +167,7 @@ const Subscribe = () => {
         position="absolute"
         bottom={2}
         right={2}
-        width={{ base: "120px", md: "200px" }}
+        width={{ base: "100px", sm: "180px" }}
       >
         <Image src={law_book} alt="law book" />
       </Box>
