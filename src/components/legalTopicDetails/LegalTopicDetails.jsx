@@ -68,7 +68,7 @@ console.log(topic,"checkdata")
               flexDirection={{ base: "column", md: "row" }}
             >
               <Box minW="250px">
-                <BookCard image={topic.icon || JudgeHammer} />
+                <BookCard image={JudgeHammer} />
               </Box>
               <VStack align="start" gap={5}>
                 <Box>
@@ -80,16 +80,14 @@ console.log(topic,"checkdata")
               </VStack>
             </HStack>
 
-            <Box mt={6}>
-              <Text className="text-base text-[#07070B]">{topic.description}</Text>
-            </Box>
+            
           </Box>
 
           <VStack gap={5} align="start">
             <Text className="text-2xl text-[#3F4242]">Quotes</Text>
             <Box className="border px-3 py-3">
-              <Text className="text-xl text-[#001025]">
-              {topic.quotes}
+              <Text className="text-sm text-center text-[#001025]">
+             {topic.quotes}
               </Text>
             </Box>
 

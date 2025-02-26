@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   HStack,
-  Image,
   SimpleGrid,
   Text,
   VStack,
@@ -14,6 +13,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLegalTopics } from "../../../redux/features/legalTopicsSlice";
+import { GoLaw } from "react-icons/go";
 
 const Highlights = () => {
 
@@ -55,7 +55,7 @@ const Highlights = () => {
                 boxShadow="md"
               >
                 <VStack align="start" spacing={3} ml={4}>
-                  <Image src={topic.icon} alt={topic.title} boxSize="50px" />
+                <GoLaw size={50} color="#C08729" />
                   <Text fontSize="lg" fontWeight="bold">
                     {topic.title}
                   </Text>
