@@ -3,12 +3,12 @@ import books from "./books.png";
 
 const Connect = () => {
   return (
-    <div className="relative bg-[#003315] text-white p-6 flex items-center justify-center ">
+    <div className="relative bg-[#003315] text-white p-6 flex items-center justify-center pb-20 sm:pb-6">
       {/* Absolute Image */}
       <img
         src={books}
         alt="Books and Hammer"
-        className="absolute right-64 top-[9.9vw] max-sm:scale-[.5] max-sm:top-[46vw] max-sm:left-[60vw] bottom-24 w-48 h-auto"
+        className="absolute right-0 sm:right-[5%] md:right-[15%] lg:right-[20%] bottom-0 sm:bottom-6 max-sm:scale-[.9] w-48 h-auto"
       />
 
       {/* Centered Content */}
@@ -68,7 +68,7 @@ const Connect = () => {
             className="w-3 h-3 bg-[#C08729] transform rotate-90"
             style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
           ></div>
-          <div className="h-[0.1vw] bg-[#C08729] w-20"></div>
+          <div className="h-[0.2vw] bg-[#C08729] w-20"></div>
           <div
             className="w-3 h-3 bg-[#C08729] transform rotate-90"
             style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}

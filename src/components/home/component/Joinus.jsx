@@ -87,9 +87,9 @@ const Joinus = () => {
             <Box
               position="absolute"
               bottom={{ base: "-2px", md: "-3px" }}
-              left={{ base: "10%", md: "0%" }}
+              left={{ base: "10px", md: "-60px" }}
               transform={{ base: "translateX(-50%)", md: "none" }}
-              width={{ base: "120px", md: "200px" }}
+              width={{ base:'100px', sm: "120px", md: "200px" }}
             >
               <Image src={law_book} alt="law book" />
             </Box>

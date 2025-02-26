@@ -13,9 +13,9 @@ export default function BookCard({ image, version, title, description, _id }) {
           {/* Overlay Title on Image */}
           <Text
             position="absolute"
-            bottom="220px"
+            bottom="50%"
             left="50%"
-            transform="translateX(-50%)"
+            transform="translateX(-50%) translateY(50%)"
             color="#edddb5"
             fontWeight="bold"
             fontSize="2rem"
