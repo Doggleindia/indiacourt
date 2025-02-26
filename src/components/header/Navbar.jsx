@@ -97,9 +97,22 @@ const NavLinks = () => {
         </Box>
         <Link className="hover:text-yellow-700">
           <Text className="w-max">
-            <Select size="sm" style={{ border: 0 }}>
-              <option>English</option>
-              <option>Hindi</option>
+            <Select
+              size="sm"
+              style={{ border: 0, outline: "none", background: "transparent" }}
+              onChange={(e) => {
+                const lang = e.target.value;
+                const googleDropdown = document.querySelector(".goog-te-combo");
+                if (googleDropdown) {
+                  googleDropdown.value = lang;
+                  googleDropdown.dispatchEvent(new Event("change"));
+                } else {
+                  console.error("Google Translate dropdown not found!");
+                }
+              }}
+            >
+              <option value="en">English</option>
+              <option value="hi">हिंदी</option>
             </Select>
           </Text>
         </Link>
