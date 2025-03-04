@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import apiService from "../api/apiService";
 
 // 📌 Fetch all Bare Acts
 export const fetchBareActs = createAsyncThunk("bareActs/fetchAll", async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get("http://localhost:5500/api/bareacts"); 
+    const response = await apiService.get("/api/bareacts"); 
     return response.data.acts; // Return only the acts array
   } catch (error) {
     return rejectWithValue(error.response?.data || "Failed to fetch acts");
@@ -14,7 +14,7 @@ export const fetchBareActs = createAsyncThunk("bareActs/fetchAll", async (_, { r
 // 📌 Fetch a specific Act’s details
 export const fetchActDetails = createAsyncThunk("bareActs/fetchDetails", async (url, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`http://localhost:5500/api/bareacts/subacts?url=${encodeURIComponent(url)}`); 
+    const response = await apiService.get(`/api/bareacts/subacts?url=${encodeURIComponent(url)}`); 
     return response.data.subActs; // Return the act details
   } catch (error) {
     return rejectWithValue(error.response?.data || "Failed to fetch act details");
