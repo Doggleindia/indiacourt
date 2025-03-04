@@ -1,22 +1,25 @@
 import { Button, HStack, Input } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 const Serachbutton = ({
   bordercolor,
   placeholder = "Enter your number",
   label = "Subscribe Now",
+  onButtonPress = () => {}
 }) => {
+  const [text, setText] = useState('')
+
   return (
     <>
       <HStack display={"flex"} justifyContent={"center"} gap={"0"} flexDirection={{base:'column', sm:'row'}}>
         <Input
+          value={text}
+          onChange={({target}) => {setText(target.value)}}
           name="phone"
           placeholder={placeholder}
           border={`2px solid ${bordercolor}`}
           _focus={{ boxShadow: "none", borderBottom: "2px solid #000000" }}
           rounded="0"
-          //   px={2}
-
         />
         <Button
           backgroundColor={"#056B38"}
@@ -25,6 +28,7 @@ const Serachbutton = ({
           borderLeft={"1px solid #056B38"}
           border="2px solid #056B38"
           _hover={{ color: "#000000" }}
+          onClick={() => onButtonPress(text)}
         >
           {label}
         </Button>

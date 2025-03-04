@@ -1,7 +1,6 @@
 import { Box, Container } from "@chakra-ui/react";
 import React from "react";
 import Header from "../header/Header";
-import Serachbutton from "../header/Serachbutton";
 import LegalDictionary from "./LegalDictionary";
 import CommonFooter from "../CommonFooter";
 
@@ -15,7 +14,6 @@ const Dictionary = () => {
             headtitle="Dictionary"
             description="Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et  "
           />
-          <Serachbutton bordercolor="#C08729" />
           <LegalDictionary />
         </Container>
       </Box>

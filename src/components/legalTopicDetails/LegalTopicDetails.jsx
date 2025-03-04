@@ -28,7 +28,7 @@ const LegalTopicDetails = () => {
   useEffect(() => {
     const fetchTopic = async () => {
       try {
-        const response = await axios.get(`http://localhost:5500/legal-topics/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_MAIN_BACKEND}/legal-topics/${id}`);
         setTopic(response.data.topic); // Set fetched topic data
       } catch (err) {
         setError("Failed to fetch topic data.");
@@ -61,7 +61,7 @@ console.log(topic,"checkdata")
         </Box>
 
         <HStack mt={6} alignItems="start" justify='center' flexWrap={{ base:'wrap' , lg:'nowrap' }}>
-          <Box>
+          <Box w={'80%'}>
             <HStack
               align="start"
               gap={4}
@@ -82,8 +82,6 @@ console.log(topic,"checkdata")
                 <Text className="text-[#3A3A38] text-lg">{topic.description}</Text>
               </VStack>
             </HStack>
-
-            
           </Box>
 
 
