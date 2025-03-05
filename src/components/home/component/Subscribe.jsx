@@ -17,6 +17,9 @@ const Subscribe = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const toast = useToast();
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
   const handleSubmit = async () => {
     if (!email) {
       toast({
@@ -139,7 +142,8 @@ const Subscribe = () => {
           </HStack>
           <HStack display={"flex"} justifyContent={"center"} py={2} flexDirection={{base:'column', md:'row'}}>
             <Input
-              name="phone"
+              name="email"
+              type="email"
               placeholder="Enter your email"
               border="2px solid #C08729"
               _focus={{ boxShadow: "none",color:'#FFFFFf', borderBottom: "2px solid #C08729" }}
@@ -155,7 +159,7 @@ const Subscribe = () => {
               borderLeft={"1px solid #003315"}
               border="2px solid #C08729"
               onClick={handleSubmit}
-              disabled={loading}
+              disabled={loading || !isValidEmail(email)}
             >
                {loading ? <Spinner size="sm" /> : "Subscribe Now"} 
             </Button>

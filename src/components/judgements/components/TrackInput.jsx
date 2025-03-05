@@ -1,11 +1,11 @@
 import { Button, HStack, Input } from "@chakra-ui/react";
 import React from "react";
 
-const TrackInput = () => {
+const TrackInput = ({ searchQuery, setSearchQuery }) => {
   return (
     <HStack display="flex" justifyContent="center" gap="0">
       <Input
-        name="phone"
+        name="search"
         placeholder="Enter your Bill number"
         border="1px solid #C08729"
         borderRight="0px"
@@ -16,6 +16,8 @@ const TrackInput = () => {
         }}
         rounded="0"
         width={{ sm: "80%", md: "full" }}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
       <Button
         backgroundColor={"#056B38"}
@@ -26,7 +28,7 @@ const TrackInput = () => {
         _hover={{ color: "#000000" }}
         px={10}
       >
-        TRACK
+        Search
       </Button>
     </HStack>
   );

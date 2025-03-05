@@ -29,7 +29,7 @@ const LegalBooks = () => {
             />
 
              <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
-                          {books.slice(0,6).map((book) => (
+                          {books.slice(0,3).map((book) => (
                             <BookCard {...book} />
                           ))}
                         </SimpleGrid>

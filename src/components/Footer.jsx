@@ -62,7 +62,7 @@ const Footer = () => {
             <h3 className="text-lg text-left font-semibold mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 max-sm:text-left">
               <p>+7889 Mechanic Rd.Miami, FL 33125 </p>
-              <p>+91 999999999</p>
+              <p>+91 99927 82657</p>
               <p>support@indiaCourt.in</p>
             </address>
           </div>
@@ -121,7 +121,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:underline"
-                >
+                > 
                   Doggleindia
                 </a>
               </p>

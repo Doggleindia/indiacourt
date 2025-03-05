@@ -7,7 +7,7 @@ import LegalBooks from "../homepagepart/LegalBooks";
 import Connect from "../homepagepart/Connect";
 import Services from "../homepagepart/Services";
 import HelpLine from "../homepagepart/HelpLine";
-import Resources from "./component/Resources";
+// import Resources from "./component/Resources";
 import Findalawyer from "./component/Findalawyer";
 import Faq from "./component/Faq";
 import Blog from "./component/blog/Blog";
@@ -16,11 +16,13 @@ import Advertisment from "./component/Advertisement";
 import Inquiry from "./component/Inquiry";
 import Subscribe from "./component/Subscribe";
 import Footer from "../Footer";
+import WhatsAppButton from "./component/WhatsAppButton";
 
 const page = () => {
   return (
     <>
       <Hero />
+      <WhatsAppButton/>
       <Counter />
       <Highlights />
       <Judgements />
@@ -28,7 +30,7 @@ const page = () => {
       <Connect />
       <Services />
       <HelpLine />
-      <Resources />
+      {/* <Resources /> */}
       <Findalawyer />
       <Blog />
       <Faq />

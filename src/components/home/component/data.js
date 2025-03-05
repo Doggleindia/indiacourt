@@ -34,7 +34,7 @@ to:'/books'
   to:'/case-number'
 }
 , {
-  title: 'Helpline Numbers',
+  title: 'Helpline',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',

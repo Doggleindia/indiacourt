@@ -1,5 +1,5 @@
-import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import { Box, Flex, Image, VStack } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import TrackInput from "./TrackInput";
 import BookImage from "../../../assets/legalTopics/family_law_in_india.png";
 import JudgementBlock from "./JudgementBlock";
@@ -8,8 +8,9 @@ import JudgementDetails from "./JudgementDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSupremeCourtJudgements } from "../../../redux/features/judgementsSlice";
 export default function TabContent() {
-  const arr = [...Array(8).keys()].map((i) => i);
-  const base = 1920;
+  const [searchQuery, setSearchQuery] = useState("");
+  // const arr = [...Array(8).keys()].map((i) => i);
+  // const base = 1920;
   const dispatch = useDispatch();
     const { judgements, loading, error } = useSelector((state) => state.judgements);
   
@@ -19,17 +20,17 @@ export default function TabContent() {
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>
-      <TrackInput />
+     <TrackInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       <Flex mt={8} w="full" gap={5} justify="space-between">
         <Box className="hidden md:flex flex-col" gap={6}>
-          <Box border="1px solid #C08729" px={4} py={5} w="full">
+          {/* <Box border="1px solid #C08729" px={4} py={5} w="full">
             {arr.map((val) => (
               <Text className=" text-sm font-normal text-[#07070B] border-b-[1px] border-b-[#F0E5D4] leading-6 w-max mx-auto">
                 {base - val * 10} - {base - val * 10 + 9}
               </Text>
             ))}
-          </Box>
+          </Box> */}
           <Image src={BookImage} w="197px" />
         </Box>
 
@@ -43,7 +44,7 @@ export default function TabContent() {
           </Flex>
 
           <VStack mt={4} align={'flex-start'} width={'full'} gap={6}>
-            <JudgementBlock error = {error} loading = {loading} judgements = {judgements} />
+          <JudgementBlock error={error} loading={loading} judgements={judgements} searchQuery={searchQuery} />
             
           </VStack>
         </Box>

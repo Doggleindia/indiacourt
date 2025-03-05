@@ -60,7 +60,7 @@ const Connect = () => {
           ></div>
         </div>
 
-        <p className="text-sm lg:text-base">For more legal info, subscribe to our newsletter.</p>
+        {/* <p className="text-sm lg:text-base">For more legal info, subscribe to our newsletter.</p> */}
 
         {/* Bottom Line with Diamonds */}
         <div className="flex items-center justify-center mt-4">

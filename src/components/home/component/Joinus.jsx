@@ -63,9 +63,9 @@ const Joinus = () => {
                 Shape Your Legal Journey with Us – Free and Seamless.
               </Text>
               <Text fontSize={{ base: "sm", md: "md" }} color="#FFFF">
-                "Join our growing network of passionate legal professionals.
+                Join our growing network of passionate legal professionals.
                 Connect, collaborate, and grow your career with no fees or
-                barriers."
+                barriers.
               </Text>
             </VStack>
 

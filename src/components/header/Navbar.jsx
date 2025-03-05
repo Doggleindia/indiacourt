@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { GoSearch } from "react-icons/go";
+// import { GoSearch } from "react-icons/go";
 import { FaSquareFull } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import logo from "../../assets/home/logo.png";
@@ -92,9 +92,9 @@ const NavLinks = () => {
         </HStack>
       </Link>
       <Flex gap={0} align="center">
-        <Box className="border border-yellow-700 p-1 rounded">
+        {/* <Box className="border border-yellow-700 p-1 rounded">
           <GoSearch color="#C08729" width={20} height={20} />
-        </Box>
+        </Box> */}
         <Link className="hover:text-yellow-700">
           <Text className="w-max">
             <Select
@@ -149,8 +149,10 @@ const Navbar = () => {
           <Flex justify="space-between" className="overflow-hidden flex-1">
             <VStack align="start" gap={0} className="w-full">
               <Flex className="w-full py-2 px-4 items-center justify-between">
-                <Box className="text-2xl font-bold text-yellow-700">
+                <Box className="text-2xl font-bold text-yellow-700 pointer ">
+                  <Link to="/">
                   <Image src={logo} alt="logo" w="80px" />
+                  </Link>
                 </Box>
                 <IoMdMenu
                   size={32}
@@ -190,7 +192,9 @@ const Navbar = () => {
     >
       <HStack justify="start" gap={6}>
         <Box className="text-2xl font-bold text-yellow-700">
+          <Link to="/">
           <Image src={logo} alt="logo" w="100px" />
+          </Link>
         </Box>
 
         <Flex
