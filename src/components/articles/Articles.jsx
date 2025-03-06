@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Header from "../header/Header";
-import Serachbutton from "../header/Serachbutton";
+// import Serachbutton from "../header/Serachbutton";
 import BlogCard from "../home/component/blog/BlogCard";
 import law_queen from "../../assets/home/law_queen.png";
 import CommonFooter from "../CommonFooter";
@@ -24,7 +24,7 @@ const Articles = () => {
             description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
           />
 
-          <Serachbutton bordercolor="#C08729" />
+          {/* <Serachbutton bordercolor="#C08729" /> */}
 
           <VStack pt={4}>
             <HStack justify="center" spacing={3}>

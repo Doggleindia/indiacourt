@@ -112,7 +112,24 @@ const NavLinks = () => {
               }}
             >
               <option value="en">English</option>
-              <option value="hi">हिंदी</option>
+              <option value="hi">हिंदी (Hindi)</option>
+              <option value="bn">বাংলা (Bengali)</option>
+              <option value="ta">தமிழ் (Tamil)</option>
+              <option value="te">తెలుగు (Telugu)</option>
+              <option value="mr">मराठी (Marathi)</option>
+              <option value="gu">ગુજરાતી (Gujarati)</option>
+              <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+              <option value="ml">മലയാളം (Malayalam)</option>
+              <option value="kn">ಕನ್ನಡ (Kannada)</option>
+              <option value="or">ଓଡ଼ିଆ (Odia)</option>
+              <option value="as">অসমীয়া (Assamese)</option>
+              <option value="ur">اردو (Urdu)</option>
+              <option value="sd">سنڌي (Sindhi)</option>
+              <option value="ks">کٲشُر (Kashmiri)</option>
+              <option value="ne">नेपाली (Nepali)</option>
+              <option value="sa">संस्कृतम् (Sanskrit)</option>
+              <option value="mai">मैथिली (Maithili)</option>
+              <option value="mni">মৈতৈলোন (Manipuri)</option>
             </Select>
           </Text>
         </Link>
@@ -151,7 +168,7 @@ const Navbar = () => {
               <Flex className="w-full py-2 px-4 items-center justify-between">
                 <Box className="text-2xl font-bold text-yellow-700 pointer ">
                   <Link to="/">
-                  <Image src={logo} alt="logo" w="80px" />
+                    <Image src={logo} alt="logo" w="80px" />
                   </Link>
                 </Box>
                 <IoMdMenu
@@ -193,7 +210,7 @@ const Navbar = () => {
       <HStack justify="start" gap={6}>
         <Box className="text-2xl font-bold text-yellow-700">
           <Link to="/">
-          <Image src={logo} alt="logo" w="100px" />
+            <Image src={logo} alt="logo" w="100px" />
           </Link>
         </Box>
 

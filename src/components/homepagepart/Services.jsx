@@ -96,7 +96,7 @@ const Services = () => {
             <p className="text-sm text-gray-600">
               Potenti porta mauris nec vulputate. Massa sagittis lectus ut...
             </p>
-            <Link to="/legal-advice" className="text-black text-sm mt-4 cursor-pointer">
+            <Link to="/contact-us" className="text-black text-sm mt-4 cursor-pointer">
               READ MORE →
             </Link>
           </div>

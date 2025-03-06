@@ -41,7 +41,7 @@ const Blog = () => {
                   desc={article.content.substring(0, 100) + "..."} // Shortened description
                   imgurl={article.image || "default-image.png"} // Placeholder image
                   to={`/blog/${article._id}`} // Navigate to article details
-                  top={index % 2 === 1 ? "100px" : "0px"}
+                  // top={index % 2 === 1 ? "100px" : "0px"}
                 />
               ))}
             </SimpleGrid>

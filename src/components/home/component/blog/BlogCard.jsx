@@ -2,17 +2,17 @@ import { Button, Divider, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BlogCard = ({imgurl,title,desc,top,Direction,width,to}) => {
+const BlogCard = ({imgurl,title,desc,Direction,width,to}) => {
   return (
     <>
      <HStack
               align="center"
               spacing={4}
               flexDirection={{ base: "column", md: Direction || "row" }}
-              pt={top}
+              // pt={top}
             >
-              <Image src={imgurl} width={{base:'150px',md: width ||"35%"}} alt="law_queen" />
-              <VStack align="start" maxW={{base:'100%',md: width || "35%"}} spacing={4}>
+              <Image src={imgurl} width={{base:'100%',md: width ||"50%"}} height={'30vh'} alt="law_queen" />
+              <VStack align="start" maxW={{base:'100%',md: width || "50%"}} spacing={4}>
                 <Text fontSize="2xl" color="#07070B" fontWeight="semibold">
                  {title}
                 </Text>

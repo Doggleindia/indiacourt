@@ -61,6 +61,7 @@ const LegalActsList = () => {
                   color="#BF9874"
                   fontWeight="semibold"
                   cursor="pointer"
+                  _hover={{ color: "#C08729" }}
                 >
                   {act.title}
                 </Text>
