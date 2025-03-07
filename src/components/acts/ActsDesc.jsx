@@ -10,11 +10,11 @@ const ActsDesc = () => {
   const { url, slug } = location.state || {};
   const [actDetails, setActDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!slug || !url) {
-      setError("Missing required data");
+      // setError("Missing required data");
       setLoading(false);
       return;
     }
@@ -28,7 +28,7 @@ const ActsDesc = () => {
         const response = await axios.get(apiUrl);
         setActDetails(response.data);
       } catch (err) {
-        setError("Failed to fetch act details");
+        // setError("Failed to fetch act details");
         console.error("API Error:", err);
       } finally {
         setLoading(false);

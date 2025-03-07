@@ -1,7 +1,7 @@
 import { Box, Container, HStack, Image, Spinner, Text, VStack } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import Header from "../../../header/Header";
-import Serachbutton from "../../../header/Serachbutton";
+// import Serachbutton from "../../../header/Serachbutton";
 import LAWYER from "../../../../assets/blog/LAWYER.png";
 import Recomendedblog from "../../../articles/Recomendedblog";
 import BrowseMore from "../../../articles/BrowseMore";

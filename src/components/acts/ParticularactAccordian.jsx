@@ -16,7 +16,7 @@ import { fetchActDetails } from "../../redux/features/bareActsSlice";
 const ParticularactAccordian = () => {
   const { id } = useParams(); // Extract act ID from route
   const dispatch = useDispatch();
-  const { actDetails, loading, error } = useSelector((state) => state.bareActs);
+  const { actDetails, loading } = useSelector((state) => state.bareActs);
   const [openIndex, setOpenIndex] = useState(null);
 
   useEffect(() => {
@@ -30,7 +30,8 @@ const ParticularactAccordian = () => {
   };
 
   const extractSlug = (url) => {
-    const match = url.match(/bareacts\/([^\/]*)\//);
+    // eslint-disable-next-line
+    const match = url.match(/bareacts\/([^\/]*)\//);  
     return match ? match[1] : "unknown-slug";
   };
   
