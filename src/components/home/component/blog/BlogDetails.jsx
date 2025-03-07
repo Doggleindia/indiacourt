@@ -28,7 +28,7 @@ const BlogDetails = () => {
             description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
           />
 
-          <Serachbutton bordercolor="#C08729" />
+          {/* <Serachbutton bordercolor="#C08729" /> */}
            {/* ✅ Loading & Error Handling */}
           {loading ? (
             <Spinner size="xl" mt={10} color="blue.500" />

@@ -1,9 +1,46 @@
-import { Box, Container, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box, Container, Text, Spinner } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import Header from "../header/Header";
 import CommonFooter from "../CommonFooter";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const ActsDesc = () => {
+  const location = useLocation();
+  const { url, slug } = location.state || {};
+  const [actDetails, setActDetails] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!slug || !url) {
+      setError("Missing required data");
+      setLoading(false);
+      return;
+    }
+
+    const fetchData = async () => {
+      try {
+        const apiUrl = `${process.env.REACT_APP_MAIN_BACKEND}/api/bareacts/details?slug=${slug}&queryParams=Title=${encodeURIComponent(
+          url
+        )}`;
+
+        const response = await axios.get(apiUrl);
+        setActDetails(response.data);
+      } catch (err) {
+        setError("Failed to fetch act details");
+        console.error("API Error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [slug, url]);
+
+  if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
+  // if (error || !actDetails) return ;
+
   return (
     <>
       <Box pb={4} pt={{ base: "5rem", xl: "8rem" }}>
@@ -11,23 +48,22 @@ const ActsDesc = () => {
           <Header
             title="Articles"
             headtitle="Articles"
-            description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
+            description="Details of the selected Act."
           />
+
+          {/* Render Act Title */}
           <Text color={"#C08729"} fontSize={"2xl"}>
-            The Abducted Persons (Recovery and Restoration) Continuance Act,
-            1955
-          </Text>
-          <Text fontSize={"sm"}>Short title and commencement.-</Text>
-          <Text fontSize={"sm"}>
-            (1) This Act may be called the Abducted Persons (Recovery and
-            Restoration) Continuance Act, 1955.
-          </Text>
-          <Text fontSize={"sm"}>
-            (2) It shall be deemed to have come into force on the 30th day of
-            May, 1955.
+            {actDetails?.details[0] || "Act Title Not Available"}
           </Text>
 
-          {/* <ParticularactAccordian /> */}
+          {/* Render Act Details */}
+          {actDetails ? actDetails?.details.slice(1).map((paragraph, index) => (
+            <Text key={index} fontSize={"sm"} mt={2}>
+              {paragraph}
+            </Text>
+          ))
+          :<Text fontSize="xl" color="gray.500" className="m-auto">Data is not present</Text>}
+          
         </Container>
       </Box>
 

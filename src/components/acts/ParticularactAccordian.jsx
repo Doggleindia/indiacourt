@@ -29,8 +29,13 @@ const ParticularactAccordian = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const extractSlug = (url) => {
+    const match = url.match(/bareacts\/([^\/]*)\//);
+    return match ? match[1] : "unknown-slug";
+  };
+  
   if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
-  if (error) return <Text color="red.500">{error}</Text>;
+  // if (error) return <Text color="red.500">{error}</Text>;
 
   return (
     <Box maxW="100%" mx="auto" my={4} border="1px solid #C08729">
@@ -59,7 +64,8 @@ const ParticularactAccordian = () => {
           <Collapse in={openIndex === index}>
             <Box px={6} py={3} bg="#FFF9F1">
               {section.slice(1).map((item, i) => (
-                <Link key={i} to={item.href || "#"}>
+                <Link key={i} to={'/desc'}  state={{ url: item.href, slug: extractSlug(id) }}>
+                  {console.log(id,'idsssss')}
                   <Text fontWeight="bold" color="#3A3A38">{item.title}</Text>
                 </Link>
               ))}

@@ -62,7 +62,7 @@ function AppContent({ isChatOpen, handleToggleChat }) {
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/acts" element={<Acts />} />
         <Route path="/acts/:id" element={<Particularacts />} />
-        <Route path="/acts/:id/desc" element={<ActsDesc />} />
+        <Route path="/desc" element={<ActsDesc />} />
         <Route path="/legal-topics" element={<LegalTopics />} />
         <Route path="/legal-topic/:id" element={<LegalTopicDetails />} />
         <Route path="/judgements" element={<Judgements />} />
