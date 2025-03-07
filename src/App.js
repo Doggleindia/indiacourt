@@ -25,6 +25,7 @@ import Navbar from "./components/header/Navbar";
 import ChatScreen from "./components/chatscreen/chatscreen";
 import { useState } from "react";
 import StickyChatBox from "./components/home/component/StickyChatBox";
+import ScrollToTop from "./config/ScrollToTop";
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(true);
@@ -37,6 +38,8 @@ function App() {
   return (
     <>
       <Router>
+        
+      <ScrollToTop />
         <AppContent isChatOpen={isChatOpen} handleToggleChat={handleToggleChat} />
       </Router>
     </>
