@@ -7,7 +7,7 @@ import { Image, Text } from "@chakra-ui/react";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#C08729] px-[10vw] text-white pb-[10vh]">
+      <footer className="bg-[#000000] px-[10vw]  pb-[10vh]" style={{color: "rgb(191 152 116)"}}>
         <>
           <Image src='https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740381649933_footerIcon.svg' mx="auto" />
           <Text className="text-base text-center my-8 ">
@@ -62,7 +62,7 @@ const Footer = () => {
             <h3 className="text-lg text-left font-semibold mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 max-sm:text-left">
               <p>+7889 Mechanic Rd.Miami, FL 33125 </p>
-              <p>+91 99927 82657</p>
+              <p>+91 1294030864</p>
               <p>support@indiaCourt.in</p>
             </address>
           </div>
