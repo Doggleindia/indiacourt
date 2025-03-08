@@ -7,6 +7,8 @@ import chatReducer from "./features/chatSlice";
 import bareActsReducer from "./features/bareActsSlice";
 import judgementsReducer from "./features/judgementsSlice";
 import resourcesReducer from "./features/resourcesSlice";
+import billsReducer from "./features/billsSlice";
+
 const store = configureStore({
   reducer: {
     legalTopics: legalTopicsSlice,
@@ -17,6 +19,7 @@ const store = configureStore({
     bareActs: bareActsReducer,
     judgements: judgementsReducer,
     resources: resourcesReducer,
+    bills: billsReducer,
   },
 });
 

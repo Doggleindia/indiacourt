@@ -17,6 +17,7 @@ import Inquiry from "./component/Inquiry";
 import Subscribe from "./component/Subscribe";
 import Footer from "../Footer";
 import WhatsAppButton from "./component/WhatsAppButton";
+import Bills from "./component/Bills";
 
 const page = () => {
   return (
@@ -26,6 +27,7 @@ const page = () => {
       <Counter />
       <Highlights />
       <Judgements />
+      <Bills />
       <LegalBooks />
       <Connect />
       <Services />

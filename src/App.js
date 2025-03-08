@@ -26,6 +26,7 @@ import ChatScreen from "./components/chatscreen/chatscreen";
 import { useState } from "react";
 import StickyChatBox from "./components/home/component/StickyChatBox";
 import ScrollToTop from "./config/ScrollToTop";
+import Bills from "./components/bills/Page";
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(true);
@@ -79,6 +80,7 @@ function AppContent({ isChatOpen, handleToggleChat }) {
         <Route path="/dictionary" element={<Dictionary />} />
         <Route path="/books" element={<Books />} />
         <Route path="/books/:id" element={<BookDetails />} />
+        <Route path="/bills" element={<Bills />} />
       </Routes>
     </>
   );

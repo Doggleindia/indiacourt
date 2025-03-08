@@ -2,7 +2,7 @@ import { Box, Flex, Spinner, Text, VStack } from "@chakra-ui/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import React from "react";
 
-export default function LatestJudgements({error,loading,judgements}) {
+export default function LatestJudgements({error,loading,judgements, tabName}) {
   return (
     <>
     {loading && <Spinner color="#C08729" size="lg" />}
@@ -11,7 +11,7 @@ export default function LatestJudgements({error,loading,judgements}) {
     <VStack gap={5}>
       
       <Text className=" text-[#07070B] text-2xl font-normal">
-        Latest Judgements
+        Latest {tabName === 'Lok Sabha' || tabName === 'Rajya Sabha' ? 'Updates' : 'Judgements'}
       </Text>
       <Box border="1px solid #C08729" px={4} py={5} w="full">
       {judgements.slice(0,6).map((judgement, index) => (
