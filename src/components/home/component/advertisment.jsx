@@ -1,4 +1,4 @@
-import { Box, Container, HStack } from "@chakra-ui/react";
+import { Box, Container, HStack, VStack } from "@chakra-ui/react";
 import React from "react";
 
 const advertisment = () => {

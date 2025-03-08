@@ -15,7 +15,7 @@ import React from "react";
 import ComponentHeader from "./header/ComponentHeader";
 import judgements from "../../../assets/home/judgements.png";
 // import { FaArrowRight } from "react-icons/fa";
-import { LuFolder, LuSquareCheck, LuUser } from "react-icons/lu";
+import { LuFolder, LuUser } from "react-icons/lu";
 import Judgementstab from "./judgements/Judgementstab";
 import { Link } from "react-router-dom";
 const Judgements = () => {
