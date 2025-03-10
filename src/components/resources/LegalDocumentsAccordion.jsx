@@ -101,7 +101,7 @@ const LegalDocumentsAccordion = () => {
                       <Button
                         mt={3}
                         colorScheme="yellow"
-                        onClick={() => downloadResourceAsPDF(sub.title, resourceDetails[sub.href])}
+                        onClick={() => downloadResourceAsPDF(sub.href)}
                       >
                         Download as PDF
                       </Button>

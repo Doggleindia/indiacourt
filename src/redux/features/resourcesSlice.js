@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import apiService from "../api/apiService";
-import { jsPDF } from "jspdf";
 
 // 📌 Fetch all resources
 export const fetchResources = createAsyncThunk(
@@ -29,22 +28,22 @@ export const fetchResourceDetails = createAsyncThunk(
 );
 
 // 📌 Download resource details as PDF
-export const downloadResourceAsPDF = (title, details) => {
-  const doc = new jsPDF();
-  doc.setFontSize(12);
-  doc.text(title, 10, 10);
-  
-  let y = 20;
-  details.forEach((line, index) => {
-    if (y > 280) {
-      doc.addPage();
-      y = 10;
-    }
-    doc.text(line, 10, y);
-    y += 10;
-  });
+export const downloadResourceAsPDF = async (href) => {
+  try {
+    const response = await apiService.post(
+      "/api/resources/downloadpdf",
+      { url: href },
+      { responseType: "blob" }
+    );
 
-  doc.save(`${title}.pdf`);
+    // Create a link to download the PDF file
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(response.data);
+    link.download = "document.pdf";
+    link.click();
+  } catch (error) {
+    console.error("Error downloading PDF:", error);
+  }
 };
 
 const resourcesSlice = createSlice({
