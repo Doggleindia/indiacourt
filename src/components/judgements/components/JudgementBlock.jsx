@@ -2,12 +2,16 @@ import { Box, Flex, Spinner, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function JudgementBlock({ error, loading, judgements, searchQuery }) {
+export default function JudgementBlock({ error, loading, judgements, searchQuery, tabName }) {
   // Filter judgements based on search query
   const filteredJudgements = judgements.filter((judgement) =>
     judgement.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     judgement.date.includes(searchQuery)
   );
+
+  const HC_PDF_URL =
+    process.env.REACT_APP_MAIN_BACKEND +
+    "/api/judgements/highcourt/downloadpdf?id=";
 
   return (
     <>
@@ -16,7 +20,7 @@ export default function JudgementBlock({ error, loading, judgements, searchQuery
       {filteredJudgements.length === 0 && !loading && <Text color="gray.500">No results found.</Text>}
       {filteredJudgements.map((judgement, index) => (
         <Box key={index} py={3} px={7} border="1px solid #C08729" width={'100%'}>
-          <Text className="text-[#C08729] text-sm">Supreme Court</Text>
+          <Text className="text-[#C08729] text-sm">{tabName}</Text>
           <Text className=" text-2xl text-black">{judgement.date}</Text>
           <Text className="text-[#353535] text-sm">{judgement.title}</Text>
           <Flex justify="flex-end">
@@ -27,7 +31,15 @@ export default function JudgementBlock({ error, loading, judgements, searchQuery
               as="button"
               _hover={{ color: "#C08729" }}
             >
-              <Text className=" text-[12px] font-bold" as="a" href={judgement.href} target="_blank" rel="noopener noreferrer">
+              <Text
+                className=" text-[12px] font-bold"
+                as="a"
+                href={
+                  judgement.href ? judgement.href : HC_PDF_URL + judgement.id
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Learn more
               </Text>
               <FaArrowRightLong />

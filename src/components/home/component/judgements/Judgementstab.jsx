@@ -2,22 +2,35 @@ import { Box, Button, HStack, Text, VStack, Spinner } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { TbPlayerTrackNextFilled } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSupremeCourtJudgements } from "../../../../redux/features/judgementsSlice";
+import {
+  fetchHighCourtJudgements,
+  fetchSupremeCourtJudgements,
+} from "../../../../redux/features/judgementsSlice";
 
-const Judgementstab = () => {
+const Judgementstab = ({ tabName }) => {
   const dispatch = useDispatch();
-  const { judgements, loading, error } = useSelector((state) => state.judgements);
+  const { SCJudgements, HCJudgements, loading, error } = useSelector((state) => state.judgements);
 
   useEffect(() => {
-    dispatch(fetchSupremeCourtJudgements()); // ✅ Fetch data on mount
-  }, [dispatch]);
+    dispatch(
+      tabName === "High Court"
+        ? fetchHighCourtJudgements()
+        : fetchSupremeCourtJudgements()
+    ); // ✅ Fetch data on mount
+  }, [dispatch, tabName]);
+
+  const judgements = tabName === "High Court" ? HCJudgements : SCJudgements;
+
+  const HC_PDF_URL =
+    process.env.REACT_APP_MAIN_BACKEND +
+    "/api/judgements/highcourt/downloadpdf?id=";
 
   return (
     <Box display={"flex"}>
       <VStack w="100%">
         <HStack w="100%" align="center">
           <Text fontSize="lg" fontWeight="bold" color="#C08729">
-            Supreme Court Judgements
+            {tabName} Judgements
           </Text>
           <Box flex="1" borderBottom="2px solid #C08729" />
         </HStack>
@@ -53,8 +66,15 @@ const Judgementstab = () => {
               {judgement.date}
             </Button>
             </Box>
-            <Text  as="a" fontSize="sm" color="black" fontWeight="md"  href={judgement.href} target="_blank"
-              rel="noopener noreferrer">
+            <Text
+              as="a"
+              fontSize="sm"
+              color="black"
+              fontWeight="md"
+              href={judgement.href ? judgement.href : HC_PDF_URL + judgement.id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {judgement.title}
             </Text>
           </HStack>

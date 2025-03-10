@@ -119,10 +119,10 @@ const Judgements = () => {
                 {/* Tabs Content */}
                 <TabPanels>
                   <TabPanel>
-                    <Judgementstab />
+                    <Judgementstab tabName='Supreme Court' />
                   </TabPanel>
                   <TabPanel>
-                    <Judgementstab />
+                    <Judgementstab tabName='High Court' />
                   </TabPanel>
                 </TabPanels>
               </Tabs>

@@ -39,10 +39,10 @@ export default function Judgements() {
           </TabList>
           <TabPanels>
             <TabPanel px={0}>
-              <TabContent />
+              <TabContent tabName="Supreme Court" />
             </TabPanel>
             <TabPanel px={0}>
-              <TabContent />
+              <TabContent tabName="High Court" />
             </TabPanel>
           </TabPanels>
         </Tabs>

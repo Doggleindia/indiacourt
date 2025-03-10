@@ -6,17 +6,27 @@ import JudgementBlock from "./JudgementBlock";
 import LatestJudgements from "./LatestJudgements";
 import JudgementDetails from "./JudgementDetails";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSupremeCourtJudgements } from "../../../redux/features/judgementsSlice";
-export default function TabContent() {
+import {
+  fetchHighCourtJudgements,
+  fetchSupremeCourtJudgements,
+} from "../../../redux/features/judgementsSlice";
+
+export default function TabContent({ tabName }) {
   const [searchQuery, setSearchQuery] = useState("");
   // const arr = [...Array(8).keys()].map((i) => i);
   // const base = 1920;
   const dispatch = useDispatch();
-    const { judgements, loading, error } = useSelector((state) => state.judgements);
-  
-    useEffect(() => {
-      dispatch(fetchSupremeCourtJudgements()); // ✅ Fetch data on mount
-    }, [dispatch]);
+  const { SCJudgements, HCJudgements, loading, error } = useSelector((state) => state.judgements);
+
+  useEffect(() => {
+    dispatch(
+      tabName === "High Court"
+        ? fetchHighCourtJudgements()
+        : fetchSupremeCourtJudgements()
+    ); // ✅ Fetch data on mount
+  }, [dispatch, tabName]);
+
+  const judgements = tabName === "High Court" ? HCJudgements : SCJudgements;
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>
@@ -44,7 +54,7 @@ export default function TabContent() {
           </Flex>
 
           <VStack mt={4} align={'flex-start'} width={'full'} gap={6}>
-          <JudgementBlock error={error} loading={loading} judgements={judgements} searchQuery={searchQuery} />
+          <JudgementBlock error={error} loading={loading} judgements={judgements} searchQuery={searchQuery} tabName={tabName} />
             
           </VStack>
         </Box>
