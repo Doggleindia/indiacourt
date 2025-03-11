@@ -4,12 +4,13 @@ import resources from '../../../assets/home/resources.png'
 import { RiBookShelfLine, RiUserSettingsLine } from 'react-icons/ri';
 import { BiSearchAlt } from 'react-icons/bi';
 import { GiOpenBook } from 'react-icons/gi';
+import { TbGavel } from 'react-icons/tb';
 export const counterData = [{
   title: 'Legal Topics',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   suffix: 'K',
-  icon: legalcourt,
-  isImage: true,
+  icon: TbGavel,
+  variant: 'info',
   to:'/legal-topics'
 }, {
   title: 'Books',
@@ -59,13 +60,23 @@ to:'/books'
   variant: 'info',
   to:'/find-lawyer'
 }, {
-  title: 'Resources',
+  title: 'Forms',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
   icon: GiOpenBook,
   variant: 'info',
   to:'/resources'
+},
+ {
+  title: 'Articles',
+  desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
+  count: 6,
+  suffix: 'K+',
+  icon: legalcourt,
+  isImage: true,
+  variant: 'info',
+  to:'/articles'
 },
 
 ];

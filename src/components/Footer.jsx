@@ -111,10 +111,12 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          <div></div>
+          <p className="text-center justify-center text-[15px] mt-[10px]">WE ARE NOT AFFILIATED WITH ANY GOVERNMENT </p>
           <div className="border-t-2 md:hidden flex justify-center items-center w-full border-[#F6E8FB80]">
             <h3 className="text-[10px] text-center mt-4">
               <p>
-                &copy; 2025 All rights reserved By SHIVLOK LEGAL INDIA PRIVATE LIMITED 
+                &copy; 2025 All rights reserved By SHIVLOK LEGAL INDIA PRIVATE LIMITED
                 Powered by
                 <a
                   href="https://doggleindia.com/"
@@ -128,8 +130,8 @@ const Footer = () => {
             </h3>
           </div>
         </div>
-        <div className="border-t-2 mt-[5vw] hidden md:flex justify-center items-center w-full border-[#F6E8FB80]">
-          <h3 className="text-[10px] text-center mt-4">
+        <div className="border-t-2 mt-[1vw] hidden md:flex justify-center items-center w-full border-[#F6E8FB80]">
+          <h3 className="text-[14px] text-center mt-4">
             <p>
               &copy; 2025 All rights reserved By SHIVLOK LEGAL INDIA PRIVATE LIMITED 
               <br /> Powered by
