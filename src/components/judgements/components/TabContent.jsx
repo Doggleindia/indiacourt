@@ -26,7 +26,8 @@ export default function TabContent({ tabName }) {
     ); // ✅ Fetch data on mount
   }, [dispatch, tabName]);
 
-  const judgements = tabName === "High Court" ? HCJudgements : SCJudgements;
+  // const judgements = tabName === "High Court" ? HCJudgements : SCJudgements;
+  const judgements = tabName === "High Court" ? HCJudgements || [] : SCJudgements || []
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>
