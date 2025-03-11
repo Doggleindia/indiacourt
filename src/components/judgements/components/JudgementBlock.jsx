@@ -18,7 +18,7 @@ export default function JudgementBlock({ error, loading, judgements, searchQuery
       {loading && <Spinner color="#C08729" size="lg" />}
       {error && <Text color="red.500">Error: {error}</Text>}
       {filteredJudgements.length === 0 && !loading && <Text color="gray.500">No results found.</Text>}
-      {filteredJudgements.map((judgement, index) => (
+      {filteredJudgements && filteredJudgements.length > 0 ?  filteredJudgements.map((judgement, index) => (
         <Box key={index} py={3} px={7} border="1px solid #C08729" width={'100%'}>
           <Text className="text-[#C08729] text-sm">{tabName}</Text>
           <Text className=" text-2xl text-black">{judgement.date}</Text>
@@ -46,7 +46,10 @@ export default function JudgementBlock({ error, loading, judgements, searchQuery
             </Flex>
           </Flex>
         </Box>
-      ))}
+      ))
+      : (
+        <Text color="gray.500">No data available</Text>
+    )}
     </>
   );
 }

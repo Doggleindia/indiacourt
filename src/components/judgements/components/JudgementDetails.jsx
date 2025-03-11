@@ -7,7 +7,7 @@ export default function JudgementDetails({error,loading,judgements}) {
     <Box maxW="672px">
       <Image src={CriminalLawImage} />
       <VStack mt={4} gap={4}>
-      {judgements.slice(0,1).map((judgement, index) => (
+      {judgements && judgements.length > 0 ?  judgements.slice(0,1).map((judgement, index) => (
         <>
         <Text className=" text-3xl text-black">
         {judgement.title}
@@ -24,7 +24,11 @@ export default function JudgementDetails({error,loading,judgements}) {
           </Text>
         </Text>
         </>
-         ))}
+
+         ))
+        
+         : (
+          <Text color="gray.500">No data available</Text>)}
       </VStack>
     </Box>
   );

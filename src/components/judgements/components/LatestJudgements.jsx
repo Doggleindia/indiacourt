@@ -14,11 +14,14 @@ export default function LatestJudgements({error,loading,judgements, tabName}) {
         Latest {tabName === 'Lok Sabha' || tabName === 'Rajya Sabha' ? 'Updates' : 'Judgements'}
       </Text>
       <Box border="1px solid #C08729" px={4} py={5} w="full">
-      {judgements.slice(0,6).map((judgement, index) => (
+      {judgements && judgements.length > 0 ? judgements.slice(0,6).map((judgement, index) => (
         <Text className="text-sm font-normal text-black border-b-[1px] border-b-[#F0E5D4] leading-6">
         {judgement.title}
         </Text>
-       ))}
+       ))
+       : (
+        <Text color="gray.500">No data available</Text>)
+      }
         <Box justifyContent="center" display="flex">
           <Flex
             gap={2}
