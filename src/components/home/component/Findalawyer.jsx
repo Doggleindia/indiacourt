@@ -1,7 +1,7 @@
 import { Box, Button, Container, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import phone from '../../../assets/home/phone.png'
-import lawayer from '../../../assets/home/lawayer_img.png'
+import lawyer1 from '../../../assets/home/lawyer1.jpg'
 import fullpolygon from '../../../assets/icons/fullpolygon_line.png'
 
 const Findalawyer = () => {
@@ -59,7 +59,7 @@ const Findalawyer = () => {
               {/* Right Side - Lawyer Image + Right-Side Arrow */}
               <VStack flex="1" align="center" pt={{base:0,md:'10px'}} spacing={2} position="relative" width="100%">
                 <Box position="relative" display="inline-block">
-                  <Image src={lawayer} boxSize={{ base: "250px", md: "300px" }} alt="lawyer" />
+                  <Image src={lawyer1} boxSize={{ base: "250px", md: "310px" }} alt="lawyer" />
                   <Image
                     src={fullpolygon}
                     alt="polygon"
