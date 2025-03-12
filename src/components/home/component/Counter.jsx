@@ -1,4 +1,11 @@
-import { Box, Container, Image, Text, VStack, IconButton } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Image,
+  Text,
+  VStack,
+  IconButton,
+} from "@chakra-ui/react";
 import { counterData } from "./data";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,13 +23,14 @@ const Counter = () => {
             {/* Swiper Carousel */}
             <Swiper
               modules={[Navigation]}
-              spaceBetween={15}
-              slidesPerView={4}
+              spaceBetween={20} // Increased space between cards
+              slidesPerView={1}
               breakpoints={{
-                640: { slidesPerView: 2 },
-                768: { slidesPerView: 4 },
-                1024: { slidesPerView: 6 },
-                1280: { slidesPerView: 8 },
+                320: { slidesPerView: 1, spaceBetween: 10 }, // More spacing for mobile
+                480: { slidesPerView: 2, spaceBetween: 15 },
+                768: { slidesPerView: 4, spaceBetween: 20 },
+                1024: { slidesPerView: 6, spaceBetween: 25 },
+                1280: { slidesPerView: 8, spaceBetween: 30 },
               }}
               navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
               loop
@@ -30,62 +38,64 @@ const Counter = () => {
               {counterData.map((item, idx) => (
                 <SwiperSlide key={idx}>
                   <Link to={item.to} className="pointer">
-                  <Box
-  display="flex"
-  flexDirection="column"
-  justifyContent="center"
-  alignItems="center"
-  p={4}
-  bg="white" /* Ensure a solid background for the shadow */
-  borderRadius="lg"
-  boxShadow="lg" /* Increase shadow visibility */
-  textAlign="center"
-  minW="120px"
->
-  <VStack align="center" spacing={2}>
-    {item.isImage ? (
-      <Image 
-        src={item.icon} 
-        alt={item.title} 
-        boxSize="40px" 
-        bg="transparent" /* Ensures image does not override box styling */
-      />
-    ) : (
-      <Text fontSize="4xl" color="#F26727">
-        <item.icon />
-      </Text>
-    )}
-    <Text fontSize="sm" fontWeight="medium">
-      {item.title}
-    </Text>
-  </VStack>
-</Box>
-
+                    <Box
+                      display="flex"
+                      flexDirection="column"
+                      justifyContent="center"
+                      alignItems="center"
+                      p={6} // Increased padding for better spacing
+                      bg="white"
+                      borderRadius="lg"
+                      boxShadow="lg"
+                      textAlign="center"
+                      minW="140px" // Increased width for better spacing
+                      gap={4}
+                      // Ensures elements inside the box have proper spacing
+                    >
+                      <VStack align="center" spacing={3}>
+                        {item.isImage ? (
+                          <Image
+                            src={item.icon}
+                            alt={item.title}
+                            boxSize="45px" // Slightly increased size for better visibility
+                          />
+                        ) : (
+                          <Text fontSize="4xl" color="#F26727">
+                            <item.icon />
+                          </Text>
+                        )}
+                        <Text fontSize="md" fontWeight="semibold">
+                          {item.title}
+                        </Text>
+                      </VStack>
+                    </Box>
                   </Link>
                 </SwiperSlide>
               ))}
             </Swiper>
 
-            {/* Navigation Buttons */}
+            {/* Navigation Buttons (Responsive Fix) */}
             <IconButton
               aria-label="Previous"
               icon={<FaChevronLeft />}
               position="absolute"
-              left="-50px"
-              top="50%"
+              left={{ base: "5px", md: "-50px" }}
+              top="45%"
               transform="translateY(-50%)"
-              zIndex={2}
+              zIndex={10}
               className="prev-btn"
+              boxSize={{ base: "30px", md: "40px" }}
             />
             <IconButton
               aria-label="Next"
               icon={<FaChevronRight />}
               position="absolute"
-              right="-50px"
-              top="50%"
+              right={{ base: "5px", md: "-50px" }}
+              top="45%"
               transform="translateY(-50%)"
-              zIndex={2}
+              zIndex={10}
               className="next-btn"
+              boxSize={{ base: "30px", md: "40px" }}
             />
           </Box>
         </Container>
