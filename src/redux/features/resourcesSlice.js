@@ -9,7 +9,7 @@ export const fetchResources = createAsyncThunk(
       const response = await apiService.get("/api/resources");
       return response.data.resources;
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch resources");
+      return rejectWithValue(error.response?.data?.error || "Failed to fetch resources");
     }
   }
 );
@@ -22,7 +22,7 @@ export const fetchResourceDetails = createAsyncThunk(
       const response = await apiService.get(`/api/resources/details?url=${encodeURIComponent(url)}`);
       return { url, details: response.data.details };
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch resource details");
+      return rejectWithValue(error.response?.data?.error || "Failed to fetch resource details");
     }
   }
 );

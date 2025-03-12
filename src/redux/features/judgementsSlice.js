@@ -16,7 +16,7 @@ export const fetchSupremeCourtJudgements = createAsyncThunk(
       const response = await apiService.get("/api/judgements/supremecourt");
       return response.data.judgements || []; // Ensure it's always an array
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch Supreme Court judgements");
+      return rejectWithValue(error.response?.data?.error || "Failed to fetch Supreme Court judgements");
     }
   }
 );
@@ -36,7 +36,7 @@ export const fetchHighCourtJudgements = createAsyncThunk(
       const response = await apiService.get("/api/judgements/highcourt");
       return response.data.judgements || []; // Ensure it's always an array
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch High Court judgements");
+      return rejectWithValue(error.response?.data?.error || "Failed to fetch High Court judgements");
     }
   }
 );

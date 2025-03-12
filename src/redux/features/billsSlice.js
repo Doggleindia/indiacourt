@@ -17,7 +17,7 @@ export const fetchLatestRajyaSabhaBills = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch rajya sabha bills");
+      return rejectWithValue(error.message || "Failed to fetch rajya sabha bills");
     }
   }
 );
@@ -38,7 +38,7 @@ export const fetchLatestLokSabhaBills = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch lok sabha bills");
+      return rejectWithValue(error.message || "Failed to fetch lok sabha bills");
     }
   }
 );
