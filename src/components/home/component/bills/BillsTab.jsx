@@ -6,13 +6,13 @@ import { fetchLatestLokSabhaBills, fetchLatestRajyaSabhaBills } from "../../../.
 
 const BillsTab = ({tabName}) => {
   const dispatch = useDispatch();
-  const {rajyaSabhaBills, lokSabhaBills, loading, error } = useSelector((state) => state.bills);
+  const { RS, LS } = useSelector((state) => state.bills);
 
   useEffect(() => {
     dispatch(tabName === 'Rajya Sabha' ? fetchLatestRajyaSabhaBills() : fetchLatestLokSabhaBills());
   }, [dispatch, tabName]);
 
-  const bills = tabName === 'Rajya Sabha' ? rajyaSabhaBills : lokSabhaBills;
+  const {bills, loading, error} = tabName === 'Rajya Sabha' ? RS : LS;
 
   return (
     <Box display={"flex"}>

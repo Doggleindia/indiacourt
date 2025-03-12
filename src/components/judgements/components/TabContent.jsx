@@ -16,7 +16,7 @@ export default function TabContent({ tabName }) {
   // const arr = [...Array(8).keys()].map((i) => i);
   // const base = 1920;
   const dispatch = useDispatch();
-  const { SCJudgements, HCJudgements, loading, error } = useSelector((state) => state.judgements);
+  const { SC, HC } = useSelector((state) => state.judgements);
 
   useEffect(() => {
     dispatch(
@@ -26,8 +26,7 @@ export default function TabContent({ tabName }) {
     ); // ✅ Fetch data on mount
   }, [dispatch, tabName]);
 
-  // const judgements = tabName === "High Court" ? HCJudgements : SCJudgements;
-  const judgements = tabName === "High Court" ? HCJudgements || [] : SCJudgements || []
+  const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>

@@ -5,11 +5,11 @@ import apiService from "../api/apiService"; // ✅ Ensure correct API service im
 export const fetchSupremeCourtJudgements = createAsyncThunk(
   "judgements/fetchSupremeCourt",
   async (_, { getState, rejectWithValue }) => {
-    const { SCJudgements } = getState().judgements;
+    const { SC } = getState().judgements;
     
-    if (SCJudgements.length > 0) {
+    if (SC.judgements.length > 0) {
       console.log("✅ Supreme Court Judgements already loaded, skipping API call.");
-      return SCJudgements; // Return existing data if already available
+      return SC.judgements; // Return existing data if already available
     }
 
     try {
@@ -25,11 +25,11 @@ export const fetchSupremeCourtJudgements = createAsyncThunk(
 export const fetchHighCourtJudgements = createAsyncThunk(
   "judgements/fetchHighCourt",
   async (_, { getState, rejectWithValue }) => {
-    const { HCJudgements } = getState().judgements;
+    const { HC } = getState().judgements;
 
-    if (HCJudgements.length > 0) {
+    if (HC.judgements.length > 0) {
       console.log("✅ High Court Judgements already loaded, skipping API call.");
-      return HCJudgements; // Return existing data if already available
+      return HC.judgements; // Return existing data if already available
     }
 
     try {
@@ -44,13 +44,16 @@ export const fetchHighCourtJudgements = createAsyncThunk(
 const judgementsSlice = createSlice({
   name: "judgements",
   initialState: {
-    SCJudgements: [],
-    HCJudgements: [],
-    SCError: null, // ✅ Separate errors
-    HCError: null,
-    loading: {
-      SC: false, // ✅ Separate loading states
-      HC: false,
+    // ✅ Separate HC & SC
+    SC: {
+      judgements: [],
+      error: null,
+      loading: false,
+    },
+    HC: {
+      judgements: [],
+      error: null,
+      loading: false,
     },
   },
   reducers: {},
@@ -58,30 +61,30 @@ const judgementsSlice = createSlice({
     builder
       // ✅ Supreme Court Judgements
       .addCase(fetchSupremeCourtJudgements.pending, (state) => {
-        state.loading.SC = true;
-        state.SCError = null;
+        state.SC.loading = true;
+        state.SC.error = null;
       })
       .addCase(fetchSupremeCourtJudgements.fulfilled, (state, action) => {
-        state.loading.SC = false;
-        state.SCJudgements = action.payload;
+        state.SC.loading = false;
+        state.SC.judgements = action.payload;
       })
       .addCase(fetchSupremeCourtJudgements.rejected, (state, action) => {
-        state.loading.SC = false;
-        state.SCError = action.payload;
+        state.SC.loading = false;
+        state.SC.error = action.payload;
       })
 
       // ✅ High Court Judgements
       .addCase(fetchHighCourtJudgements.pending, (state) => {
-        state.loading.HC = true;
-        state.HCError = null;
+        state.HC.loading = true;
+        state.HC.error = null;
       })
       .addCase(fetchHighCourtJudgements.fulfilled, (state, action) => {
-        state.loading.HC = false;
-        state.HCJudgements = action.payload;
+        state.HC.loading = false;
+        state.HC.judgements = action.payload;
       })
       .addCase(fetchHighCourtJudgements.rejected, (state, action) => {
-        state.loading.HC = false;
-        state.HCError = action.payload;
+        state.HC.loading = false;
+        state.HC.error = action.payload;
       });
   },
 });

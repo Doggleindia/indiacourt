@@ -189,13 +189,13 @@ const tempJudgements = [
 export default function TabContent({tabName}) {
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
-  const {rajyaSabhaBills, lokSabhaBills, loading, error } = useSelector((state) => state.bills);
+  const { RS, LS } = useSelector((state) => state.bills);
 
   useEffect(() => {
     dispatch(tabName === 'Rajya Sabha' ? fetchLatestRajyaSabhaBills() : fetchLatestLokSabhaBills());
   }, [dispatch, tabName]);
 
-  const bills = tabName === 'Rajya Sabha' ? rajyaSabhaBills : lokSabhaBills;
+  const {bills, loading, error} = tabName === 'Rajya Sabha' ? RS : LS;
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>

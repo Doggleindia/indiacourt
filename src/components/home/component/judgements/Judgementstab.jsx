@@ -9,7 +9,7 @@ import {
 
 const Judgementstab = ({ tabName }) => {
   const dispatch = useDispatch();
-  const { SCJudgements, HCJudgements, loading, error } = useSelector((state) => state.judgements);
+  const { HC, SC } = useSelector((state) => state.judgements);
 
   useEffect(() => {
     dispatch(
@@ -19,7 +19,7 @@ const Judgementstab = ({ tabName }) => {
     ); // ✅ Fetch data on mount
   }, [dispatch, tabName]);
 
-  const judgements = tabName === "High Court" ? HCJudgements : SCJudgements;
+  const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
 
   const HC_PDF_URL =
     process.env.REACT_APP_MAIN_BACKEND +
