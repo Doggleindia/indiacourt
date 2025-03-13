@@ -3,23 +3,27 @@ import React, { useEffect } from "react";
 import { TbPlayerTrackNextFilled } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchHighCourtJudgements,
+  // fetchHighCourtJudgements,
   fetchSupremeCourtJudgements,
 } from "../../../../redux/features/judgementsSlice";
 
 const Judgementstab = ({ tabName }) => {
   const dispatch = useDispatch();
-  const { HC, SC } = useSelector((state) => state.judgements);
+  const { SC } = useSelector((state) => state.judgements);
 
   useEffect(() => {
     dispatch(
-      tabName === "High Court"
-        ? fetchHighCourtJudgements()
-        : fetchSupremeCourtJudgements()
+      // Temporary Fetch only SC judgements for both HC and SC..HC API not working
+      fetchSupremeCourtJudgements()
+      // tabName === "High Court"
+      //   ? fetchHighCourtJudgements()
+      //   : fetchSupremeCourtJudgements()
     ); // ✅ Fetch data on mount
   }, [dispatch, tabName]);
-
-  const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
+  
+  // Temporary use only SC judgements for both HC and SC..HC API not working
+  const {judgements, loading, error} = SC;
+  // const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
 
   const HC_PDF_URL =
     process.env.REACT_APP_MAIN_BACKEND +

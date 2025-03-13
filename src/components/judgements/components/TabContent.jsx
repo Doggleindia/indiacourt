@@ -7,7 +7,7 @@ import LatestJudgements from "./LatestJudgements";
 import JudgementDetails from "./JudgementDetails";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchHighCourtJudgements,
+  // fetchHighCourtJudgements,
   fetchSupremeCourtJudgements,
 } from "../../../redux/features/judgementsSlice";
 
@@ -16,17 +16,21 @@ export default function TabContent({ tabName }) {
   // const arr = [...Array(8).keys()].map((i) => i);
   // const base = 1920;
   const dispatch = useDispatch();
-  const { SC, HC } = useSelector((state) => state.judgements);
+  const { SC } = useSelector((state) => state.judgements);
 
   useEffect(() => {
     dispatch(
-      tabName === "High Court"
-        ? fetchHighCourtJudgements()
-        : fetchSupremeCourtJudgements()
+      // Temporary Fetch only SC judgements for both HC and SC..HC API not working
+      fetchSupremeCourtJudgements()
+      // tabName === "High Court"
+      //   ? fetchHighCourtJudgements()
+      //   : fetchSupremeCourtJudgements()
     ); // ✅ Fetch data on mount
   }, [dispatch, tabName]);
 
-  const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
+  // Temporary use only SC judgements for both HC and SC..HC API not working
+  const {judgements, loading, error} = SC;
+  // const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>
