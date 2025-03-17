@@ -10,7 +10,7 @@ export default function LegalTopics() {
       <Header
         title="Explore Legal Topics"
         headtitle="Topics"
-        description="Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et"
+        description="Whether you are facing a legal issue or want to learn about a specific legal subject, browsing our legal topics is the perfect starting point."
       />
 
       <Flex mt="6" gap={12}>

@@ -30,7 +30,6 @@ const Articles = () => {
           <Header
             title="Articles"
             headtitle="Articles"
-            description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
           />
 
           {/* <Serachbutton bordercolor="#C08729" /> */}

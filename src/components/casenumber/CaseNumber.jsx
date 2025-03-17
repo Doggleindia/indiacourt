@@ -21,7 +21,7 @@ const CaseNumber = () => {
           <Header
             title="Court Case Status Checker"
             headtitle="Case Status"
-            description="Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et  "
+            description="Track the status of your court case in real-time. Get updates on hearings, judgments, and case progress instantly."
           />
 
           <Box>

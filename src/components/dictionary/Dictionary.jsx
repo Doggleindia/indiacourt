@@ -12,7 +12,7 @@ const Dictionary = () => {
           <Header
             title=" Glossary"
             headtitle="Dictionary"
-            description="Suspendisse nibh sapien, ultricies ac purus vel, eleifend commodo tortor. Nam sed tempor sapien. Interdum et  "
+            description="Understand key legal terms and definitions to navigate your court case with confidence."
           />
           <LegalDictionary />
         </Container>

@@ -59,7 +59,7 @@ const Lawyer = () => {
           <Header
             title="Find your lawyer"
             headtitle="lawyer"
-            description="Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie pellentesque urna libero velit porta. Velit pellentesque hac gravida pellentesque est semper. Duis lectus gravida "
+            description="Find the right lawyer to represent your case. Connect with experienced legal professionals easily."
           />
           <VStack pt={4}>
             <HStack justify="center" spacing={3}>
