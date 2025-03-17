@@ -11,6 +11,64 @@ import {
   fetchSupremeCourtJudgements,
 } from "../../../redux/features/judgementsSlice";
 
+// FIXED HC Judgements As HC API Not working
+const HC = {
+  judgements: [
+    {
+      "title": "Himalaya Global Holdings Ltd & Anr. vs Rajasthan Aushdhalaya Private Limited ...",
+      "date": "13 March, 2025",
+      "id": "54510839"
+    },
+    {
+      "title": "Tm 25 Holding Bv vs Akhtar Ali & Ors.",
+      "date": "13 March, 2025",
+      "id": "64906398"
+    },
+    {
+      "title": "Naval Kishore Kapoor vs National Investigation Agency",
+      "date": "12 March, 2025",
+      "id": "65320202"
+    },
+    {
+      "title": "Monu @ Sandeep vs Union Of India Through Its Secretary & ...",
+      "date": "12 March, 2025",
+      "id": "132405804"
+    },
+    {
+      "title": "Mercedes-Benz Group Ag (Previously ... vs Minda Corporation Limited",
+      "date": "12 March, 2025",
+      "id": "133845374"
+    },
+    {
+      "title": "Janki Newsprint Ltd vs Principal Commissioner Of Customs New ...",
+      "date": "12 March, 2025",
+      "id": "64027764"
+    },
+    {
+      "title": "M/S Pc Jain Textile Pvt Ltd Through Its ... vs Sh. Shyam Sunder Suri And Anr",
+      "date": "12 March, 2025",
+      "id": "19861497"
+    },
+    {
+      "title": "Sushil Kumar Alias Raju vs State",
+      "date": "12 March, 2025",
+      "id": "87831079"
+    },
+    {
+      "title": "M/S B Braun Medical India Pvt Ltd vs Union Of India & Ors.",
+      "date": "12 March, 2025",
+      "id": "129760565"
+    },
+    {
+      "title": "Shish Ram & Anr vs Govind Vashish",
+      "date": "12 March, 2025",
+      "id": "9719096"
+    }
+  ],
+  loading: false,
+  error: null,
+}
+
 export default function TabContent({ tabName }) {
   const [searchQuery, setSearchQuery] = useState("");
   // const arr = [...Array(8).keys()].map((i) => i);
@@ -19,8 +77,8 @@ export default function TabContent({ tabName }) {
   const { SC } = useSelector((state) => state.judgements);
 
   useEffect(() => {
-    dispatch(
-      // Temporary Fetch only SC judgements for both HC and SC..HC API not working
+    // Temporary Fetch only SC judgements..HC API not working
+    tabName === 'Supreme Court' && dispatch(
       fetchSupremeCourtJudgements()
       // tabName === "High Court"
       //   ? fetchHighCourtJudgements()
@@ -28,9 +86,8 @@ export default function TabContent({ tabName }) {
     ); // ✅ Fetch data on mount
   }, [dispatch, tabName]);
 
-  // Temporary use only SC judgements for both HC and SC..HC API not working
-  const {judgements, loading, error} = SC;
-  // const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
+  // Temporary use Fixed HC Judgements..HC API not working
+  const {judgements, loading, error} = tabName === "High Court" ? HC : SC;
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>

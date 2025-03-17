@@ -9,9 +9,7 @@ export default function JudgementBlock({ error, loading, judgements, searchQuery
     judgement.date.includes(searchQuery)
   );
 
-  const HC_PDF_URL =
-    process.env.REACT_APP_MAIN_BACKEND +
-    "/api/judgements/highcourt/downloadpdf?id=";
+  const HC_PDF_URL = 'https://indiankanoon.org/doc/'
 
   return (
     <>

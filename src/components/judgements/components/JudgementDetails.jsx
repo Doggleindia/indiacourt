@@ -3,6 +3,8 @@ import CriminalLawImage from "../../../assets/judgements/criminal_law.png";
 import React from "react";
 
 export default function JudgementDetails({error,loading,judgements}) {
+  const HC_PDF_URL = 'https://indiankanoon.org/doc/'
+
   return (
     <Box maxW="672px">
       <Image src={CriminalLawImage} />
@@ -19,7 +21,7 @@ export default function JudgementDetails({error,loading,judgements}) {
           Bridge Company Limited (NTBCL), has preferred the instant appeal
           questioning the judgement dated 26.10.2016 passed by the High Court of
           Judicature at Allahabad (High Court).{" "}
-          <Text cursor="pointer" className="font-bold"  as="a"   href={judgement.href} target="_blank" rel="noopener noreferrer">
+          <Text cursor="pointer" className="font-bold"  as="a" href={judgement.href ? judgement.href : HC_PDF_URL + judgement.id} target="_blank" rel="noopener noreferrer">
             Know more
           </Text>
         </Text>
