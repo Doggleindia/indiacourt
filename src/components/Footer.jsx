@@ -46,9 +46,11 @@ const Footer = () => {
               <Link to={"/legal-topics"}>
                 <li>Legal Insights</li>
               </Link>
-              <Link to={"/case-number"}>
+              {/* <Link to={"/case-number"}> */}
+              <a href="https://services.ecourts.gov.in/ecourtindia_v6/" className="hover:text-yellow-700" target="_blank" rel="noopener noreferrer">
                 <li>Case Library</li>
-              </Link>
+              </a>
+              {/* </Link> */}
               <Link to={"/acts"}>
                 <li>Laws and Acts</li>
               </Link>

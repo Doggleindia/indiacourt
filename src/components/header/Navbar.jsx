@@ -61,11 +61,13 @@ const NavLinks = () => {
           <Rhombus /> <Text> LEGAL INSIGHTS </Text>
         </HStack>
       </Link>
-      <Link to="/case-number" className="hover:text-yellow-700">
+      {/* <Link to="/case-number" className="hover:text-yellow-700"> */}
+      <a href="https://services.ecourts.gov.in/ecourtindia_v6/" className="hover:text-yellow-700" target="_blank" rel="noopener noreferrer">
         <HStack>
           <Rhombus /> <Text> CASE LIBRARY</Text>
         </HStack>
-      </Link>
+      </a>
+      {/* </Link> */}
       <Link to="/acts" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> LAWS & ACTS </Text>

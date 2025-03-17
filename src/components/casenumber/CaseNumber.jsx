@@ -7,15 +7,24 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../header/Header";
 import { LuFolder, LuUser } from "react-icons/lu";
 import Inputform from "./Inputform";
 import CommonFooter from "../CommonFooter";
+import { useNavigate } from "react-router-dom";
 
 const CaseNumber = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.open("https://services.ecourts.gov.in/ecourtindia_v6/", "_blank");
+
+    navigate(-1);
+  }, [navigate]);
+
   return (
-    <>
+    true ? null :<> {/* //return null */}
       <Box pb={4} pt={{ base: "5rem", xl: "8rem" }}>
         <Container maxW="container.xl">
           <Header

@@ -32,7 +32,7 @@ to:'/books'
   suffix: 'K+',
   icon: RiBookShelfLine,
   variant: 'info',
-  to:'/case-number'
+  to:'https://services.ecourts.gov.in/ecourtindia_v6/'
 }
 , {
   title: 'Helpline',
