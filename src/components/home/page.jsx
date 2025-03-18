@@ -18,10 +18,12 @@ import Subscribe from "./component/Subscribe";
 import Footer from "../Footer";
 import WhatsAppButton from "./component/WhatsAppButton";
 import Bills from "./component/Bills";
+import HomeNavbar from "../header/HomeNavbar";
 
 const page = () => {
   return (
     <>
+    <HomeNavbar/>
       <Hero />
       <WhatsAppButton/>
       <Counter />

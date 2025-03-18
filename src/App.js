@@ -49,10 +49,10 @@ function App() {
 
 function AppContent({ isChatOpen, handleToggleChat }) {
   const location = useLocation(); 
-
+  const isHomePage = location.pathname === "/";
   return (
     <>
-      <Navbar />
+       {!isHomePage && <Navbar />}
       {location.pathname !== "/chat" && (
         <StickyChatBox isChatOpen={isChatOpen} handleToggleChat={handleToggleChat} />
       )}

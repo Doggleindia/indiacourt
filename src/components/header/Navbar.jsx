@@ -48,15 +48,15 @@ const Rhombus = () => (
   </Box>
 );
 
-const NavLinks = () => {
+const NavLinks = ({closeMenu}) => {
   return (
     <>
-      <Link to="/" className="hover:text-yellow-700">
+      <Link to="/" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> HOME </Text>
         </HStack>
       </Link>
-      <Link to="/legal-topics" className="hover:text-yellow-700">
+      <Link to="/legal-topics" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> LEGAL INSIGHTS </Text>
         </HStack>
@@ -68,27 +68,27 @@ const NavLinks = () => {
         </HStack>
       </a>
       {/* </Link> */}
-      <Link to="/acts" className="hover:text-yellow-700">
+      <Link to="/acts" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> LAWS & ACTS </Text>
         </HStack>
       </Link>
-      <Link to="/join-as-lawyer" className="hover:text-yellow-700">
+      <Link to="/join-as-lawyer" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
         </HStack>
       </Link>
-      <Link to="/find-lawyer" className="hover:text-yellow-700">
+      <Link to="/find-lawyer" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> OUR SERVICES </Text>
         </HStack>
       </Link>
-      <Link to="/dictionary" className="hover:text-yellow-700">
+      <Link to="/dictionary" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> DICTIONARY </Text>
         </HStack>
       </Link>
-      <Link to="/contact-us" className="hover:text-yellow-700">
+      <Link to="/contact-us" className="hover:text-yellow-700" onClick={closeMenu}>
         <HStack>
           <Rhombus /> <Text> CONTACT </Text>
         </HStack>
@@ -97,7 +97,7 @@ const NavLinks = () => {
         {/* <Box className="border border-yellow-700 p-1 rounded">
           <GoSearch color="#C08729" width={20} height={20} />
         </Box> */}
-        <Link className="hover:text-yellow-700">
+        <Link className="hover:text-yellow-700" >
           <Text className="w-max">
             <Select
               size="sm"
@@ -112,6 +112,7 @@ const NavLinks = () => {
                   console.error("Google Translate dropdown not found!");
                 }
               }}
+              
             >
               <option value="en">English</option>
               <option value="hi">हिंदी (Hindi)</option>
@@ -160,8 +161,10 @@ const Navbar = () => {
       <Box
         as="nav"
         className="fixed top-0 z-50 "
-        color={scrolled ? "white" : "black"}
-        bg={scrolled ? "#07070B" : "transparent"}
+        // color={scrolled ? "white" : "black"}
+        // bg={scrolled ? "#07070B" : "transparent"}
+        color="white"
+        bg="#07070B"
         w="100%"
       >
         <HStack justify="start" gap={6}>
@@ -192,7 +195,7 @@ const Navbar = () => {
                   ml="auto"
                   className="pb-2 px-2"
                 >
-                  <NavLinks />
+                  <NavLinks closeMenu={() => setMenuOpen(false)}  />
                 </VStack>
               )}
             </VStack>
@@ -205,8 +208,10 @@ const Navbar = () => {
     <Box
       as="nav"
       className="fixed top-0 z-50 pl-6"
-      color={scrolled ? "white" : "black"}
-      bg={scrolled ? "#07070B" : "transparent"}
+      // color={scrolled ? "white" : "black"}
+      // bg={scrolled ? "#07070B" : "transparent"}
+       color="white"
+        bg="#07070B"
       w="100%"
     >
       <HStack justify="start" gap={6}>
