@@ -160,8 +160,8 @@ import {
         <Box
           as="nav"
           className="fixed top-0 z-50 "
-          color={scrolled ? "white" : "black"}
-          bg={scrolled ? "#07070B" : "transparent"}
+          color={scrolled ? "white" : "white"}
+          bg={scrolled ? "#07070B" : "black"}
         //   color="white"
         //   bg="#07070B"
           w="100%"
