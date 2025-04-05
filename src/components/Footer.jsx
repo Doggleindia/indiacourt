@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Line from "../assets/icons/fullpolygon_line_white.svg";
 import { Image, Text } from "@chakra-ui/react";
 
@@ -50,6 +50,9 @@ const Footer = () => {
               <a href="https://services.ecourts.gov.in/ecourtindia_v6/" className="hover:text-yellow-700" target="_blank" rel="noopener noreferrer">
                 <li>Case Library</li>
               </a>
+              <a href="https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/fir1.php?state_cd=9&dist_cd=1&court_code=1&stateNm=Rajasthan" className="hover:text-yellow-700" target="_blank" rel="noopener noreferrer">
+                <li>FIR Status</li>
+              </a>
               {/* </Link> */}
               <Link to={"/acts"}>
                 <li>Laws and Acts</li>
@@ -63,17 +66,19 @@ const Footer = () => {
           <div className="max-sm:w-full max-sm:text-left">
             <h3 className="text-lg text-left font-semibold mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 max-sm:text-left">
-              <p>+7889 Mechanic Rd.Miami, FL 33125 </p>
-              <p>+91 1294030864</p>
-              <p>support@indiaCourt.in</p>
+              <p>Faridabad 
+              </p>
+              <p>+9199927 82657</p>
+              <p>Support@indiacourt.com</p>
+              
             </address>
           </div>
-          <div className="max-sm:w-full block md:hidden max-sm:text-left">
-            <h3 className="mt-5 text-lg font-medium">Follow us</h3>
+          <div className="max-sm:w-full text-[white] block  max-sm:text-left">
+            <h3 className="mt-5 text-lg font-medium ">Follow us</h3>
             <ul className="space-x-4 justify-start items-start pt-4 max-sm:pl-0 flex max-sm:space-y-0 flex-row max-sm:flex-row max-sm:space-x-4">
               <li>
                 <a
-                  href="https://www.instagram.com/aignosis.in?igsh=MTU0dmUybjViOTIzZw=="
+                  href="https://www.instagram.com/INDIA.COURT"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2"
@@ -81,7 +86,7 @@ const Footer = () => {
                   <FaInstagram size={26} className="text-pink-600" />
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="https://www.facebook.com/share/19HxXZyVyE/?mibextid=wwXIfr"
                   target="_blank"
@@ -90,10 +95,10 @@ const Footer = () => {
                 >
                   <FaFacebook size={26} className="text-blue-600" />
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
-                  href="https://youtube.com/@aignosis?si=gozM9TLj4ZToY5-k"
+                  href="https://youtube.com/@INDIACOURT1947"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2"
@@ -103,17 +108,17 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/company/aignosisai/"
+                  href="@InidaCourtTWITTR"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2"
                 >
-                  <FaLinkedin size={26} className="text-blue-500" />
+                  <FaTwitter size={26} className="text-blue-500" />
                 </a>
               </li>
             </ul>
           </div>
-          <div></div>
+          {/* <div></div> */}
           <p className="text-center justify-center text-[15px] mt-[10px]">WE ARE NOT AFFILIATED WITH ANY GOVERNMENT </p>
           <div className="border-t-2 md:hidden flex justify-center items-center w-full border-[#F6E8FB80]">
             <h3 className="text-[10px] text-center mt-4">

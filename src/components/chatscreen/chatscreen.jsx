@@ -2,23 +2,34 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendMessage } from "../../redux/features/chatSlice";
 
-const Message = ({ text, sender, time }) => (
-  <div className={`flex ${sender === "user" ? "justify-end" : "justify-start"} my-2`}>
+const Message = ({ text, sender, time }) => {
+  // Clean up bot response: remove * and " characters
+  const cleanText =
+    sender === "bot" ? text?.replace(/[*"]/g, "") : text;
+
+  return (
     <div
-      className={`p-3 rounded-lg shadow-md text-sm ${
-        sender === "user"
-          ? "bg-[#FCEDE8] text-black rounded-br-none"
-          : "bg-gray-100 text-black rounded-bl-none"
-      }`}
+      className={`flex ${
+        sender === "user" ? "justify-end" : "justify-start"
+      } my-2`}
     >
-      <p>{text || "No response from bot."}</p>
-      <span className="text-xs text-gray-500 block text-right">{time}</span>
+      <div
+        className={`p-3 rounded-lg shadow-md text-sm ${
+          sender === "user"
+            ? "bg-[#FCEDE8] text-black rounded-br-none"
+            : "bg-gray-100 text-black rounded-bl-none"
+        }`}
+      >
+        <p>{cleanText || "No response from bot."}</p>
+        <span className="text-xs text-gray-500 block text-right">{time}</span>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ChatScreen = () => {
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const chatEndRef = useRef(null);
 
@@ -28,10 +39,24 @@ const ChatScreen = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!input.trim()) return;
-    dispatch(sendMessage(input));
+
+    const userMessage = {
+      text: input,
+      sender: "user",
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    };
+
+    // Dispatch user message locally
+    dispatch({ type: "chat/addMessage", payload: userMessage });
+
     setInput("");
+    setIsLoading(true);
+
+    // Wait for async dispatch
+    await dispatch(sendMessage(input));
+    setIsLoading(false);
   };
 
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -50,8 +75,12 @@ const ChatScreen = () => {
         </div>
 
         <div className="text-center mx-4">
-          <h2 className="text-2xl font-bold tracking-wider text-black">Chat With Us</h2>
-          <p className="text-[#9B7B4D] tracking-wider text-sm">Talk to us for any query</p>
+          <h2 className="text-2xl font-bold tracking-wider text-black">
+            Chat With Us
+          </h2>
+          <p className="text-[#9B7B4D] tracking-wider text-sm">
+            Talk to us for any query
+          </p>
           <span className="text-xs text-gray-500">{currentDate}</span>
         </div>
 
@@ -66,6 +95,17 @@ const ChatScreen = () => {
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} time={msg.time} />
         ))}
+
+        {isLoading && (
+          <div className="flex justify-start my-2">
+            <div className="p-3 rounded-lg shadow-md text-sm bg-gray-100 text-black rounded-bl-none">
+              <p className="italic animate-pulse">Typing...</p>
+              <span className="text-xs text-gray-500 block text-right">
+                {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+              </span>
+            </div>
+          </div>
+        )}
         <div ref={chatEndRef}></div>
       </div>
 

@@ -122,7 +122,7 @@ const Judgements = () => {
                     <Judgementstab tabName='Supreme Court' />
                   </TabPanel>
                   <TabPanel>
-                    <Judgementstab tabName='High Court' />
+                    <Judgementstab  tabName="High Court" hcState="telangana" />
                   </TabPanel>
                 </TabPanels>
               </Tabs>

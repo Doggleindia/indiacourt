@@ -1,12 +1,12 @@
 import { Button, HStack, Input } from "@chakra-ui/react";
 import React from "react";
 
-const TrackInput = ({ searchQuery, setSearchQuery }) => {
+const TrackInput = ({ searchQuery, setSearchQuery,placeinput = "Enter your Bill number" }) => {
   return (
     <HStack display="flex" justifyContent="center" gap="0">
       <Input
         name="search"
-        placeholder="Enter your Bill number"
+        placeholder={placeinput }
         border="1px solid #C08729"
         borderRight="0px"
         _focus={{
