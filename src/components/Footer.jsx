@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaInstagram,  FaYoutube,  FaTwitter } from "react-icons/fa";
 import Line from "../assets/icons/fullpolygon_line_white.svg";
 import { Image, Text } from "@chakra-ui/react";
 

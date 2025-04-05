@@ -13,6 +13,7 @@ export default function TabContent({ tabName }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [hcState, setHcState] = useState("Delhi"); // controlled state
   const dispatch = useDispatch();
+  // eslint-disable-next-line 
   const [selectedYearRange, setSelectedYearRange] = useState(null); //
   const { SC } = useSelector((state) => state.judgements);
 
@@ -23,6 +24,7 @@ export default function TabContent({ tabName }) {
   }, [dispatch, tabName]);
   const allHCJudgements = HC[hcState] || [];
    // 🧠 Filter judgements based on selected year range
+   
    const filteredHCJudgements = (
     selectedYearRange
       ? allHCJudgements.filter((j) => {
@@ -39,10 +41,10 @@ export default function TabContent({ tabName }) {
   const loading = tabName === "High Court" ? false : SC.loading;
   const error = tabName === "High Court" ? null : SC.error;
 
-  const yearRanges = [...Array(8).keys()].map((i) => {
-    const start = 2025 - i * 1;
-    return { start};
-  });
+  // const yearRanges = [...Array(8).keys()].map((i) => {
+  //   const start = 2025 - i * 1;
+  //   return { start};
+  // });
 
   return (
     <Box border="1px solid #BF987466" pl={9} pr={10} py={5}>
