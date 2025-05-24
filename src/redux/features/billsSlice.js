@@ -13,8 +13,8 @@ export const fetchLatestRajyaSabhaBills = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get("https://api.allorigins.win/raw?url=https://sansad.in/api_rs/ppHome/latestUpdates");
-
+      const response = await axios.get("https://api.allorigins.win/raw?url=https://sansad.in/api_rs/ppHome/latestUpdates?locale=en");
+       console.log("RS API Response", response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message || "Failed to fetch rajya sabha bills");
@@ -34,8 +34,8 @@ export const fetchLatestLokSabhaBills = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get("https://api.allorigins.win/raw?url=https://sansad.in/api_ls/ppHome/Updates?locale=en");
-
+      const response = await axios.get("https://api.allorigins.win/raw?url=https://sansad.in/api_ls/ppHome/latestUpdates?locale=en");
+      console.log("RS API Response", response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message || "Failed to fetch lok sabha bills");
