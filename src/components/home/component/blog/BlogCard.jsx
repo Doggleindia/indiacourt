@@ -9,6 +9,10 @@ const BlogCard = ({imgurl,title,desc,Direction,width,to}) => {
               align="center"
               spacing={4}
               flexDirection={{ base: "column", md: Direction || "row" }}
+              border="1px solid #808080"
+              borderRadius="md" // Optional, for nice rounded corners
+              p={8}
+
               // pt={top}
             >
               <Image src={imgurl} width={{base:'100%',md: width ||"50%"}} height={'30vh'} alt="law_queen" />

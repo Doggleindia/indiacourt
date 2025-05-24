@@ -16,7 +16,7 @@ export default function LegalTopics() {
       <Flex mt="6" gap={12}>
         <Topics />
         <Box className="hidden md:block">
-          <Image src={BookImage} w="60vw" />
+          <Image src={BookImage} w="240vw" />
         </Box>
       </Flex>
     </Container>

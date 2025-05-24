@@ -69,10 +69,10 @@ const Inquiry = () => {
         className="items-center"
         justifyContent={"center"}
         py={4}
-
+        
       >
-        <Container maxW="container.xl">
-          <Box mx="auto">
+        <Container maxW="container.xl" border="1px solid #808080" p={4}>
+          <Box mx="auto" >
             {/* Header */}
             <VStack
             py={2}
