@@ -14,11 +14,21 @@ const LegalBooks = () => {
   }, [dispatch]);
 
   if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
-  if (error) return <Text textAlign="center" fontSize="2xl" color="red.500">{error}</Text>;
-  if (books.length === 0) return <Text textAlign="center" fontSize="2xl">No books available</Text>;
+  if (error)
+    return (
+      <Text textAlign="center" fontSize="2xl" color="red.500">
+        {error}
+      </Text>
+    );
+  if (books.length === 0)
+    return (
+      <Text textAlign="center" fontSize="2xl">
+        No books available
+      </Text>
+    );
   return (
     <>
-      <div className="bg-[#F267271A] min-h-screen p-8">
+      <div className="bg-[#F267271A] min-h-screen p-2">
         <Container maxW="container.xl" py={2}>
           <div>
             <ComponentHeader
@@ -28,11 +38,11 @@ const LegalBooks = () => {
               to="/books"
             />
 
-             <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
-                          {books.slice(0,3).map((book) => (
-                            <BookCard {...book} />
-                          ))}
-                        </SimpleGrid>
+            <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
+              {books.slice(0, 3).map((book) => (
+                <BookCard {...book} />
+              ))}
+            </SimpleGrid>
           </div>
 
           <div className="mt-16 flex justify-end">

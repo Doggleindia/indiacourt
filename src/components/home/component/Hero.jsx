@@ -30,7 +30,7 @@ const Hero = () => {
         height="container.sm"
         display="flex"
         alignItems="center"
-        top={28}
+        top={{base:12, md:28}}
       >
         <Container maxW="container.xl" position="relative" zIndex="1">
           <Stack spacing={8} justify="space-between" align="center" direction={{ base: "column", md: "row" }}>

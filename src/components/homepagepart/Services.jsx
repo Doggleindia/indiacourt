@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import higher from './higher.png';
 import lower from './lower.png';
 import { FaPenFancy, FaLandmark, FaUsers } from "react-icons/fa6";
+import { FaQuestionCircle } from 'react-icons/fa'; 
+
 
 const Services = () => {
   return (
@@ -78,7 +80,7 @@ const Services = () => {
           {/* Card 4 */}
           <div className="w-full sm:w-[300px] bg-white shadow-lg rounded-md p-6">
             <div className="text-[#C08729] text-3xl mb-4">
-              <FaPenFancy />
+              <FaQuestionCircle />
             </div>
             <h2 className="text-lg font-semibold mb-2">Advice</h2>
             <p className="text-sm text-gray-600 mb-4">

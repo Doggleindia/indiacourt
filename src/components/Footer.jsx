@@ -68,8 +68,9 @@ const Footer = () => {
             <address className="not-italic space-y-2 max-sm:text-left">
               <p>Faridabad 
               </p>
-              <p>+9199927 82657</p>
-              <p>Support@indiacourt.com</p>
+              <p>+91 129-4030864</p>
+              <p>Indiacourt1947@gmail.com</p>
+              <p>Shivloklegalindiapvtltd@gmail.com</p>
               
             </address>
           </div>

@@ -37,7 +37,7 @@ const ComponentHeader = ({ headtitle, title, description, to }) => {
               {headtitle}
             </Text>
           </HStack>
-          <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="bold">
+          <Text fontSize={{ base: "27px", md: "4xl" }} fontWeight="bold" whiteSpace="nowrap">
             {title}
           </Text>
           {/* Description */}
@@ -57,7 +57,7 @@ const ComponentHeader = ({ headtitle, title, description, to }) => {
             fontSize={{ base: "sm", md: "md" }}
             _hover={{ color: "#C08729" }}
           >
-            <Text>See more</Text>
+            <Text whiteSpace="nowrap">See more</Text>
             <FaArrowRight />
           </HStack>
         </Link>
