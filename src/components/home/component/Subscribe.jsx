@@ -67,6 +67,7 @@ const Subscribe = () => {
       py={4}
       backgroundColor="#003315"
       position="relative"
+      px={4}
     >
       <Container maxW="container.xl">
         <Box mx="auto" py={4} position="relative">
@@ -154,8 +155,8 @@ const Subscribe = () => {
               onChange={(e) => setEmail(e.target.value)} 
             />
             <Button
-              backgroundColor={"transparent"}
-              color={"#ffff"}
+              backgroundColor={"#056B38"}
+              color={"white"}
               borderLeft={"1px solid #003315"}
               border="2px solid #C08729"
               onClick={handleSubmit}

@@ -24,7 +24,7 @@ const Counter = () => {
             <Swiper
               modules={[Navigation]}
               spaceBetween={20} // Increased space between cards
-              slidesPerView={1}
+              slidesPerView={2}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 }, // More spacing for mobile
                 480: { slidesPerView: 2, spaceBetween: 15 },

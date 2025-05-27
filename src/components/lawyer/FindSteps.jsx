@@ -14,7 +14,7 @@ const FindSteps = ({steps,lastimpression ,title,desc}) => {
                 >    
                 <VStack gap={'0'}>     
                 <HStack  spacing={2}>
-                  <Text color="#07070B" fontSize={{base:'3xl',md:"3xl"}} >
+                  <Text color="#07070B" fontWeight={"bold"} fontSize={{base:'3xl',md:"3xl"}} >
                  {title}
                   </Text>
                   <HStack>

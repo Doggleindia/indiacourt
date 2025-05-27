@@ -22,7 +22,7 @@ const Joinus = () => {
         position="relative"
       >
         <Container maxW="container.xl">
-          <Box mx="auto" py={4} position="relative">
+          <Box mx="auto" py={4} px={4} position="relative">
             {/* Header */}
             <HStack justify="center" spacing={3}>
               <HStack>
@@ -87,7 +87,7 @@ const Joinus = () => {
             <Box
               position="absolute"
               bottom={{ base: "-2px", md: "-3px" }}
-              left={{ base: "10px", md: "-60px" }}
+              left={{ base: "50px", md: "-60px" }}
               transform={{ base: "translateX(-50%)", md: "none" }}
               width={{ base:'100px', sm: "120px", md: "200px" }}
             >

@@ -27,15 +27,15 @@ const HelpLine = () => {
         <div className="mb-10">
           <div className="flex items-center mb-2">
             <div
-              className="w-3 h-3 bg-[#C08729] transform rotate-90"
+              className="w-3 h-3 bg-[black] transform rotate-90"
               style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
             ></div>
-            <div className="h-[2px] bg-[#C08729] w-20 mx-2"></div>
-            <p className="text-[#C08729] font-medium">HelpLine</p>
+            <div className="h-[2px] bg-[black] w-20 mx-2"></div>
+            <p className="text-[black] font-medium">HelpLine</p>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="text-3xl font-bold uppercase">Helpline Numbers</h2>
+              <h2 className="text-4xl font-superclarendon font-bold ">Helpline Numbers</h2>
               <p className="text-sm mt-1 text-gray-200">
                 Sidestep the lawyers with do-it-yourself books
               </p>

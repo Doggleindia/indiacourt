@@ -35,12 +35,12 @@ const Hero = () => {
         <Container maxW="container.xl" position="relative" zIndex="1">
           <Stack spacing={8} justify="space-between" align="center" direction={{ base: "column", md: "row" }}>
             <VStack spacing={4} align={{ base: "center", md: "start" }} maxW="lg">
-              <Heading as="h1" fontSize={{ base: "2xl", md: "4xl" }} fontWeight="medium" color="#07070B">
+              <Heading as="h1" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="medium" color="#07070B">
                 Empowering You with Legal Knowledge
               </Heading>
 
               <VStack align={{ base: "center", md: "start" }} width="100%">
-                <Text fontSize="sm" fontWeight="medium" my={2}>
+                <Text fontSize="lg" fontWeight="medium" my={2}>
                   What do you want to learn today?
                 </Text>
                 <Box bg="white" p={4} borderRadius="md" boxShadow="lg" width={{ base: "100%", md: "350px" }}>

@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text, VStack, Button } from "@chakra-ui/react";
 import React from "react";
 
 
@@ -41,7 +41,7 @@ const StepsCard = ({steps,lastimpression}) => {
 
           {/* Text Content */}
           <VStack spacing={3} mt={6}>
-            <Text fontSize="lg" fontWeight="bold">
+            <Text fontSize="lg" >
               {step.title}
             </Text>
             <Text fontSize="sm" color="gray.600">
@@ -55,6 +55,16 @@ const StepsCard = ({steps,lastimpression}) => {
     <Text margin={'auto'} display={'flex'} justifyContent={'center'} fontSize={'md'} py={2} fontWeight={'medium'}>
    {lastimpression}
     </Text>
+     <Box display="flex" justifyContent="center" mt={4}>
+  <Button
+    backgroundColor="#056B38"
+    size="md"
+    color="#ffff"
+  >
+    Download our app
+  </Button>
+</Box>
+
     </>
   );
 };

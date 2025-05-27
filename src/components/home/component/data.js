@@ -60,7 +60,7 @@ to:'/books'
   variant: 'info',
   to:'/find-lawyer'
 }, {
-  title: 'Forms',
+  title: 'Resources',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',

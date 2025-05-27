@@ -31,7 +31,7 @@ export default function BookCard({ image, version, title, description, _id }) {
         </Link>
       </Box>
       <Box w="full">
-        <Text className="text-base text-[#07070B]">{title}</Text>
+        <Text className="text-base text-[#07070B]" fontWeight="bold" fontSize="1.2rem">{title}</Text>
         <Text className="text-base text-[#07070B]">{version}</Text>
         <Text className="text-xs text-[#07070B]">{description}</Text>
       </Box>

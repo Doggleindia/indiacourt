@@ -5,8 +5,6 @@ import React, { useState } from "react";
 const Inquiry = () => {
 
 
-
-
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -71,8 +69,8 @@ const Inquiry = () => {
         py={4}
         
       >
-        <Container maxW="container.xl" border="1px solid #808080" p={4}>
-          <Box mx="auto" >
+        <Container maxW="5xl"  border={{ base: "none", md: "1px solid #808080" }} p={4}>
+          <Box mx={{base:4, md:32}} >
             {/* Header */}
             <VStack
             py={2}
@@ -160,10 +158,10 @@ const Inquiry = () => {
 
             {/* Button */}
             <Button 
-              backgroundColor="transparent" 
+              backgroundColor="#056B38" 
               border="1px solid #000000" 
               size="md" 
-              color="#000000" 
+              color="white" 
               mt={4} 
               px={6} 
               _hover={{ bg: "#C08729", color: "#fff", borderColor: "#C08729" }}

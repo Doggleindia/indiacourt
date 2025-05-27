@@ -7,7 +7,7 @@ import { Image, Text } from "@chakra-ui/react";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#000000] px-[10vw]  pb-[10vh]" style={{color: "rgb(191 152 116)"}}>
+      <footer className="bg-[#000000] px-[10vw]  pb-[10vh]" style={{color: "white"}}>
         <>
           <Image src='https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740381649933_footerIcon.svg' mx="auto" />
           <Text className="text-base text-center my-8 ">
@@ -16,9 +16,9 @@ const Footer = () => {
           <Image src={Line} mx="auto" mb={8} />
         </>
 
-        <div className="container justify-center mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-[1vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-6">
-          <div className="max-sm:w-full max-sm:text-left">
-            <h3 className="text-lg font-semibold mb-4">Pages</h3>
+        <div className="container justify-center mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-[5vw] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:space-y-6">
+          <div className="max-sm:w-full  max-sm:text-left">
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
               <Link to="/find-lawyer">
                 <li>Find A Lawyer</li>
@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Information Section */}
           <div className="max-sm:w-full max-sm:text-left">
-            <h3 className="text-lg font-semibold mb-4">pages</h3>
+            <h3 className="text-lg font-semibold mb-4">Pages</h3>
             <ul className="space-y-2 list-disc pl-[2vw] max-sm:pl-0 max-sm:list-none">
               {/* <li>Brand Story</li> */}
               <Link to={"/"}>

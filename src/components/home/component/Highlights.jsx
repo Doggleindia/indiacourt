@@ -55,7 +55,7 @@ const Highlights = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <Box py={4}>
+    <Box py={{base:4, md:8}}>
       <Container maxW="container.xl" py={2}>
         <ComponentHeader
           headtitle="Highlights"

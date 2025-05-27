@@ -66,7 +66,7 @@ const ChatScreen = () => {
   });
 
   return (
-    <div className="flex flex-col h-screen bg-white pt-[80px]">
+    <div className="flex flex-col h-screen bg-white pt-[110px]">
       {/* Chat Header */}
       <div className="flex items-center justify-center py-6 border-b border-gray-300">
         <div className="flex items-center">

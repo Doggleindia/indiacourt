@@ -28,7 +28,9 @@ const LegalTopicDetails = () => {
   useEffect(() => {
     const fetchTopic = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_MAIN_BACKEND}/legal-topics/${id}`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_MAIN_BACKEND}/legal-topics/${id}`
+        );
         setTopic(response.data.topic); // Set fetched topic data
       } catch (err) {
         setError("Failed to fetch topic data.");
@@ -40,10 +42,20 @@ const LegalTopicDetails = () => {
     fetchTopic();
   }, [id]);
 
-  if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
-  if (error) return <Text textAlign="center" fontSize="2xl" color="red.500">{error}</Text>;
-  if (!topic) return <Text textAlign="center" fontSize="2xl">No topic found.</Text>;
-console.log(topic,"checkdata")
+  if (loading) return <Spinner size="xl" mt={20} color="blue.500" />;
+  if (error)
+    return (
+      <Text textAlign="center" fontSize="2xl" color="red.500">
+        {error}
+      </Text>
+    );
+  if (!topic)
+    return (
+      <Text textAlign="center" fontSize="2xl">
+        No topic found.
+      </Text>
+    );
+  console.log(topic, "checkdata");
   return (
     <Box>
       <Container maxW="8xl" pb={10}>
@@ -54,44 +66,54 @@ console.log(topic,"checkdata")
             align="center"
             _hover={{ color: "#C08729" }}
             onClick={() => navigate(-1)}
+            mt={10}
           >
             <FaArrowLeftLong />
             <Text className="text-xl font-bold">BACK</Text>
           </Flex>
         </Box>
 
-        <HStack mt={6} alignItems="start" justify='center' flexWrap={{ base:'wrap' , lg:'nowrap' }}>
-          <Box w={'80%'}>
+        <HStack
+          mt={12}
+          alignItems="start"
+          justify="center"
+          flexWrap={{ base: "wrap", lg: "nowrap" }}
+        >
+          <Box w={{ base: "100%", md: "80%" }}>
             <HStack
               align="start"
               gap={4}
               flexDirection={{ base: "column", md: "row" }}
             >
-
-              <Box minW="250px">
+              <Box minW={{ base: "300px", md: "250px" }}>
                 <BookCard image={JudgeHammer} />
-
-              
               </Box>
-              <VStack align="start" gap={5}>
+              <VStack
+                align={{ base: "center", md: "start" }}
+                textAlign={{ base: "center", md: "left" }}
+                gap={5}
+              >
                 <Box>
                   <Text className="text-lg text-[#07070B]">Legal topic</Text>
                   <Text className="text-6xl text-[#07070B]">{topic.title}</Text>
                 </Box>
 
-                <Text className="text-[#3A3A38] text-lg">{topic.description}</Text>
+                <Text className="text-[#3A3A38] text-lg">
+                  {topic.description}
+                </Text>
               </VStack>
             </HStack>
           </Box>
 
-
-          <VStack gap={5} align="start" justify='center' maxW={{ base:'100%' , lg:'20%' }}>
+          <VStack
+            gap={5}
+            align="start"
+            justify="center"
+            maxW={{ base: "100%", lg: "20%" }}
+          >
             <Text className="text-2xl text-[#3F4242] mx-auto">Quotes</Text>
             <Box className="border px-3 py-3 w-full">
-              <Text className="text-xl text-[#001025]">
-              {topic.quotes}
-
-              </Text>
+              <Text className="text-xl text-[#C08729]">{topic.quotes}</Text>
             </Box>
 
             <Image src={LegalBook} alignSelf="center" />
@@ -126,7 +148,7 @@ console.log(topic,"checkdata")
                   justify="space-between"
                   fontWeight="bold"
                   color="#C08729"
-                  flexWrap='wrap'
+                  flexWrap="wrap"
                   gap={2}
                   align="center"
                 >

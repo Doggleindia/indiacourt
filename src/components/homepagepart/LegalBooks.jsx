@@ -33,7 +33,7 @@ const LegalBooks = () => {
           <div>
             <ComponentHeader
               headtitle={"Reference"}
-              title={"Explore Legal Books"}
+              title={"Explore legal metarials for education "}
               description={"Sidestep the lawyers with do-it-yourself books"}
               to="/books"
             />

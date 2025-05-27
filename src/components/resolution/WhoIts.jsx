@@ -1,4 +1,4 @@
-import { Box, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, SimpleGrid, Text, VStack , Button} from "@chakra-ui/react";
 import React from "react";
 import { FaBusinessTime, FaFileMedicalAlt, FaUser, FaUserCog } from "react-icons/fa";
 
@@ -102,6 +102,16 @@ const WhoIts = () => {
       >
         Take the first step toward resolving your dispute by filling out the form. Our experts will review your case and provide personalized guidance to help you achieve the best possible outcome.
       </Text>
+
+      <Box display="flex" justifyContent="center" mt={4}>
+        <Button
+          backgroundColor="#056B38"
+          size="md"
+          color="#ffff"
+        >
+          Download our app
+        </Button>
+      </Box>
     </>
   );
 };

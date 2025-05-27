@@ -27,7 +27,7 @@ const Services = () => {
             <div className="h-[2px] bg-[#C08729] w-20 mx-2"></div>
             <p className="text-[#C08729] font-medium">Features</p>
           </div>
-          <h1 className="text-3xl font-bold">Our Services</h1>
+          <h1 className="text-4xl font-bold font-superclarendon" >Our Services</h1>
           <p className="text-gray-700 mt-2">
             Download our app to get the best legal service
           </p>
@@ -42,7 +42,7 @@ const Services = () => {
             </div>
             <h2 className="text-lg font-semibold mb-2">Find your Lawyer</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat...
+              Connect with trusted legal experts near you in seconds.
             </p>
             <Link to="/find-lawyer" className="text-black text-sm font-semibold hover:text-[#C08729]">
               READ MORE →
@@ -56,7 +56,7 @@ const Services = () => {
             </div>
             <h2 className="text-lg font-semibold mb-2">Validate your legal documents</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Pretium purus feugiat volutpat pellentesque. Potenti porta mauris nec...
+              Instant document verification—secure, reliable, court-compliant.
             </p>
             <Link to="/validate" className="text-black text-sm font-semibold hover:text-[#C08729]">
               READ MORE →
@@ -70,7 +70,7 @@ const Services = () => {
             </div>
             <h2 className="text-lg font-semibold mb-2">Dispute Resolution Tool</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Potenti porta mauris nec vulputate. Massa sagittis lectus ut...
+              Resolve legal conflicts faster with guided online solutions.
             </p>
             <Link to="/resolution" className="text-black text-sm font-semibold hover:text-[#C08729]">
               READ MORE →
@@ -84,7 +84,7 @@ const Services = () => {
             </div>
             <h2 className="text-lg font-semibold mb-2">Advice</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Potenti porta mauris nec vulputate. Massa sagittis lectus ut...
+              Get expert answers to your legal questions anytime.
             </p>
             <Link to="/contact-us" className="text-black text-sm font-semibold hover:text-[#C08729]">
               READ MORE →
