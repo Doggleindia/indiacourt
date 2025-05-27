@@ -29,6 +29,7 @@ const Serachbutton = ({
           border="2px solid #056B38"
           _hover={{ color: "#000000" }}
           onClick={() => onButtonPress(text)}
+          mt={{base:4, md:0}}
         >
           {label}
         </Button>

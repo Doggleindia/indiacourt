@@ -36,6 +36,7 @@ const Header = ({ headtitle, title, description }) => {
             fontSize={{ base: "sm", xl: "md" }}
             textAlign={{ base: "left" }}
             color="gray.700"
+            
           >
             {description}
           </Text>

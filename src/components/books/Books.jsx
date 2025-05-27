@@ -82,7 +82,7 @@ export default function Books() {
           description="Sidestep the lawyers with do-it-yourself books"
           headtitle="Books"
         />
-        <Serachbutton bordercolor="#C08729" label="Search" placeholder="Search for a book..." onButtonPress={onSearch}/>
+        <Serachbutton bordercolor="#C08729"  label="Search" placeholder="Search for a book..." onButtonPress={onSearch}/>
 
       {books.length === 0 ? 
         <Text textAlign="center" fontSize="2xl">No books available</Text> :
@@ -100,7 +100,7 @@ export default function Books() {
             </Box>
 
             <Box>
-              <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
+              <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={12}>
                 {books.map((book) => (
                   <BookCard {...book} />
                 ))}

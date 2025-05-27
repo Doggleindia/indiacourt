@@ -33,6 +33,7 @@ const ComponentHeader = ({ headtitle, title, description, to }) => {
               fontSize={{ base: "sm", md: "sm" }}
               color="#C08729"
               fontWeight="bold"
+              ml={2}
             >
               {headtitle}
             </Text>

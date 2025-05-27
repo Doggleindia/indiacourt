@@ -9,6 +9,7 @@ import CommonFooter from "../../../CommonFooter";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticleById, fetchRecommendedArticles } from "../../../../redux/features/articlesSlice";
+import Serachbutton from "../../../header/Serachbutton";
 const BlogDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -21,14 +22,14 @@ const BlogDetails = () => {
   return (
     <>
       <Box pb={4} pt={{ base: "5rem", xl: "8rem" }}>
-        <Container maxW="container.xl">
+        <Container maxW="7xl">
           <Header
             title="Articles"
             headtitle="Articles"
             description={article?.title}
           />
 
-          {/* <Serachbutton bordercolor="#C08729" /> */}
+          <Serachbutton bordercolor="#C08729" placeholder="Find Article" label="Search" />
            {/* ✅ Loading & Error Handling */}
           {loading ? (
             <Spinner size="xl" mt={10} color="blue.500" />
@@ -51,7 +52,7 @@ const BlogDetails = () => {
               align={"center"}
               flexDirection={{ base: "column", md: "row" }}
             >
-              <VStack flex="1" align={"start"} spacing={4}>
+              <VStack flex="6" align={"start"} spacing={4}>
                 <Text fontSize={"4xl"} fontWeight={"bold"}>
                   {article?.title}
                 </Text>
@@ -59,7 +60,7 @@ const BlogDetails = () => {
                  {article?.content}
                 </Text>
               </VStack>
-              <Box flex="1" width="100%" minH="400px">
+              <Box flex="4" width="100%" minH="400px">
                 <Text fontSize={"4xl"} fontWeight={"bold"}>
                   Recommendation Articles
                 </Text>

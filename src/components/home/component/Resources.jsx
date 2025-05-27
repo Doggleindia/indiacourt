@@ -9,71 +9,90 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import ComponentHeader from "./header/ComponentHeader";
-import resources from "../../../assets/home/resources.png";
-import { resourcesData } from "./data";
+import r1 from "../../../assets/home/r1.png";
+import r2 from "../../../assets/home/r2.png";
+import r3 from "../../../assets/home/r3.png";
 import { FaArrowRightLong } from "react-icons/fa6";
+
+// Updated: include unique image per resource
+const filteredResources = [
+  {
+    title: 'Simple money bond',
+    desc: 'Download legally formatted money bond agreements for lending or borrowing easy, court-compliant, and ready to use.',
+    image: r1,
+  },
+  {
+    title: 'Company law bond',
+    desc: 'Access standard bond formats under company law for internal agreements, guarantees, and statutory compliance.',
+    image: r2,
+  },
+  {
+    title: 'Partnership law bond',
+    desc: 'Get partnership bond templates covering profit-sharing, responsibilities, and legal commitments between partners.',
+    image: r3,
+  },
+];
+
 const Resources = () => {
   return (
-    <>
-      <Box py={4}>
-        <Container maxW="container.xl" py={2}>
+    <Box py={8}>
+      <Container maxW="container.xl">
+        <HStack justify="space-between" align="center" mb={8}>
           <ComponentHeader
-            title="Resources"
-            headtitle="Forms & Agreements"
-            description="Problems trying to resolve the conflict between 
-the two major realms of Classical physics: Newtonian mechanics "
-            to="resources"
+            title="Easy-To-Use Legal Templates"
+            headtitle="Resources"
+            description="Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics"
+            to="/resources"
           />
-          <SimpleGrid columns={{ base: 1, sm: 2, xl: 4 }} spacing={6}>
-            {resourcesData.map((item, idx) => {
-              return (
-                <>
-                  <Box
-                    key={idx}
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    p={4}
-                  >
-                    <VStack align="start" spacing={1} ml={4}>
-                      <Box
-                        border="1px solid #F0E5D4"
-                        borderRadius="lg"
-                        overflow="hidden"
-                        p={6}
-                        margin={"auto"}
-                      >
-                        <Image
-                          src={resources}
-                          alt={item.title}
-                          boxSize={{ base: "330px", md: "250px" }}
-                        />
-                      </Box>
-                      <Text fontSize="lg" color={"#3A3A38"} fontWeight="medium">
-                        {item.title}
-                      </Text>
-                      <Text fontSize="sm" color={"#3A3A38"} fontWeight="sm">
-                        {item.desc}
-                      </Text>
-                      <HStack
-                        as={"button"}
-                        _hover={{ color: "#C08729" }}
-                        cursor="pointer"
-                      >
-                        <Text fontSize="sm" fontWeight="semibold">
-                          View
-                        </Text>
-                        <FaArrowRightLong />
-                      </HStack>
-                    </VStack>
-                  </Box>
-                </>
-              );
-            })}
-          </SimpleGrid>
-        </Container>
-      </Box>
-    </>
+        </HStack>
+
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+          {filteredResources.map((item, idx) => (
+            <VStack key={idx} align="start" spacing={4}>
+              <Box
+                w="100%"
+                bg="#F0E5D4"
+                borderRadius="md"
+                overflow="hidden"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                p={6}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  objectFit="contain"
+                  maxH="300px"
+                />
+              </Box>
+
+              <Text fontSize="2xl" fontWeight="bold" color="#2E2E2E">
+                {item.title}
+              </Text>
+              <Text fontSize="sm" color="#3A3A38">
+                {item.desc}
+              </Text>
+
+              {/* View link fixed with spacing and consistent alignment */}
+              <Box pt={2}>
+                <HStack
+                  as="button"
+                  spacing={2}
+                  _hover={{ color: "#C08729" }}
+                  cursor="pointer"
+                >
+                  <Text fontSize="sm" fontWeight="semibold">
+                    View
+                  </Text>
+                  <FaArrowRightLong />
+                </HStack>
+              </Box>
+            </VStack>
+          ))}
+        </SimpleGrid>
+      </Container>
+    </Box>
   );
 };
 

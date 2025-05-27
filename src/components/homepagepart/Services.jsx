@@ -37,7 +37,7 @@ const Services = () => {
         <div className="flex flex-wrap justify-center gap-6">
           {/* Card 1 */}
           <div className="w-full sm:w-[300px] bg-white shadow-lg rounded-md p-6">
-            <div className="text-[#C08729] text-3xl mb-4">
+            <div className="text-[#F26727] text-3xl mb-4">
               <FaLandmark />
             </div>
             <h2 className="text-lg font-semibold mb-2">Find your Lawyer</h2>
@@ -51,7 +51,7 @@ const Services = () => {
 
           {/* Card 2 */}
           <div className="w-full sm:w-[300px] bg-white shadow-lg rounded-md p-6">
-            <div className="text-[#C08729] text-3xl mb-4">
+            <div className="text-[#F26727] text-3xl mb-4">
               <FaUsers />
             </div>
             <h2 className="text-lg font-semibold mb-2">Validate your legal documents</h2>
@@ -65,7 +65,7 @@ const Services = () => {
 
           {/* Card 3 */}
           <div className="w-full sm:w-[300px] bg-white shadow-lg rounded-md p-6">
-            <div className="text-[#C08729] text-3xl mb-4">
+            <div className="text-[#F26727] text-3xl mb-4">
               <FaPenFancy />
             </div>
             <h2 className="text-lg font-semibold mb-2">Dispute Resolution Tool</h2>
@@ -79,7 +79,7 @@ const Services = () => {
 
           {/* Card 4 */}
           <div className="w-full sm:w-[300px] bg-white shadow-lg rounded-md p-6">
-            <div className="text-[#C08729] text-3xl mb-4">
+            <div className="text-[#F26727] text-3xl mb-4">
               <FaQuestionCircle />
             </div>
             <h2 className="text-lg font-semibold mb-2">Advice</h2>

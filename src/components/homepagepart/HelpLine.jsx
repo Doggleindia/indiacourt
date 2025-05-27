@@ -37,7 +37,7 @@ const HelpLine = () => {
             <div>
               <h2 className="text-4xl font-superclarendon font-bold ">Helpline Numbers</h2>
               <p className="text-sm mt-1 text-gray-200">
-                Sidestep the lawyers with do-it-yourself books
+                Need help? Call the appropriate helpline for fast, reliable legal support.
               </p>
             </div>
             <Link

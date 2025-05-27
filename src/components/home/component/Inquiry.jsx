@@ -108,7 +108,7 @@ const Inquiry = () => {
             <HStack width="100%" spacing={4} flexDirection={{ base: "column", md: "row" }}>
               <Input 
                 name="fullName" 
-                placeholder="Enter your name" 
+                placeholder="Full Name" 
                 border="none" 
                 borderBottom="2px solid #C08729" 
                 _focus={{ boxShadow: "none", borderBottom: "2px solid #C08729" }} 
@@ -119,7 +119,7 @@ const Inquiry = () => {
               />
               <Input 
                 name="email" 
-                placeholder="Enter your email" 
+                placeholder="Email" 
                 border="none" 
                 borderBottom="2px solid #C08729" 
                 _focus={{ boxShadow: "none", borderBottom: "2px solid #C08729" }} 
@@ -133,7 +133,7 @@ const Inquiry = () => {
             {/* Second Row - Full Width Inputs */}
             <Input 
               name="phone" 
-              placeholder="Enter your phone number" 
+              placeholder="Phone" 
               border="none" 
               borderBottom="2px solid #C08729" 
               _focus={{ boxShadow: "none", borderBottom: "2px solid #C08729" }} 
@@ -145,7 +145,7 @@ const Inquiry = () => {
             />
             <Input 
               name="message" 
-              placeholder="Enter your message" 
+              placeholder="Message" 
               border="none" 
               borderBottom="2px solid #C08729" 
               _focus={{ boxShadow: "none", borderBottom: "2px solid #C08729" }} 

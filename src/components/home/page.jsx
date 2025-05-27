@@ -11,6 +11,7 @@ import HelpLine from "../homepagepart/HelpLine";
 import Findalawyer from "./component/Findalawyer";
 import Faq from "./component/Faq";
 import Blog from "./component/blog/Blog";
+import Resources from "./component/Resources";
 import Joinus from "./component/Joinus";
 import Advertisment from "./component/Advertisement";
 import Inquiry from "./component/Inquiry";
@@ -34,7 +35,7 @@ const page = () => {
       <Connect />
       <Services />
       <HelpLine />
-      {/* <Resources /> */}
+      <Resources />
       <Findalawyer />
       <Blog />
       <Faq />

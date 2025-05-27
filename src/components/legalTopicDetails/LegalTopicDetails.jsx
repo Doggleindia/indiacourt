@@ -84,6 +84,7 @@ const LegalTopicDetails = () => {
               align="start"
               gap={4}
               flexDirection={{ base: "column", md: "row" }}
+              mx={12}
             >
               <Box minW={{ base: "300px", md: "250px" }}>
                 <BookCard image={JudgeHammer} />
@@ -112,8 +113,10 @@ const LegalTopicDetails = () => {
             maxW={{ base: "100%", lg: "20%" }}
           >
             <Text className="text-2xl text-[#3F4242] mx-auto">Quotes</Text>
-            <Box className="border px-3 py-3 w-full">
-              <Text className="text-xl text-[#C08729]">{topic.quotes}</Text>
+            <Box border="1px solid black" px={3} py={3} w="full">
+              <Text fontSize="xl" color="#C08729">
+                {topic.quotes}
+              </Text>
             </Box>
 
             <Image src={LegalBook} alignSelf="center" />

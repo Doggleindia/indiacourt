@@ -1,10 +1,11 @@
 import { FaBook, FaHome, FaPhoneAlt } from 'react-icons/fa';
-import legalcourt from '../../../assets/icons/leagal.svg';
 import resources from '../../../assets/home/resources.png'
 import { RiBookShelfLine, RiUserSettingsLine } from 'react-icons/ri';
 import { BiSearchAlt } from 'react-icons/bi';
 import { GiOpenBook } from 'react-icons/gi';
 import { TbGavel } from 'react-icons/tb';
+import { HiOutlineDocumentText } from 'react-icons/hi'; // Add this import
+
 export const counterData = [{
   title: 'Legal Topics',
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
@@ -73,8 +74,7 @@ to:'/books'
   desc: 'Varius quisque odio mauris lectus consequat sed. Pretium purus feugiat volut.',
   count: 6,
   suffix: 'K+',
-  icon: legalcourt,
-  isImage: true,
+  icon: HiOutlineDocumentText,
   variant: 'info',
   to:'/articles'
 },

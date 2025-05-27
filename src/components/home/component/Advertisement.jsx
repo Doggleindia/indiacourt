@@ -2,7 +2,7 @@ import { Box, Container, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import android from '../../../assets/icons/android.png';
 import googleplay from '../../../assets/icons/googleplay.png';
-import phone from '../../../assets/home/phone1.png';
+import phone from '../../../assets/home/phone2.png';
 
 const Advertisment = () => {
   return (
