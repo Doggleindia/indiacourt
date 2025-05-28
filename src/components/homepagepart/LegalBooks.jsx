@@ -13,6 +13,22 @@ const LegalBooks = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
+  // List of titles to show
+  const selectedTitles = [
+    "Bhartiya Nagrik Suraksha Sanhita, 2023 (Act No. 46 of 2023)",
+    "Bhartiya Nyay Sanhita, 2023 (Act No. 45 of 2023)",
+    "Kanun Bhartiya - India Court",
+  ];
+
+  // Filter books by title
+  const filteredBooks = books.filter((book) =>
+    selectedTitles.includes(book.title)
+  );
+
+  const sortedBooks = filteredBooks.sort(
+    (a, b) => selectedTitles.indexOf(a.title) - selectedTitles.indexOf(b.title)
+  );
+
   if (loading) return <Spinner size="xl" mt={10} color="blue.500" />;
   if (error)
     return (
@@ -20,12 +36,13 @@ const LegalBooks = () => {
         {error}
       </Text>
     );
-  if (books.length === 0)
+  if (sortedBooks.length === 0)
     return (
       <Text textAlign="center" fontSize="2xl">
         No books available
       </Text>
     );
+
   return (
     <>
       <div className="bg-[#F267271A] min-h-screen p-2">
@@ -33,14 +50,14 @@ const LegalBooks = () => {
           <div>
             <ComponentHeader
               headtitle={"Reference"}
-              title={"Explore legal metarials for education "}
+              title={"Explore legal materials for education "}
               description={"Sidestep the lawyers with do-it-yourself books"}
               to="/books"
             />
 
             <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
-              {books.slice(0, 3).map((book) => (
-                <BookCard {...book} />
+              {sortedBooks.map((book) => (
+                <BookCard key={book._id} {...book} />
               ))}
             </SimpleGrid>
           </div>
