@@ -19,14 +19,14 @@ const Counter = () => {
     <>
       <Box mt="-55px" position="relative">
         <Container maxW="container.xl">
-          <Box position="relative">
+          <Box position="relative" zIndex={1}>
             {/* Swiper Carousel */}
             <Swiper
               modules={[Navigation]}
               spaceBetween={20} // Increased space between cards
               slidesPerView={2}
               breakpoints={{
-                320: { slidesPerView: 1, spaceBetween: 10 }, // More spacing for mobile
+                320: { slidesPerView: 2, spaceBetween: 10 }, // More spacing for mobile
                 480: { slidesPerView: 2, spaceBetween: 15 },
                 768: { slidesPerView: 4, spaceBetween: 20 },
                 1024: { slidesPerView: 6, spaceBetween: 25 },
@@ -46,10 +46,11 @@ const Counter = () => {
                       p={6} // Increased padding for better spacing
                       bg="white"
                       borderRadius="lg"
-                      boxShadow="lg"
+                       boxShadow="2xl" 
                       textAlign="center"
                       minW="140px" // Increased width for better spacing
                       gap={4}
+                      zIndex={100}
                       // Ensures elements inside the box have proper spacing
                     >
                       <VStack align="center" spacing={3}>

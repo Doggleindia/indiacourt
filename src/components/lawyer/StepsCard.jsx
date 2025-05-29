@@ -55,7 +55,7 @@ const StepsCard = ({steps,lastimpression}) => {
     <Text margin={'auto'} display={'flex'} justifyContent={'center'} fontSize={'md'} py={2} fontWeight={'medium'}>
    {lastimpression}
     </Text>
-     <Box display="flex" justifyContent="center" mt={4}>
+     <Box display="flex" justifyContent="center" mt={4} mb={8}>
   <Button
     backgroundColor="#056B38"
     size="md"

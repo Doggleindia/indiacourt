@@ -13,22 +13,24 @@ import r1 from "../../../assets/home/r1.png";
 import r2 from "../../../assets/home/r2.png";
 import r3 from "../../../assets/home/r3.png";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 
 // Updated: include unique image per resource
 const filteredResources = [
   {
-    title: 'Simple money bond',
-    desc: 'Download legally formatted money bond agreements for lending or borrowing easy, court-compliant, and ready to use.',
+    title: "Simple money bond",
+    desc: "Download legally formatted money bond agreements for lending or borrowing easy, court-compliant, and ready to use.",
     image: r1,
   },
   {
-    title: 'Company law bond',
-    desc: 'Access standard bond formats under company law for internal agreements, guarantees, and statutory compliance.',
+    title: "Company law bond",
+    desc: "Access standard bond formats under company law for internal agreements, guarantees, and statutory compliance.",
     image: r2,
   },
   {
-    title: 'Partnership law bond',
-    desc: 'Get partnership bond templates covering profit-sharing, responsibilities, and legal commitments between partners.',
+    title: "Partnership law bond",
+    desc: "Get partnership bond templates covering profit-sharing, responsibilities, and legal commitments between partners.",
     image: r3,
   },
 ];
@@ -82,9 +84,11 @@ const Resources = () => {
                   _hover={{ color: "#C08729" }}
                   cursor="pointer"
                 >
-                  <Text fontSize="sm" fontWeight="semibold">
-                    View
-                  </Text>
+                  <Link to="/resources">
+                    <Text fontSize="sm" fontWeight="semibold">
+                      View
+                    </Text>
+                  </Link>
                   <FaArrowRightLong />
                 </HStack>
               </Box>

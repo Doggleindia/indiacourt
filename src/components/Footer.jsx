@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram,  FaYoutube,  FaTwitter } from "react-icons/fa";
-import Line from "../assets/icons/fullpolygon_line_white.svg";
+import Line from "../assets/icons/fullpolygon_line.png";
 import { Image, Text } from "@chakra-ui/react";
+// import icon from "../assets/icons/icon1.png"
 
 const Footer = () => {
   return (
     <div>
       <footer className="bg-[#000000] px-[10vw]  pb-[10vh]" style={{color: "white"}}>
         <>
+          {/* <Image src={icon} mx="auto" /> */}
           <Image src='https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740381649933_footerIcon.svg' mx="auto" />
           <Text className="text-base text-center my-8 ">
             We are here to create awareness

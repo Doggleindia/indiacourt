@@ -67,6 +67,7 @@ const LegalTopicDetails = () => {
             _hover={{ color: "#C08729" }}
             onClick={() => navigate(-1)}
             mt={10}
+            ml={{ base: 0, md: -8 }}
           >
             <FaArrowLeftLong />
             <Text className="text-xl font-bold">BACK</Text>
@@ -95,11 +96,15 @@ const LegalTopicDetails = () => {
                 gap={5}
               >
                 <Box>
-                  <Text className="text-lg text-[#07070B]">Legal topic</Text>
-                  <Text className="text-6xl text-[#07070B]">{topic.title}</Text>
+                  <Text fontSize="lg" color="#07070B">
+                    Legal topic
+                  </Text>
+                  <Text fontSize="5xl" fontWeight="bold" color="#07070B">
+                    {topic.title}
+                  </Text>
                 </Box>
 
-                <Text className="text-[#3A3A38] text-lg">
+                <Text fontSize="lg" color="#3A3A38">
                   {topic.description}
                 </Text>
               </VStack>

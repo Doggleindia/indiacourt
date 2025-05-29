@@ -21,22 +21,22 @@ const Marquee = ({ scrolled }) => {
     <motion.div
       className="py-4 inline-block whitespace-nowrap"
       animate={{ x: ["100%", "-100%"] }}
-      transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+      transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
     >
       <span
         className={`mx-4 text-${scrolled ? "white" : "black"} font-semibold`}
       >
-        General Legal Advice
+        We are here to create awareness * Simplifying the legal process for every Indian * Available 24/7 *
       </span>
       <span
         className={`mx-4 text-${scrolled ? "white" : "black"} font-semibold`}
       >
-        General Legal Advice
+        We are here to create awareness * Simplifying the legal process for every Indian * Available 24/7 *
       </span>
       <span
         className={`mx-4 text-${scrolled ? "white" : "black"} font-semibold`}
       >
-        General Legal Advice
+        We are here to create awareness * Simplifying the legal process for every Indian * Available 24/7 *
       </span>
     </motion.div>
   );

@@ -51,11 +51,11 @@ const LegalBooks = () => {
             <ComponentHeader
               headtitle={"Reference"}
               title={"Explore legal materials for education "}
-              description={"Sidestep the lawyers with do-it-yourself books"}
+              description={"Study Legal Content At Your Own Pace"}
               to="/books"
             />
 
-            <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5}>
+            <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={12}>
               {sortedBooks.map((book) => (
                 <BookCard key={book._id} {...book} />
               ))}

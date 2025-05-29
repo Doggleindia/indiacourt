@@ -38,7 +38,7 @@ const ComponentHeader = ({ headtitle, title, description, to }) => {
               {headtitle}
             </Text>
           </HStack>
-          <Text fontSize={{ base: "27px", md: "4xl" }} fontWeight="bold" >
+          <Text fontSize={{ base: "28px", md: "4xl" }} fontWeight="bold" whiteSpace={{base:"none", md:"nowrap"}} >
             {title}
           </Text>
           {/* Description */}

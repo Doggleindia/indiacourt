@@ -49,14 +49,6 @@ const Findalawyer = () => {
                     align="center"
                     justify={{ base: "start", md: "start" }}
                   >
-                    <Text fontSize="sm" color="#C08729" fontWeight="bold">
-                      Contact
-                    </Text>
-                    <Box
-                      height="2px"
-                      width="80px"
-                      backgroundColor="#C08729"
-                    ></Box>
                     <Box
                       width="12px"
                       height="12px"
@@ -64,20 +56,30 @@ const Findalawyer = () => {
                       transform="rotate(90deg)"
                       clipPath="polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)"
                     ></Box>
+                    <Box
+                      height="2px"
+                      width="80px"
+                      backgroundColor="#C08729"
+                    ></Box>
+                    <Text fontSize="sm" color="#C08729" fontWeight="bold">
+                      Contact
+                    </Text>
                   </HStack>
 
                   {/* Main Text */}
-                  <Text
-                    fontSize={{ base: "2xl", md: "4xl" }}
-                    color="#fff"
-                    fontWeight="bold"
-                  >
-                    Find a Lawyer
-                  </Text>
-                  <Text fontSize={{ base: "sm", md: "md" }} color="#fff">
-                    Search for and connect with attorneys in your area for
-                    consultations and one-on-one legal help.
-                  </Text>
+                  <Box textAlign={{ base: "center", md: "left" }}>
+                    <Text
+                      fontSize={{ base: "2xl", md: "4xl" }}
+                      color="#fff"
+                      fontWeight="bold"
+                    >
+                      Find a Lawyer
+                    </Text>
+                    <Text fontSize={{ base: "sm", md: "md" }} color="#fff">
+                      Search for and connect with attorneys in your area for
+                      consultations and one-on-one legal help.
+                    </Text>
+                  </Box>
 
                   {/* Button */}
                   <Button

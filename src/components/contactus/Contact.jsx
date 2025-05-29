@@ -84,8 +84,9 @@ const Contact = () => {
               <FormLabel>Full Name</FormLabel>
               <Input
                 placeholder="Enter your full name"
-                borderBottom="2px solid #C08729"
                 borderRadius="none"
+                border={"none"}
+                borderBottom="2px solid #C08729"
                 _focus={{ borderColor: "#C08729" }}
               />
             </FormControl>
@@ -97,6 +98,7 @@ const Contact = () => {
               <Input
                 type="tel"
                 placeholder="Enter your phone number"
+                border={"none"}
                 borderBottom="2px solid #C08729"
                 borderRadius="none"
                 _focus={{ borderColor: "#C08729" }}
@@ -110,6 +112,7 @@ const Contact = () => {
               <Input
                 type="email"
                 placeholder="Enter your email"
+                border={"none"}
                 borderBottom="2px solid #C08729"
                 borderRadius="none"
                 _focus={{ borderColor: "#C08729" }}
@@ -122,6 +125,7 @@ const Contact = () => {
               <FormLabel>Message</FormLabel>
               <Textarea
                 placeholder="Write your message here..."
+                border={"none"}
                 borderBottom="2px solid #C08729"
                 borderRadius="none"
                 _focus={{ borderColor: "#C08729" }}

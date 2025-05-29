@@ -18,7 +18,7 @@ export default function BookCard({ image, version, title, description, _id }) {
             transform="translateX(-50%) translateY(50%)"
             color="#edddb5"
             fontWeight="bold"
-            fontSize="2rem"
+            fontSize="1.3rem"
             textAlign="center"
             bg=""
             // px={1}
