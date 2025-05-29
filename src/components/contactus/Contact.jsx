@@ -142,8 +142,9 @@ const Contact = () => {
             borderRadius="none"
             px={8}
             py={2}
-            bg="white"
-            _hover={{ bg: "#C08729", color: "white", borderColor: "#C08729" }}
+            bg="#056B38"
+            color="white"
+            _hover={{ bg: "#034f28" }}
           >
             Send
           </Button>

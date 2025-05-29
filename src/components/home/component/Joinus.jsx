@@ -73,12 +73,14 @@ const Joinus = () => {
 
             <Link to="/join-as-lawyer">
               <Button
-                backgroundColor="#056B38"
+                
                 size="md"
-                color="#FFFF"
+                bg="#056B38"
+                color="white"
                 mt={4}
                 display="block"
                 mx="auto"
+                _hover={{ bg: "#034f28" }}
               >
                 Read Now
               </Button>
@@ -89,7 +91,7 @@ const Joinus = () => {
               bottom={{ base: "-2px", md: "-3px" }}
               left={{ base: "50px", md: "-60px" }}
               transform={{ base: "translateX(-50%)", md: "none" }}
-              width={{ base:'100px', sm: "120px", md: "200px" }}
+              width={{ base: "100px", sm: "120px", md: "200px" }}
             >
               <Image src={law_book} alt="law book" />
             </Box>

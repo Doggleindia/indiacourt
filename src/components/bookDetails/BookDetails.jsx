@@ -124,7 +124,7 @@ console.log(books,"allDataBooks")
                 variant="solid"
                 bg="#056B38"
                 color="white"
-                _hover={{ bg: "#056000" }}
+                _hover={{ bg: "#034f28" }}
               >
                 <Link to={books?.bookDoc}>
                 READ NOW

@@ -65,7 +65,7 @@ const LegalBooks = () => {
           <div className="mt-16 flex justify-end">
             <div className="flex items-center text-right relative">
               {/* Left Diamond */}
-              <div
+              {/* <div
                 className="w-3 h-3 bg-[#C08729] transform rotate-90 absolute right-8"
                 style={{
                   clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
@@ -76,18 +76,18 @@ const LegalBooks = () => {
                 style={{
                   clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                 }}
-              ></div>
+              ></div> */}
 
               {/* Line */}
-              <div className="h-[2px] bg-[#C08729] w-20"></div>
+              {/* <div className="h-[2px] bg-[#C08729] w-20"></div> */}
 
               {/* Right Diamond */}
-              <div
+              {/* <div
                 className="w-3 h-3 bg-[#C08729] transform rotate-90"
                 style={{
                   clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                 }}
-              ></div>
+              ></div> */}
             </div>
           </div>
         </Container>

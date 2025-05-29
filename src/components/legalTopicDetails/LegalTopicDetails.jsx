@@ -104,7 +104,7 @@ const LegalTopicDetails = () => {
                   </Text>
                 </Box>
 
-                <Text fontSize="lg" color="#3A3A38">
+                <Text fontSize="sm" color="#3A3A38">
                   {topic.description}
                 </Text>
               </VStack>

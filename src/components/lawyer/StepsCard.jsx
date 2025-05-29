@@ -60,6 +60,7 @@ const StepsCard = ({steps,lastimpression}) => {
     backgroundColor="#056B38"
     size="md"
     color="#ffff"
+    _hover={{ bg: "#034f28" }}
   >
     Download our app
   </Button>

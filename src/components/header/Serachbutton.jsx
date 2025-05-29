@@ -27,7 +27,7 @@ const Serachbutton = ({
           rounded={"0"}
           borderLeft={"1px solid #056B38"}
           border="2px solid #056B38"
-          _hover={{ color: "#000000" }}
+          _hover={{ bg: "#034f28" }}
           onClick={() => onButtonPress(text)}
           mt={{base:4, md:0}}
         >

@@ -87,6 +87,7 @@ const Findalawyer = () => {
                     size="md"
                     color="#ffff"
                     mt={4}
+                    _hover={{ bg: "#034f28" }}
                     alignSelf={{ base: "center", md: "flex-start" }}
                   >
                     Download our app

@@ -35,6 +35,7 @@ const BlogCard = ({imgurl,title,desc,Direction,width,to}) => {
                   backgroundColor={"#056B38"}
                   size="md"
                   color={"#ffff"}
+                  _hover={{ bg: "#034f28" }}
                 >
                   Read Now
                 </Button>
