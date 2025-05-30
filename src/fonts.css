@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Superclarendon';
+  src: url('./assets/fonts/Superclarendon.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply globally */
+body {
+  font-family: 'Superclarendon', serif;
+}

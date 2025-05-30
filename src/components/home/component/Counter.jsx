@@ -43,7 +43,7 @@ const Counter = () => {
                       flexDirection="column"
                       justifyContent="center"
                       alignItems="center"
-                      p={6} // Increased padding for better spacing
+                      py={4} // Increased padding for better spacing
                       bg="white"
                       borderRadius="lg"
                        boxShadow="2xl" 
