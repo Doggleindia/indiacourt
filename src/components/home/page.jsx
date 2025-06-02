@@ -24,16 +24,18 @@ import HomeNavbar from "../header/HomeNavbar";
 const page = () => {
   return (
     <>
-    <HomeNavbar/>
+      <HomeNavbar />
       <Hero />
-      <WhatsAppButton/>
+      <WhatsAppButton />
       <Counter />
       <Highlights />
       <Judgements />
       <Bills />
       <LegalBooks />
       <Connect />
-      <Services />
+      <div id="services">
+        <Services />
+      </div>
       <HelpLine />
       <Resources />
       <Findalawyer />

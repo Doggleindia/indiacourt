@@ -21,11 +21,16 @@ const Marquee = () => {
     <motion.div
       className="py-4 inline-block whitespace-nowrap"
       animate={{ x: ["100%", "-100%"] }}
-      transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+      transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
     >
-      <span className="mx-4 text-white font-semibold">We are here to create awareness * Simplifying the legal process for every Indian * Available 24/7 *</span>
-      <span className="mx-4 text-white font-semibold">We are here to create awareness * Simplifying the legal process for every Indian * Available 24/7 *</span>
-      <span className="mx-4 text-white font-semibold">We are here to create awareness * Simplifying the legal process for every Indian * Available 24/7 *</span>
+      <span className="mx-4 text-white font-semibold">
+        We are here to create awareness * Simplifying the legal process for
+        every Indian * Available 24/7 *
+      </span>
+      <span className="mx-4 text-white font-semibold">
+        We are here to create awareness * Simplifying the legal process for
+        every Indian * Available 24/7 *
+      </span>
     </motion.div>
   );
 };
@@ -71,11 +76,11 @@ const NavLinks = () => {
           <Rhombus /> <Text> JOIN OUR LEGAL TEAM </Text>
         </HStack>
       </Link>
-      <Link to="/find-lawyer" className="hover:text-yellow-700">
+      <a href="/#services" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> OUR SERVICES </Text>
         </HStack>
-      </Link>
+      </a>
       <Link to="/dictionary" className="hover:text-yellow-700">
         <HStack>
           <Rhombus /> <Text> DICTIONARY </Text>
@@ -91,7 +96,12 @@ const NavLinks = () => {
           <Text className="w-max">
             <Select
               size="sm"
-              style={{ border: 0, outline: "none", background: "transparent" }}
+              border="1px solid #C08729"
+              bg="transparent"
+              focusBorderColor="transparent"
+              _hover={{ borderColor: "#C08729", color: "yellow.700" }}
+              _focus={{ borderColor: "#C08729", boxShadow: "none" }}
+              color="white"
               onChange={(e) => {
                 const lang = e.target.value;
                 const googleDropdown = document.querySelector(".goog-te-combo");
@@ -103,25 +113,63 @@ const NavLinks = () => {
                 }
               }}
             >
-              <option value="en">English</option>
-              <option value="hi">हिंदी (Hindi)</option>
-              <option value="bn">বাংলা (Bengali)</option>
-              <option value="ta">தமிழ் (Tamil)</option>
-              <option value="te">తెలుగు (Telugu)</option>
-              <option value="mr">मराठी (Marathi)</option>
-              <option value="gu">ગુજરાતી (Gujarati)</option>
-              <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-              <option value="ml">മലയാളം (Malayalam)</option>
-              <option value="kn">ಕನ್ನಡ (Kannada)</option>
-              <option value="or">ଓଡ଼ିଆ (Odia)</option>
-              <option value="as">অসমীয়া (Assamese)</option>
-              <option value="ur">اردو (Urdu)</option>
-              <option value="sd">سنڌي (Sindhi)</option>
-              <option value="ks">کٲشُر (Kashmiri)</option>
-              <option value="ne">नेपाली (Nepali)</option>
-              <option value="sa">संस्कृतम् (Sanskrit)</option>
-              <option value="mai">मैथिली (Maithili)</option>
-              <option value="mni">মৈতৈলোন (Manipuri)</option>
+              <option style={{ color: "black" }} value="en">
+                English
+              </option>
+              <option style={{ color: "black" }} value="hi">
+                हिंदी (Hindi)
+              </option>
+              <option style={{ color: "black" }} value="bn">
+                বাংলা (Bengali)
+              </option>
+              <option style={{ color: "black" }} value="ta">
+                தமிழ் (Tamil)
+              </option>
+              <option style={{ color: "black" }} value="te">
+                తెలుగు (Telugu)
+              </option>
+              <option style={{ color: "black" }} value="mr">
+                मराठी (Marathi)
+              </option>
+              <option style={{ color: "black" }} value="gu">
+                ગુજરાતી (Gujarati)
+              </option>
+              <option style={{ color: "black" }} value="pa">
+                ਪੰਜਾਬੀ (Punjabi)
+              </option>
+              <option style={{ color: "black" }} value="ml">
+                മലയാളം (Malayalam)
+              </option>
+              <option style={{ color: "black" }} value="kn">
+                ಕನ್ನಡ (Kannada)
+              </option>
+              <option style={{ color: "black" }} value="or">
+                ଓଡ଼ିଆ (Odia)
+              </option>
+              <option style={{ color: "black" }} value="as">
+                অসমীয়া (Assamese)
+              </option>
+              <option style={{ color: "black" }} value="ur">
+                اردو (Urdu)
+              </option>
+              <option style={{ color: "black" }} value="sd">
+                سنڌي (Sindhi)
+              </option>
+              <option style={{ color: "black" }} value="ks">
+                کٲشُر (Kashmiri)
+              </option>
+              <option style={{ color: "black" }} value="ne">
+                नेपाली (Nepali)
+              </option>
+              <option style={{ color: "black" }} value="sa">
+                संस्कृतम् (Sanskrit)
+              </option>
+              <option style={{ color: "black" }} value="mai">
+                मैथिली (Maithili)
+              </option>
+              <option style={{ color: "black" }} value="mni">
+                মৈতৈলোন (Manipuri)
+              </option>
             </Select>
           </Text>
         </Link>

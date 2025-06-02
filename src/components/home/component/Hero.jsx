@@ -35,7 +35,7 @@ const Hero = () => {
         <Container maxW="container.xl" position="relative" zIndex="1">
           <Stack spacing={8} justify="space-between" align="center" direction={{ base: "column", md: "row" }}>
             <VStack spacing={4} align={{ base: "center", md: "start" }} maxW="lg">
-              <Heading as="h1" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="medium" color="#07070B">
+              <Heading as="h1" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="medium" color="#07070B">
                 Empowering You with Legal Knowledge
               </Heading>
 
