@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelpline } from "../../redux/features/helplineSlice";
 import { Link } from "react-router-dom";
+import headline from '../../assets/home/headline.png'
 
 const HelpLine = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const HelpLine = () => {
     <div
       className="relative bg-cover bg-center text-white py-16 px-4 sm:px-10"
       style={{
-        backgroundImage: `url(https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740225621718_HELPLINE.png)`,
+        backgroundImage: `url(${headline})`,
       }}
     >
       {/* Overlay */}

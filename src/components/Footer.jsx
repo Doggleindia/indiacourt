@@ -8,11 +8,11 @@ import { Image, Text } from "@chakra-ui/react";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#000000] px-[10vw]  pb-[10vh]" style={{color: "white"}}>
+      <footer className="bg-[#000000] px-[10vw] pt-6  pb-[10vh]" style={{color: "white"}}>
         <>
           {/* <Image src={icon} mx="auto" /> */}
-          <Image src='https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740381649933_footerIcon.svg' mx="auto" />
-          <Text className="text-base text-center my-8 ">
+          {/* <Image src='https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740381649933_footerIcon.svg' mx="auto" /> */}
+          <Text className="text-base text-center   ">
             We are here to create awareness
           </Text>
           <Image src={Line} mx="auto" mb={8} />

@@ -1,9 +1,19 @@
 import StickyChatBox from "./StickyChatBox";
-import { Box, Container, Heading, HStack, Input, Text, VStack, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  HStack,
+  Input,
+  Text,
+  VStack,
+  Stack,
+} from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLegalTopics } from "../../../redux/features/legalTopicsSlice";
 import { Link } from "react-router-dom";
+import homepic from "../../../assets/home/homepic.jpg";
 
 const Hero = () => {
   const [isChatOpen, setIsChatOpen] = useState(true);
@@ -24,18 +34,34 @@ const Hero = () => {
       <Box
         position="relative"
         overflow="hidden"
-        bgImage={`url(https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1740159684742_SUPREME%20COURT%20HOME%20PAGE.png)`}
+        bgImage={homepic}
         bgSize="cover"
         bgPosition="top"
         height="container.sm"
         display="flex"
         alignItems="center"
-        top={{base:12, md:20}}
+        width="100vw" // Viewport width
+        maxW="100%"
+        top={{ base: 12, md: 20 }}
       >
         <Container maxW="container.xl" position="relative" zIndex="1">
-          <Stack spacing={8} justify="space-between" align="center" direction={{ base: "column", md: "row" }}>
-            <VStack spacing={4} align={{ base: "center", md: "start" }} maxW="lg">
-              <Heading as="h1" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="medium" color="#07070B">
+          <Stack
+            spacing={8}
+            justify="space-between"
+            align="center"
+            direction={{ base: "column", md: "row" }}
+          >
+            <VStack
+              spacing={4}
+              align={{ base: "center", md: "start" }}
+              maxW="lg"
+            >
+              <Heading
+                as="h1"
+                fontSize={{ base: "3xl", md: "4xl" }}
+                fontWeight="medium"
+                color="#07070B"
+              >
                 Empowering You with Legal Knowledge
               </Heading>
 
@@ -43,7 +69,13 @@ const Hero = () => {
                 <Text fontSize="lg" fontWeight="medium" my={2}>
                   What do you want to learn today?
                 </Text>
-                <Box bg="white" p={4} borderRadius="md" boxShadow="lg" width={{ base: "100%", md: "350px" }}>
+                <Box
+                  bg="white"
+                  p={4}
+                  borderRadius="md"
+                  boxShadow="lg"
+                  width={{ base: "100%", md: "350px" }}
+                >
                   <Text fontSize="sm" fontWeight="medium" mb={2}>
                     I want to
                   </Text>
@@ -55,7 +87,9 @@ const Hero = () => {
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       onFocus={() => setShowSuggestions(true)}
-                      onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                      onBlur={() =>
+                        setTimeout(() => setShowSuggestions(false), 200)
+                      }
                     />
                   </HStack>
 
@@ -72,7 +106,10 @@ const Hero = () => {
                     >
                       {topics.length > 0 ? (
                         topics.map((topic) => (
-                          <Link to={`/legal-topic/${topic._id}`} key={topic._id}>
+                          <Link
+                            to={`/legal-topic/${topic._id}`}
+                            key={topic._id}
+                          >
                             <Text
                               p={1} // Reduce padding
                               fontSize="sm" // Reduce font size
@@ -85,7 +122,9 @@ const Hero = () => {
                           </Link>
                         ))
                       ) : (
-                        <Text fontSize="sm" p={1}>No topics found</Text>
+                        <Text fontSize="sm" p={1}>
+                          No topics found
+                        </Text>
                       )}
                     </Box>
                   )}
@@ -95,7 +134,10 @@ const Hero = () => {
           </Stack>
         </Container>
       </Box>
-      <StickyChatBox isChatOpen={isChatOpen} handleToggleChat={handleToggleChat} />
+      <StickyChatBox
+        isChatOpen={isChatOpen}
+        handleToggleChat={handleToggleChat}
+      />
     </>
   );
 };
